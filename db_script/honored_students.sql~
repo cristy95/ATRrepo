@@ -41,7 +41,7 @@ language 'plpgsql';
 
 --view
 create or replace 
-	function get_hon_stud(in char(9), out char(9), out text, out text, out text)
+	function get_honstud_perid(in char(9), out char(9), out text, out text, out text)
 		returns setof record as
 $$
 	select stud_id, dissertation, 

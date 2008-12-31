@@ -53,7 +53,7 @@ create or replace
     function getstatuslist (in text, out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from allinfo
+    select stud_id, status from confirm
     where status = $1;
 $$
     language 'sql';

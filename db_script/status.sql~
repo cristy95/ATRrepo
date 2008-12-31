@@ -35,6 +35,6 @@ create or replace function
 returns text as
 $$
     select stud_id_fk, status from status
-    where status_id_fk = $1;
+    where stud_id_fk = $1;
 $$
     language 'sql';
