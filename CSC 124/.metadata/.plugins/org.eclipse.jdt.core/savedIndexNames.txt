@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+/home/Student/csc151/cs1/u2012-0361/Desktop/CSC 124/.metadata/.plugins/org.eclipse.jdt.core
+93126265.index
+2144527131.index
+1315774244.index
+112058838.index
