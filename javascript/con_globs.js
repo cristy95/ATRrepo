@@ -14,7 +14,7 @@ function fetchconfirm(stud_id)
                         for(i=0; i<cons.length; i++)
                         {
                               row = res[i];
-                              table += "<tr>";
+                              table += "<table><tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";

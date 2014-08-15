@@ -20,13 +20,7 @@ begin
 		insert into honored_students(stud_id, dissertation, special_project, thesis_title) values (p_stud_id, p_dissertation, p_special_project, p_thesis_title);
 	else
 		update honored_students
-			set dissertation = p_dissertation
-			where stud_id = p_stud_id;
-		update honored_students
-			set special_project = p_special_project
-			where stud_id = p_stud_id;
-		update honored_students
-			set thesis_title = p_thesis_title
+			set dissertation = p_dissertation, set special_project = p_special_project, set thesis_title = p_thesis_title
 			where stud_id = p_stud_id;
 	end if;
 	
@@ -43,4 +37,12 @@ $$
 	select stud_id, dissertation, special_project, thesis_title from honored_students
 	where stud_id = $1;
 $$
+
+create or replace
+	function get_list_hs(out char(9), out text, out text, out text)
+		returns setof record as
+$$
+	select * from honored_students;
+$$
 language 'sql';
+
