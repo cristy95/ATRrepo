@@ -51,4 +51,5 @@ function fetch_hon_stud_perid(stud_id)
 					  table += "</table>";
 					  $("#target").html(table); 
 				  } // end if
+	});
 }
