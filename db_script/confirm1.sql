@@ -4,11 +4,15 @@ create table confirm (
     
 );
 
+
+insert into confirm(stud_id, status)  values ('2012-0186', 'Pending');
+insert into confirm(stud_id, status)  values ('2012-1531', 'Confirmed');
+
 --controller
 
 create or replace
     function setconfirm (stud_id char(9), status text)
-    return text as
+    returns text as
 $$
   declare
      v_stud_id char(9);
@@ -38,3 +42,14 @@ returns setof record as
 $$
     select stud_id, status from confirm
     where stud_id = $1;
+$$
+    language 'sql';
+
+--display confirmed
+create or replace function getconfirmed (in text, out char(9), out text)
+returns setof record as
+$$
+    select stud_id, status from confirm
+    where status = $1;
+$$
+    language 'sql';
