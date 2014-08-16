@@ -1,28 +1,13 @@
-var siteloc = localhost;
+var siteloc = "localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
-function fetchparents(stud_id)
+function fetch_honor_students(stud_id)
+}
+  $.ajax({
+	url: siteloc + sriptloc + "gethonorstudents.py",
+	data: {stud_id:stud_id},
+	datatype: 'json',
+	success: function(res){
+		console.log(res);
+		}
 {
-   $.ajax({
-       url: siteloc + scriptloc + "gradesheet.py",
-       data: {stud_id:stud_id,
-              father_nameFull:father_nameFull,
-              mother_nameFull:mother_nameFull},
-       dataType: 'json',
-       success: function (par) {
-                   console.log(par);
-                   if(res[0][0] != "None")
-                   {
-			for(i=0; i<par.length; i++)
-			{
-				meh = par[i];
-				table += "<tr>";
-				for(j=0; j<meh.length; j++)
-				{
-					table += "<td>" + meh[j] + "</td>";
-				}
-				table += "</tr>";
-			}
-			table += "</table>";
-			$("#target").html(table);
-		} //end if

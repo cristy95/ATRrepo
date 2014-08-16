@@ -5,32 +5,31 @@ function fetch_honor_students()
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonorstudents.py",
-	data: {},
+	data: {}, 
 	datatype: 'json',
 	success: function(res){
 		console.log(res);
 		if(res[0][0] != "None")
                     {
-			table = '<table border="1">';
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
-                              table += "<tr>";
+                              table += "<table><tr>";
                               for (j=0; j<row.length; j++)
-                             		 {
-                              		    table += "<td>" + row[j] + "</td>";
-					 }
-				 table += "</tr>";
-			  }
+                              {
+                                  table += "<td>" + row[j] + "</td>";
+						  }
+						  table += "</tr>";
+					  }
 					  table += "</table>";
 					  $("#target").html(table); 
-		    } // end if
+				  } // end if
 		}
-		
 	});
 }
 
-function fetch_hon_stud_perid(stud_id)
+
+function fetch_hon_stud_perid(String(stud_id))
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
@@ -53,6 +52,7 @@ function fetch_hon_stud_perid(stud_id)
 					  table += "</table>";
 					  $("#target").html(table); 
 				  } // end if
+
 		}
 	});
 }
@@ -113,3 +113,4 @@ function fetchconfirmlist(status)
     });
 }
 
+>>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
