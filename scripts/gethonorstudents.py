@@ -7,10 +7,10 @@ def index(req):
 	a = doSql()
 	studs = a.execqry("select * from get_list_hs();", False)
         
-	return = []
+	result = []
 	for stud in studs:
 		stringed = map(str, stud)
-		print stringed
+		##print stringed
 		result.append(stringed)
 	
 	return json.dumps(result)
