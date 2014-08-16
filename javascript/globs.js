@@ -30,7 +30,7 @@ function fetch_honor_students()
 	});
 }
 
-function fetch_hon_stud_perid(stud_id)
+function fetch_hon_stud_perid(String(stud_id))
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
