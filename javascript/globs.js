@@ -4,23 +4,14 @@ var scriptloc = "/scripts/"
 function fetch_honor_students()
 {
   $.ajax({
-<<<<<<< HEAD
-	url: siteloc + sriptloc + "gethonorstudents.py",
-=======
 	url: siteloc + scriptloc + "gethonorstudents.py",
-<<<<<<< HEAD
 	data: {}, 
-=======
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
-	data: {},
->>>>>>> 6aca73e9c88acc87effeac2fc6122bdd81e65e2a
 	datatype: 'json',
 	success: function(res){
 		console.log(res);
 		if(res[0][0] != "None")
                     {
-<<<<<<< HEAD
-                        for(i=0; i<cons.length; i++)
+                        for(i=0; i<res.length; i++)
                         {
                               row = res[i];
                               table += "<table><tr>";
@@ -37,47 +28,18 @@ function fetch_honor_students()
 	});
 }
 
-function fetch_hon_stud_perid(stud_id)
-{
-  $.ajax({
-	url: siteloc + scriptloc + "gethonstudperid.py",
-	data: (stud_id:stud_id},
-=======
-			table = '<table border="1">';
-                        for(i=0; i<res.length; i++)
-                        {
-                              row = res[i];
-                              table += "<tr>";
-                              for (j=0; j<row.length; j++)
-                             		 {
-                              		    table += "<td>" + row[j] + "</td>";
-					 }
-				 table += "</tr>";
-			  }
-					  table += "</table>";
-					  $("#target").html(table); 
-		    } // end if
-		}
-		
-	});
-}
 
 function fetch_hon_stud_perid(String(stud_id))
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
 	data: {stud_id:stud_id},
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
 	datatype:'json',
 	success:function(res){
 		console.log(res);
 		if(res[0][0] != "None")
                     {
-<<<<<<< HEAD
-                        for(i=0; i<cons.length; i++)
-=======
                         for(i=0; i<res.length; i++)
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
                         {
                               row = res[i];
                               table += "<table><tr>";
@@ -90,10 +52,7 @@ function fetch_hon_stud_perid(String(stud_id))
 					  table += "</table>";
 					  $("#target").html(table); 
 				  } // end if
-<<<<<<< HEAD
-	});
-}
-=======
+
 		}
 	});
 }
