@@ -38,6 +38,10 @@ $$
 	where stud_id = $1;
 $$
 language 'sql';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e51be9c04d265776c70779383b67e7ead293e22
 
 create or replace
 	function get_list_hs(out char(9), out text, out text, out text)

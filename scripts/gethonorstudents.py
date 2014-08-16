@@ -10,11 +10,15 @@ def index(req):
 	result = []
 =======
         
+<<<<<<< HEAD
 	return = []
 >>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
+=======
+	result = []
+>>>>>>> 7e51be9c04d265776c70779383b67e7ead293e22
 	for stud in studs:
 		stringed = map(str, stud)
-		print stringed
+		##print stringed
 		result.append(stringed)
 	
 	return json.dumps(result)
