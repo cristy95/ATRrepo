@@ -5,7 +5,7 @@ function fetch_honor_students()
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonorstudents.py",
-	data: {},
+	data: {}, 
 	datatype: 'json',
 	success: function(res){
 		console.log(res);
