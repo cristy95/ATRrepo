@@ -1,19 +1,19 @@
 var siteloc = "localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
-function fetchconfirm(stud_id)
+function fetchconfirmlist(status)
 {
     $.ajax({
         url: siteloc + scriptloc + "getconfirm.py",
-        data: { stud_id: stud_id },
+        data: { status: status},
         dataType: 'json',
         success: function (cons) {
                     console.log(cons);
-                    if(res[0][0] != "None")
+                    if(cons[0][0] != "None")
                     {
                         for(i=0; i<cons.length; i++)
                         {
-                              row = res[i];
+                              row = cons[i];
                               table += "<table><tr>";
                               for (j=0; j<row.length; j++)
                               {
