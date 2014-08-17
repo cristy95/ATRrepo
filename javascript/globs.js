@@ -11,10 +11,11 @@ function fetch_honor_students()
 		console.log(res);
 		if(res[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
-                              table += "<table><tr>";
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
@@ -39,10 +40,11 @@ function fetch_hon_stud_perid(stud_id)
 		console.log(res);
 		if(res[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
-                              table += "<table><tr>";
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
