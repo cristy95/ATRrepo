@@ -1,4 +1,4 @@
-var siteloc = "localhost/ATRrepo";
+var siteloc = "http://localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
 function fetch_honor_students()
@@ -6,7 +6,7 @@ function fetch_honor_students()
   $.ajax({
 	url: siteloc + scriptloc + "gethonorstudents.py",
 	data: {}, 
-	datatype: 'json',
+	dataType: 'json',
 	success: function(res){
 		console.log(res);
 		if(res[0][0] != "None")
@@ -29,12 +29,12 @@ function fetch_honor_students()
 }
 
 
-function fetch_hon_stud_perid(String(stud_id))
+function fetch_hon_stud_perid(stud_id)
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
 	data: {stud_id:stud_id},
-	datatype:'json',
+	dataType:'json',
 	success:function(res){
 		console.log(res);
 		if(res[0][0] != "None")
