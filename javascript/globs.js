@@ -1,4 +1,4 @@
-var siteloc = "localhost/ATRrepo";
+var siteloc = "http://localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
 function fetch_honor_students()
@@ -6,15 +6,16 @@ function fetch_honor_students()
   $.ajax({
 	url: siteloc + scriptloc + "gethonorstudents.py",
 	data: {}, 
-	datatype: 'json',
+	dataType: 'json',
 	success: function(res){
 		console.log(res);
 		if(res[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
-                              table += "<table><tr>";
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
@@ -29,20 +30,21 @@ function fetch_honor_students()
 }
 
 
-function fetch_hon_stud_perid(String(stud_id))
+function fetch_hon_stud_perid(stud_id)
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
 	data: {stud_id:stud_id},
-	datatype:'json',
+	dataType:'json',
 	success:function(res){
 		console.log(res);
 		if(res[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
-                              table += "<table><tr>";
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
@@ -113,4 +115,4 @@ function fetchconfirmlist(status)
     });
 }
 
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
+
