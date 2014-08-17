@@ -113,4 +113,3 @@ function fetchconfirmlist(status)
     });
 }
 
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
