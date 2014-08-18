@@ -1,4 +1,4 @@
-from dosql_students import *
+from dosql import *
 import json
 
 def index(req):

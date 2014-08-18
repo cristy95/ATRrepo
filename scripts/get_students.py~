@@ -1,4 +1,4 @@
-from dosql import *
+from dosql_students import *
 import cgi
 import json
 

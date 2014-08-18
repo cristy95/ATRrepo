@@ -92,7 +92,7 @@ function fetchconfirm(stud_id)
 function fetchconfirmlist(status)
 {
     $.ajax({
-        url: siteloc + scriptloc + "getconfirm.py",
+        url: siteloc + scriptloc + "getconfirmlist.py",
         data: { status: status},
         dataType: 'json',
         success: function (cons) {

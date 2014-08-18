@@ -148,7 +148,7 @@ function fetchstudents_perid(stud_id)
 function fetchstudents_list()
 {
   $.ajax({
-      url: siteloc + scriptloc + "get_students.py",
+      url: siteloc + scriptloc + "get_students_list.py",
       data: {},
       dataType: 'json',
       success: function (res) {
