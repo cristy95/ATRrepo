@@ -11,7 +11,7 @@ insert into confirm(stud_id, status)  values ('2012-1531', 'Confirmed');
 --controller
 
 create or replace
-    function setconfirm (p_stud_id char(9), p_status text)
+    function setconfirm (stud_id char(9), status text)
     returns text as
 $$
   declare

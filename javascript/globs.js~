@@ -59,7 +59,7 @@ function fetch_hon_stud_perid(stud_id)
 	});
 }
 
---dar2 confirm
+//--dar2 confirm
 function fetchconfirm(stud_id)
 {
     $.ajax({
@@ -68,12 +68,13 @@ function fetchconfirm(stud_id)
         dataType: 'json',
         success: function (cons) {
                     console.log(cons);
-                    if(res[0][0] != "None")
+                    if(cons[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<cons.length; i++)
                         {
-                              row = res[i];
-                              table += "<table><tr>";
+                              row = cons[i];
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
@@ -87,7 +88,7 @@ function fetchconfirm(stud_id)
     });
 }
 
---dar2 list of confirmed
+//--dar2 list of confirmed
 function fetchconfirmlist(status)
 {
     $.ajax({
@@ -98,10 +99,11 @@ function fetchconfirmlist(status)
                     console.log(cons);
                     if(cons[0][0] != "None")
                     {
+			table = '<table border="1">';
                         for(i=0; i<cons.length; i++)
                         {
                               row = cons[i];
-                              table += "<table><tr>";
+                              table += "<tr>";
                               for (j=0; j<row.length; j++)
                               {
                                   table += "<td>" + row[j] + "</td>";
