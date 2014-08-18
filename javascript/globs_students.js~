@@ -29,11 +29,11 @@ function fetchstudents_perid(stud_id)
     });
 }
 
-function fetchstudents_list()
+function fetchstudents_list(status)
 {
   $.ajax({
       url: siteloc + scriptloc + "get_students.py",
-      data: {},
+      data: {status:status},
       dataType: 'json',
       success: function (res) {
                   console.log(res);
