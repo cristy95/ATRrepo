@@ -1,9 +1,7 @@
 from dosql_students import *
-import cgi
 import json
 
-def index(req, stud_id):
-    stud_id = cgi.escape(stud_id)
+def index(req):
     x = doSql()
     rets = x.execqry("select * from get_students();", False)
     result = []
