@@ -9,8 +9,8 @@ function fetchparents(stud_id)
               father_nameFull:father_nameFull,
               mother_nameFull:mother_nameFull},
        dataType: 'json',
-       success: function (res) {
-                   console.log(res);
+       success: function (par) {
+                   console.log(par);
                    if(res[0][0] != "None")
                    {
 			table = '<table border="1">';
