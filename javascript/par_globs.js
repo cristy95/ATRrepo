@@ -4,23 +4,21 @@ var scriptloc = "/scripts/"
 function fetchparents(stud_id)
 {
    $.ajax({
-       url: siteloc + scriptloc + "gradesheet.py",
-       data: {stud_id:stud_id,
-              father_nameFull:father_nameFull,
-              mother_nameFull:mother_nameFull},
+       url: siteloc + scriptloc + "getparents.py",
+       data: {stud_id:stud_id},
        dataType: 'json',
        success: function (res) {
                    console.log(res);
                    if(res[0][0] != "None")
                    {
 			table = '<table border="1">';
-			for(i=0; i<par.length; i++)
+			for(i=0; i<res.length; i++)
 			{
-				meh = par[i];
+				row = res[i];
 				table += "<tr>";
-				for(j=0; j<meh.length; j++)
+				for(j=0; j<row.length; j++)
 				{
-					table += "<td>" + meh[j] + "</td>";
+					table += "<td>" + row[j] + "</td>";
 				}
 				table += "</tr>";
 			}
