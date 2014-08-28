@@ -1,6 +1,7 @@
 var siteloc = "http://localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
+//kring2
 function fetch_honor_students()
 {
   $.ajax({
@@ -29,7 +30,7 @@ function fetch_honor_students()
 	});
 }
 
-
+//kring2
 function fetch_hon_stud_perid(stud_id)
 {
   $.ajax({
@@ -59,7 +60,7 @@ function fetch_hon_stud_perid(stud_id)
 	});
 }
 
-//--dar2 confirm
+//dar2
 function fetchconfirm(stud_id)
 {
     $.ajax({
@@ -88,7 +89,7 @@ function fetchconfirm(stud_id)
     });
 }
 
-//--dar2 list of confirmed
+//dar2
 function fetchconfirmlist(status)
 {
     $.ajax({
@@ -117,6 +118,7 @@ function fetchconfirmlist(status)
     });
 }
 
+//josh
 function fetchstudents_perid(stud_id)
 {
   $.ajax({
@@ -145,6 +147,7 @@ function fetchstudents_perid(stud_id)
     });
 }
 
+//josh
 function fetchstudents_list()
 {
   $.ajax({
@@ -173,3 +176,31 @@ function fetchstudents_list()
     });
 }
 
+//pio
+function fetchparents(stud_id)
+{
+   $.ajax({
+       url: siteloc + scriptloc + "getparents.py",
+       data: {stud_id:stud_id},
+       dataType: 'json',
+       success: function (res) {
+                   console.log(res);
+                   if(res[0][0] != "None")
+                   {
+			table = '<table border="1">';
+			for(i=0; i<res.length; i++)
+			{
+				row = res[i];
+				table += "<tr>";
+				for(j=0; j<row.length; j++)
+				{
+					table += "<td>" + row[j] + "</td>";
+				}
+				table += "</tr>";
+			}
+			table += "</table>";
+			$("#target").html(table);
+		} //end if
+	}
+	});
+}

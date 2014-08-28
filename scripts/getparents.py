@@ -9,7 +9,7 @@ def index(req, stud_id):
     result = []
     for ret in rets:
         stringed = map(str, ret)
-        results.append(stringed)
+        result.append(stringed)
     
 
     return json.dumps(result)

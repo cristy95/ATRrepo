@@ -5,9 +5,7 @@ function fetchparents(stud_id)
 {
    $.ajax({
        url: siteloc + scriptloc + "getparents.py",
-       data: {stud_id:stud_id,
-              father_nameFull:father_nameFull,
-              mother_nameFull:mother_nameFull},
+       data: {stud_id:stud_id},
        dataType: 'json',
        success: function (res) {
                    console.log(res);
@@ -27,3 +25,6 @@ function fetchparents(stud_id)
 			table += "</table>";
 			$("#target").html(table);
 		} //end if
+	}
+	});
+}
