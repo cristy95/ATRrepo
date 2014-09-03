@@ -8,6 +8,6 @@
         <script src="javascript/jqinit.js"></script>
    </head>
    <body>
-	<h2> This is the template from TADMAN.</h2>
+	<h1> This is the template from TADMAN.</h1>
 </body>
 </html>
