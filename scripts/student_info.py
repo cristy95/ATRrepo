@@ -1,6 +1,6 @@
 http://localhost/ATRrepo/scripts/addstudent.py?stud_id=2012-0001&college=scs&course=bscs&nameFirst=Cristy&nameMid=Conado&nameLast=Fuerzas&nickname=Kring2&gender=female&birthdate=7&birthMonth=12&birthYear=1995&age=18&contactNumber=0934&address=klklklkl
 
-
+    
 
 stud_id=2012-0002&
 college=SCS&
