@@ -218,3 +218,29 @@ function fetchparents(stud_id)
 	}
 	});
 }
+
+//kring2
+function addhonorstudent(stud_id, dissertation, special_project, thesis_title)
+{
+  $.ajax({
+      url: siteloc + scriptloc + "addhonorstudent.py",
+      data: {stud_id:stud_id,
+             dissertation:dissertation,
+	     special_project:special_project,
+	     thesis_title:thesis_title},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res != 0)
+                  {
+		//	answer = '<div class="table-responsive"">';
+		//	answer += '<table class"table table-condensed">';
+		//	answer += '<thead>'+'<tr>'+'<th>Answer</th></tr></thead>' + '<tbody>'+'<tr>'+'<th>'+res+'</th>'+'</tr>'+'</tbody>';
+		//	answer += '</table>'+'</div>';
+			answer = "SET"
+				  $("#target").html(answer); 
+				  } // end if
+              }
+    });
+}
+
