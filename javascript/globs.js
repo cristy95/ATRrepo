@@ -263,3 +263,19 @@ function addorgs()
     });
 }
 
+//dar2
+function addconfirm()
+{
+    $.ajax({
+        url: siteloc + scriptloc + "addconfirm.py",
+        data: {stud_id:$("stud_id").val()},
+        dataType: 'json',
+        success: function (res) {
+            console.log(res);
+            if(res[0][0] != "None")
+            {
+                answer = 'SET'
+                $("#target").html(answer);
+            }
+    });
+}
