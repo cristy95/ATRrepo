@@ -220,26 +220,22 @@ function fetchparents(stud_id)
 }
 
 //kring2
-function addhonorstudent(stud_id, dissertation, special_project, thesis_title)
+function addhonorstudent()
 {
   $.ajax({
       url: siteloc + scriptloc + "addhonorstudent.py",
-      data: {stud_id:stud_id,
-             dissertation:dissertation,
-	     special_project:special_project,
-	     thesis_title:thesis_title},
+      data: {stud_id:$("#stud_id").val(),
+             dissertation:$("#dissertation").val(),
+             special_project:$("#special_project").val(),
+	     thesis_title:$("#thesis_title").val()},
       dataType: 'json',
       success: function (res) {
                   console.log(res);
-                  if(res != 0)
+                  if(res[0][0] != "None")
                   {
-		//	answer = '<div class="table-responsive"">';
-		//	answer += '<table class"table table-condensed">';
-		//	answer += '<thead>'+'<tr>'+'<th>Answer</th></tr></thead>' + '<tbody>'+'<tr>'+'<th>'+res+'</th>'+'</tr>'+'</tbody>';
-		//	answer += '</table>'+'</div>';
-			answer = "SET"
-				  $("#target").html(answer); 
-				  } // end if
+			answer = 'SET'
+			$("#target").html(answer); 
+		  } // end if
               }
     });
 }
