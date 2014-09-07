@@ -2,7 +2,7 @@ from dosql import *
 import cgi
 import json
 
-def addStudent(req, stud_id, stud_college, stud_course, stud_nameFirst, stud_nameMid, stud_nameLast, stud_nickname, stud_gender, stud_birthdate, stud_birthMonth, stud_birthYear, stud_age, stud_contactNum, stud_homeAddress):
+def addStudent(stud_id, stud_college, stud_course, stud_nameFirst, stud_nameMid, stud_nameLast, stud_nickname, stud_gender, stud_birthdate, stud_birthMonth, stud_birthYear, stud_age, stud_contactNum, stud_homeAddress):
   stud_id = cgi.escape(stud_id)
   stud_college = cgi.escape(stud_college)
   stud_course = cgi.escape(stud_course)
