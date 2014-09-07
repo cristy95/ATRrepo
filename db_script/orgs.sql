@@ -2,7 +2,7 @@ create table orgs(
 
 	stud_id char(9) primary key,
 	org_Name text, --Organization Name
-	org_Pos text, --Organization Postition
+	org_Pos text, --Organization Position
 	org_AcYr text, --Organization Academic Year
 	stud_aA_cA text, --Academic Achievements/Co-curricular Awards
 	stud_schGra text --Scholarship Grants
