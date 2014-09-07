@@ -1,11 +1,28 @@
 <html>
    <head>
-        <script src="javascript/jquery.js"></script>
-        <script src="javascript/globs.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+       	<script src="javascript/jquery.js"></script>
+	<script src="javascript/bootstrap.min.js"></script>
+       	<script src="javascript/globs.js"></script>
         <script src="javascript/jqinit.js"></script>
    </head>
    <body>
-       <div id="target">
-       </div>
+      <h1> Welcome to <abbr title="Automated TADMAN Registration">ATR</abbr>.</h1>
+      <p>Choose what you want to do.</p>
+	<ol>
+      	   <li><a href="firsturl">Fill up registration form</a></li>
+	   <li><a href="secondurl">Edit registration</a></li>
+	   <li><a href="thirdurl">Cancel registration</a></li>
+           <li><a href="showtemp.html">Show template</a></li>
+	   <li><a href="showhonstudlist.html">Show Honored Students</a></li>
+	</ol>
+	<!--button
+		class="btn btn-success btn-mini"
+		onclick="fetch_honor_students();"> Load Honor Students
+	</button-->
+      <p>This is for the admin only.</p>
+	<ol>
+	   <li><a href="url">Show uncofirmed?</a></li>
    </body>
 </html>

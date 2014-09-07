@@ -1,0 +1,19 @@
+<html>
+   <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="javascript/jquery.js"></script>
+        <script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/globs.js"></script>
+        <script src="javascript/jqinit.js"></script>
+   </head>
+   <body>
+	   <div id="target">
+       </div>
+	   <button    
+	            class="btn btn-success btn-mini"
+	            onclick="fetch_honor_students();">
+				Load..
+	   </button>
+   </body>
+</html>

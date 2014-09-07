@@ -13,9 +13,11 @@ insert into confirm(stud_id, status)  values ('2012-1531', 'Confirmed');
 create or replace
     function setconfirm (p_stud_id char(9), p_status text)
     returns text as
+
 $$
   declare
      v_stud_id char(9);
+
   begin
     select into v_stud_id stud_id from confirm
         where stud_id = p_stud_id;
@@ -45,8 +47,10 @@ $$
 $$
     language 'sql';
 
+
 --display confirmed
-create or replace function getconfirmed (in text, out char(9), out text)
+create or replace
+    function getconfirmed (in text, out char(9), out text)
 returns setof record as
 $$
     select stud_id, status from confirm

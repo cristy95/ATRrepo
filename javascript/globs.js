@@ -12,7 +12,18 @@ function fetch_honor_students()
 		console.log(res);
 		if(res[0][0] != "None")
                     {
-			table = '<table border="1">';
+			 table = '<div class="table-responsive">';
+				table += '<table class="table table-condensed">';
+				table += "<thead>" +
+					 "<tr>" +
+						 "<th>ID No.</th>" +
+						 "<th>Dissertation</th>" +
+						 "<th>Special Project</th>" +
+						 "<th>Thesis Title</th>" +
+					 "</tr>" +
+					 "</thead>";
+			 table += "<tbody>";
+			
                         for(i=0; i<res.length; i++)
                         {
                               row = res[i];
@@ -23,7 +34,10 @@ function fetch_honor_students()
 						  }
 						  table += "</tr>";
 					  }
+					  table += "</tbody>";
 					  table += "</table>";
+					  table += "</div>";
+					
 					  $("#target").html(table); 
 				  } // end if
 		}
@@ -204,3 +218,25 @@ function fetchparents(stud_id)
 	}
 	});
 }
+
+//kring2
+function addhonorstudent()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "addhonorstudent.py",
+      data: {stud_id:$("#stud_id").val(),
+             dissertation:$("#dissertation").val(),
+             special_project:$("#special_project").val(),
+	     thesis_title:$("#thesis_title").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'SET'
+			$("#target").html(answer); 
+		  } // end if
+              }
+    });
+}
+

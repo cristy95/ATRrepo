@@ -1,5 +1,5 @@
 //define functions and global variables here..
-var siteloc = "http:/localhost/ATRrepo"
+var siteloc = "https:/localhost/ATRrepo"
 var scriptloc = "/scripts/"
 
 function fetchinfo(stud_id)
