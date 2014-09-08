@@ -133,10 +133,10 @@ function fetchconfirmlist(status)
 }
 
 //josh
-function fetchstudents_perid(stud_id)
+function fetchorgs_perid(stud_id)
 {
   $.ajax({
-      url: siteloc + scriptloc + "get_students.py",
+      url: siteloc + scriptloc + "get_orgs.py",
       data: {stud_id:stud_id},
       dataType: 'json',
       success: function (res) {
@@ -162,10 +162,10 @@ function fetchstudents_perid(stud_id)
 }
 
 //josh
-function fetchstudents_list()
+function fetchorgs_list()
 {
   $.ajax({
-      url: siteloc + scriptloc + "get_students_list.py",
+      url: siteloc + scriptloc + "get_orgs_list.py",
       data: {},
       dataType: 'json',
       success: function (res) {
@@ -185,7 +185,7 @@ function fetchstudents_list()
 					  }
 					  table += "</table>";
 					  $("#target").html(table); 
-				  } // end if
+				  }
               }
     });
 }
@@ -228,6 +228,61 @@ function addhonorstudent()
              dissertation:$("#dissertation").val(),
              special_project:$("#special_project").val(),
 	     thesis_title:$("#thesis_title").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'SET'
+			$("#target").html(answer); 
+		  } // end if
+              }
+    });
+}
+
+//josh
+function addorgs()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "addorgs.py",
+      data: {stud_id:$("#stud_id").val(),
+             org_Name:$("#org_Name").val(),
+             org_Pos:$("#org_Pos").val(),
+			 org_AcYr:$("#org_AcYr").val(),
+			 stud_aA_cA:$("#stud_aA_cA").val(),
+			 stud_aA_cA:$("#stud_aA_cA").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'SET'
+			$("#target").html(answer); 
+		  }
+              }
+    });
+}
+
+//lorie
+function addstudinfo()
+{
+	$.ajax({
+      url: siteloc + scriptloc + "student_info.py",
+      data: {stud_id : $("#stud_id").val(),
+             college : $("#college").val(),
+             course  : $("#course").val(),
+             nameFirst : $("#nameFirst").val(),
+             nameMid : $("#nameMid").val(),
+             nameLast: $("#nameLast").val(),
+             nickname: $("#nickname").val(),
+             gender: $("#gender").val(),
+             birthdate: $("#birthdate").val(),
+             birthMonth: $("#birthMonth").val(),
+             birthYear: $("#birthYear").val(),
+             age : $("#age").val(),
+             contactNum : $("#contactNum").val(),
+             homeAddress : $("#homeAddress").val(),}
+             
       dataType: 'json',
       success: function (res) {
                   console.log(res);

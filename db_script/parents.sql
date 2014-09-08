@@ -20,13 +20,14 @@ $$
 		where v_stud_id = p_stud_id;
 		
 	if v_stud_id isnull then 
-		insert into parents(stud_id, father_nameFull, mother_nameFull) values
-			(p_stud_id, p_father_nameFull, p_mother_nameFull);
+		insert into parents(stud_id, father_nameFull, mother_nameFull) 
+		values (p_stud_id, p_father_nameFull, p_mother_nameFull);
 			
 	else
 		update parents
 			set father_nameFull = p_father_nameFull
 			where stud_id = p_stud_id;
+		
 		update parents
 			set mother_nameFull = p_mother_nameFull
 			where stud_id = p_stud_id;
@@ -40,10 +41,12 @@ $$
 create or replace function 
 	get_parents_perid(in char(9), out char(9), out text, out text)
 returns setof record as
+
 $$
 	select stud_id, father_nameFull, mother_nameFull from parents
 	where stud_id = $1;
 $$
+
  language 'sql';
 
 -- select * from  get_object_perid(1)
