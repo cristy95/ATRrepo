@@ -156,7 +156,7 @@ function fetchorgs_perid(stud_id)
 					  }
 					  table += "</table>";
 					  $("#target").html(table); 
-				  }
+				  } // end if
               }
     });
 }
@@ -263,19 +263,35 @@ function addorgs()
     });
 }
 
-//dar2
-function addconfirm()
+//lorie
+function addstudinfo()
 {
-    $.ajax({
-        url: siteloc + scriptloc + "addconfirm.py",
-        data: {stud_id:$("stud_id").val()},
-        dataType: 'json',
-        success: function (res) {
-            console.log(res);
-            if(res[0][0] != "None")
-            {
-                answer = 'SET'
-                $("#target").html(answer);
-            }
+	$.ajax({
+      url: siteloc + scriptloc + "student_info.py",
+      data: {stud_id : $("#stud_id").val(),
+             college : $("#college").val(),
+             course  : $("#course").val(),
+             nameFirst : $("#nameFirst").val(),
+             nameMid : $("#nameMid").val(),
+             nameLast: $("#nameLast").val(),
+             nickname: $("#nickname").val(),
+             gender: $("#gender").val(),
+             birthdate: $("#birthdate").val(),
+             birthMonth: $("#birthMonth").val(),
+             birthYear: $("#birthYear").val(),
+             age : $("#age").val(),
+             contactNum : $("#contactNum").val(),
+             homeAddress : $("#homeAddress").val(),}
+             
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'SET'
+			$("#target").html(answer); 
+		  } // end if
+              }
     });
 }
+
