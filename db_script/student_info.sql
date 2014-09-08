@@ -21,9 +21,9 @@ create table stud_info
 --controller
 
 create or replace
-
- function regstudent(p_stud_id char(9), p_college text, p_course text, p_nameFirst text, p_nameMid text, p_nameLast text, p_nickname text, p_gender text, p_birthdate int, p_birthMonth int, p_birthYear int,
-p_age text, p_contactNum text, p_homeAddress text)
+ function regstudent(p_stud_id char(9), p_college text, p_course text, p_nameFirst text,
+ p_nameMid text, p_nameLast text, p_nickname text, p_gender text, p_birthdate int,
+ p_birthMonth int, p_birthYear int, p_age text, p_contactNum text, p_homeAddress text)
  returns text as
 
 $$
@@ -44,14 +44,17 @@ p_age, p_contactNum, p_homeAddress);
 
  else
  update stud_info
- set stud_college = p_college, course = p_course, nameFirst = p_nameFirst, nameMid = p_nameMid, nameLast = p_nameLast, nickname = p_nickname, gender = p_gender, birthdate = p_birthdate, birthMonth = p_birthMonth, birthYear = p_birthYear, age = p_age, contactNum = p_contactNum, homeAddress = p_homeAddress
- where stud_id = p_stud_id;
+ set stud_college = p_college, course = p_course, nameFirst = p_nameFirst,
+ nameMid = p_nameMid, nameLast = p_nameLast, nickname = p_nickname, 
+ gender = p_gender, birthdate = p_birthdate, birthMonth = p_birthMonth, 
+ birthYear = p_birthYear, age = p_age, contactNum = p_contactNum, 
+ homeAddress = p_homeAddressn where stud_id = p_stud_id;
  end if;
  return 'OK';
  end;
 
 $$
- language 'plpgsql'
+ language 'plpgsql';
 --How to Use:
 -- select * from regstudent('2012-0001','SCS','BSCS','Cristy','Conado','Fuerzas','Kring2','female',7,12,1995,'18','09123456789','klklklklkl');
 --view
