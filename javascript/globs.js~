@@ -45,11 +45,11 @@ function fetch_honor_students()
 }
 
 //kring2
-function fetch_hon_stud_perid(stud_id)
+function fetch_hon_stud_perid()
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
-	data: {stud_id:stud_id},
+	data: {stud_id:$("#stud_id").val()},
 	dataType:'json',
 	success:function(res){
 		console.log(res);

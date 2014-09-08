@@ -4,13 +4,12 @@ import json
 
 def index(req, stud_id):
     stud_id = cgi.escape(stud_id)
-    z = doSql()
-    confirm = z.execqry("select * from get_object_perstud_id('" + stud_id + "');", False)
-
+    x = doSql()
+    rets = x.execqry("select * from get_stud_info_perid('" + stud_id + "');", False)
     result = []
-    for con in confirm:
-        stringed = map(str, con)
+    for ret in rets:
+        stringed = map(str, ret)
         result.append(stringed)
+    
 
     return json.dumps(result)
-    
