@@ -1,6 +1,6 @@
 import sys
 import psycopg2
-from globs import *
+from glob import *
 
 
 class doSql(object):
@@ -10,11 +10,7 @@ class doSql(object):
     errmsg ="" 
     #methods
     def __init__(self): #constructor
-<<<<<<< HEAD
-        self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='cuteKO143' host='127.0.0.1' port='5433'")
-=======
-        self._cxn = psycopg2.connect("dbname='test' user='your_username' password='your_pass' host='127.0.0.1' port='80'")
->>>>>>> bade025394925b4d29ea9dd484e1e4b73c569e4d
+        self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='cuteKo143' host='127.0.0.1' port='5433'")
         self._cur = self._cxn.cursor()
         
     def __del__(self): #destructor
