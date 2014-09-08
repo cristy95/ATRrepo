@@ -13,8 +13,8 @@ function fetch_honor_students()
 		if(res[0][0] != "None")
                     {
 			 table = '<div class="table-responsive">';
-				table += '<table class="table table-condensed">';
-				table += "<thead>" +
+			 table += '<table class="table table-condensed">';
+			 table += "<thead>" +
 					 "<tr>" +
 						 "<th>ID No.</th>" +
 						 "<th>Dissertation</th>" +
@@ -45,11 +45,11 @@ function fetch_honor_students()
 }
 
 //kring2
-function fetch_hon_stud_perid(stud_id)
+function fetch_hon_stud_perid()
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
-	data: {stud_id:stud_id},
+	data: {stud_id:$("#stud_id").val()},
 	dataType:'json',
 	success:function(res){
 		console.log(res);
