@@ -61,3 +61,12 @@ $$
 $$
 language 'sql';
 
+create or replace
+	function del_studid_hs(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from honored_students 
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
