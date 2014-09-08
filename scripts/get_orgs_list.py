@@ -3,7 +3,7 @@ import json
 
 def index(req):
     x = doSql()
-    rets = x.execqry("select * from get_students();", False)
+    rets = x.execqry("select * from get_orgs();", False)
     result = []
     for ret in rets:
         stringed = map(str, ret)
