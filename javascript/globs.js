@@ -13,8 +13,8 @@ function fetch_honor_students()
 		if(res[0][0] != "None")
                     {
 			 table = '<div class="table-responsive">';
-				table += '<table class="table table-condensed">';
-				table += "<thead>" +
+			 table += '<table class="table table-condensed">';
+			 table += "<thead>" +
 					 "<tr>" +
 						 "<th>ID No.</th>" +
 						 "<th>Dissertation</th>" +
@@ -45,11 +45,11 @@ function fetch_honor_students()
 }
 
 //kring2
-function fetch_hon_stud_perid(stud_id)
+function fetch_hon_stud_perid()
 {
   $.ajax({
 	url: siteloc + scriptloc + "gethonstudperid.py",
-	data: {stud_id:stud_id},
+	data: {stud_id:$("#stud_id").val()},
 	dataType:'json',
 	success:function(res){
 		console.log(res);
@@ -133,10 +133,10 @@ function fetchconfirmlist(status)
 }
 
 //josh
-function fetchstudents_perid(stud_id)
+function fetchorgs_perid(stud_id)
 {
   $.ajax({
-      url: siteloc + scriptloc + "get_students.py",
+      url: siteloc + scriptloc + "get_orgs.py",
       data: {stud_id:stud_id},
       dataType: 'json',
       success: function (res) {
@@ -162,10 +162,10 @@ function fetchstudents_perid(stud_id)
 }
 
 //josh
-function fetchstudents_list()
+function fetchorgs_list()
 {
   $.ajax({
-      url: siteloc + scriptloc + "get_students_list.py",
+      url: siteloc + scriptloc + "get_orgs_list.py",
       data: {},
       dataType: 'json',
       success: function (res) {
@@ -185,7 +185,7 @@ function fetchstudents_list()
 					  }
 					  table += "</table>";
 					  $("#target").html(table); 
-				  } // end if
+				  }
               }
     });
 }
@@ -236,6 +236,29 @@ function addhonorstudent()
 			answer = 'SET'
 			$("#target").html(answer); 
 		  } // end if
+              }
+    });
+}
+
+//josh
+function addorgs()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "addorgs.py",
+      data: {stud_id:$("#stud_id").val(),
+             org_Name:$("#org_Name").val(),
+             org_Pos:$("#org_Pos").val(),
+			 org_AcYr:$("#org_AcYr").val(),
+			 stud_aA_cA:$("#stud_aA_cA").val(),
+			 stud_aA_cA:$("#stud_aA_cA").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'SET'
+			$("#target").html(answer); 
+		  }
               }
     });
 }
