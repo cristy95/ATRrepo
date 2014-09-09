@@ -1,7 +1,7 @@
 var siteloc = localhost;
 var scriptloc = "/scripts/"
 
-function fetchparents_perid(stud_id)
+function getparents_perid(stud_id)
 {
    $.ajax({
        
@@ -37,7 +37,7 @@ function fetchparents_perid(stud_id)
 	});
 }
 
-function fetchparents_(stud_id)
+function addparents(stud_id)
 {
    $.ajax({
        
