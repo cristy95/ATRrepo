@@ -16,7 +16,7 @@ create or replace
 	p_stud_aA_cA text, p_stud_schGra text)
 	
 	returns text as
-$$
+$BODY$
 declare
 	v_stud_id char(9);
 
