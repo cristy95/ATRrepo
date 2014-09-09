@@ -6,7 +6,7 @@ def index(req, stud_id, dissertation, special_project, thesis_title):
 
   stud_id = cgi.escape(stud_id)
   dissertation = cgi.escape(dissertation)
-  special_projec = cgi.escape(special_project)
+  special_project = cgi.escape(special_project)
   thesis_title = cgi.escape(thesis_title)
 
   x = doSql()
