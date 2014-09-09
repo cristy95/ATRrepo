@@ -21,9 +21,9 @@
 				
 				<nav><ul>
 				
-					<li><a href="#">Home</a></li>
+					<li><a href="welpage.html">Home</a></li>
 					<li><a href="#">About</a></li>
-					<li><a href="#">Student</a></li>
+					<li><a href="fill1.html">Student</a></li>
 					<li><a href="#">Admin</a></li>
 					
 				</ul></nav>
@@ -61,11 +61,11 @@
 		
 		<div id="target"></div>
 
-		<!a href="fill2.html"><button  
+		<a href="fill2.html"><button  
 					class="btn btn-lg btn-success"
 					onclick="addstudinfo();"> <!-- function for adding the user to the list-->
 					Next Page
-		</button><!/a>
+		</button></a>
 	</form>
 
 </div>
