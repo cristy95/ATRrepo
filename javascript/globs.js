@@ -267,7 +267,7 @@ function addorgs()
 function addstudinfo()
 {
 	$.ajax({
-      url: siteloc + scriptloc + "student_info.py",
+      url: siteloc + scriptloc + "addstudent.py",
       data: {stud_id : $("#stud_id").val(),
              college : $("#college").val(),
              course  : $("#course").val(),
