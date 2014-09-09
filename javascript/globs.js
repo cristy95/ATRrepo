@@ -156,7 +156,7 @@ function fetchorgs_perid(stud_id)
 					  }
 					  table += "</table>";
 					  $("#target").html(table); 
-				  } // end if
+				  }
               }
     });
 }
