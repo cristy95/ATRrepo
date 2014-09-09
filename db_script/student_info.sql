@@ -44,7 +44,7 @@ p_age, p_contactNum, p_homeAddress);
 
  else
  update stud_info
- set stud_college = p_college, course = p_course, nameFirst = p_nameFirst,
+ set college = p_college, course = p_course, nameFirst = p_nameFirst,
  nameMid = p_nameMid, nameLast = p_nameLast, nickname = p_nickname, 
  gender = p_gender, birthdate = p_birthdate, birthMonth = p_birthMonth, 
  birthYear = p_birthYear, age = p_age, contactNum = p_contactNum, 

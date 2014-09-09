@@ -281,8 +281,7 @@ function addstudinfo()
              birthYear: $("#birthYear").val(),
              age : $("#age").val(),
              contactNum : $("#contactNum").val(),
-             homeAddress : $("#homeAddress").val(),}
-             
+             homeAddress : $("#homeAddress").val()},      
       dataType: 'json',
       success: function (res) {
                   console.log(res);

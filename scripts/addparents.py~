@@ -18,7 +18,7 @@ def index(req, stud_id, father_nameFirst, father_nameMiddle,father_nameLast, mot
   spouse_nameMiddle = cgi.escape(spouse_nameMiddle)
   spouse_nameLast = cgi.escape(spouse_nameLast)
   x = doSql()
-  student = x.execqry("select * from addParents('" + stud_id + "', '" + father_nameFirst + "', '" + father_nameMiddle + "', '" + father_nameLast + "', '" + mother_nameFirst + "', '" + mother_nameMiddle + "', '" + mother_nameLast + "', '" + guardian_nameFirst + "', '" + guardian_nameMiddle + "', '" + guardian_nameLast + "', '" + spouse_nameFirst + "', '" + spouse_nameMiddle + "', '" + spouse_nameLast + "');", True)
+  student = x.execqry("select * from addParents('" + stud_id + "', '" + father_nameFirst + "', '" + father_nameMiddle + "', '" + father_nameLast + "', '" + mother_nameFirst + "', '" + mother_nameMiddle + "', '" + mother_nameLast + "', '" + guardian_nameFirst + "', '" + guardian_nameMiddle + "', '" + guardian_nameLast + "', '" + spouse_nameFirst + "', '" + spouse_nameMiddle + "', '" + spouse_nameLast + ");", True)
   result = []
   for stud in student:
     stringed = map(str, stud)
