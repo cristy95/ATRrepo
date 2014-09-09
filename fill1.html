@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <html lang="en">
 		
 	<head>
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		<link rel="stylesheet" type="text/css" href="fill_up.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		
@@ -42,16 +41,21 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please CHECK appropriate box</br>
 		</form>
 
-		<input type="text" id="month" class="fill1" placeholder="Month" required=""> 
-		<input type="text" id="day" class="fill1" placeholder="Day" required="">
+		<input type="int" id="day" class="fill1" placeholder="Day" required=""> 
+		<input type="text" id="month" class="fill1" placeholder="Month" required="">
 		<input type="int" id="year" class="fill1" placeholder="Year" required=""></br>
+		Address</br>
+		<input type="text" id="lot_no" class="addbox" placeholder="Lot No.">
+		<input type="text" id="street" class="addbox" placeholder="Street/Baranggay">
+		<input type="text" id="city" class ="addbox" placeholder="City/Municipality">
+		<input type="text" id="province" class="addbox" placeholder="Province">
 		<p></p>
 		
 
 		<button  
 					class="btn btn-lg btn-success"
 					onclick="regstudent( );"> <!-- function for adding the user to the list-->
-					Fill Up
+					Next Page
 		</button>
 	</form>
 
