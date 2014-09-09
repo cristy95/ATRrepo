@@ -46,8 +46,10 @@ begin
 			where stud_id = p_stud_id;
 	end if;
 	return 'OK';
-end
-$$
+end;
+$BODY$
+
+language 'plpgsql';
 
 --view
 
