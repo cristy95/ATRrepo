@@ -12,7 +12,7 @@ create table orgs(
 --controller
 
 create or replace
-	function addOrgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,\
+	function addOrgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
 	p_stud_aA_cA text, p_stud_schGra text)
 	
 	returns text as
@@ -25,7 +25,7 @@ begin
 		where v_stud_id = p_stud_id;
 
 	if v_stud_id isnull then
-		insert into orgs(stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra)\
+		insert into orgs(stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra)
 		values (p_stud_id, p_org_Name, p_org_Pos, p_org_AcYr, p_stud_aA_cA, p_stud_schGra);
 
 	else
@@ -52,7 +52,7 @@ $$
 --view
 
 create or replace
-	function get_orgs_perid(in char(9), out char(9), out text, out text, out text,\
+	function get_orgs_perid(in char(9), out char(9), out text, out text, out text,
 	out text, out text)
 	
 returns setof record as
