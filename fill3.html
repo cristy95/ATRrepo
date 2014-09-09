@@ -30,31 +30,32 @@
 	<form class="fill_up">
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
-		<p>Dissertation/SpecialProject/Thesis Title</p>
+		<input type="char" id="stud_id" class="fill" placeholder="ID No."></br>
 		 Position held in official recognized Student Organization</br>
 		<br> &emsp; &emsp;&emsp; Position&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp; Organization&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;  Academic Year</br>
-		<input type="text" id="position" class="fill" placeholder="Position">
-		 <input type="text" id="org" class="fill" placeholder="Organization">
-		<input type="text" id="ac_year" class"fill" placeholder="Academic Year"></br>
+		<input type="text" id="org_Pos" class="fill" placeholder="Position">
+		 <input type="text" id="org_Name" class="fill" placeholder="Organization">
+		<input type="text" id="org_AcYr" class"fill" placeholder="Academic Year"></br>
 		<input type="text" id="position" class="fill" placeholder="Position">
 		 <input type="text" id="org" class="fill" placeholder="Organization">
 		<input type="text" id="ac_year" class"fill" placeholder="Academic Year"</br>
 		
 		<p></p>
 		Academic Awards/Co-curricular Awards</br>
-		<input type="text" id="academic" class="fill"></br>
-		<input type="text" id="academic" class="fill"></br>
+		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
+		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
 		<p></p>
 		Scholarship Grants</br>
-		<input type="text" id="grants" class="fill"></br>
-		<input type="text" id="grants" class="fill"></br></br>
+		<input type="text" id="stud_schGra" class="fill" placeholder="Sholarship Grant"></br>
+		<input type="text" id="stud_schGra" class="fill" placeholder="Scholarship Grant"></br></br>
 		
 
-		<button  
+		<div id="target"></div>
+		<a href="fill4.html"><button  
 					class="btn btn-lg btn-success"
 					onclick="regstudent( );"> <!-- function for adding the user to the list-->
 					Next Page
-		</button>
+		</button></a>
 	</form>
 
 </div>
