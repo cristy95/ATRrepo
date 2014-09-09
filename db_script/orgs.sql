@@ -73,6 +73,8 @@ $$
 
 $$
 
+language 'sql';
+
 -- How to use:
 -- select * from get_orgs_perid(1);
 -- select * from get_orgs();
