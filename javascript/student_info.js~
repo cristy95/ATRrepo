@@ -19,7 +19,8 @@ function fetchinfo(stud_id)
              birthYear : birthYear,
              age : age,
              contactNum : contactNum,
-             homeAddress : homeAddress},
+             homeAddress : homeAddress
+			 },
       dataType: 'json',
       success: function (stud) {
                   console.log(stud);
