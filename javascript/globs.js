@@ -333,7 +333,7 @@ function getparents_perid(stud_id)
 }
 
 //Pio
-function addparents(stud_id)
+function addparents()
 {
    $.ajax({
        
