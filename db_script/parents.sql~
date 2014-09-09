@@ -19,7 +19,7 @@ create table parents(
 
 
 create or replace
-   function addParents(p_stud_id int, p_father_nameFirst text, p_father_nameMiddle 
+   function addParents(p_stud_id char(9), p_father_nameFirst text, p_father_nameMiddle 
 					   text, p_father_nameLast text, p_mother_nameFirst text, 
 					   p_mother_nameMiddle text, p_mother_nameLast text, 
 					   p_guardian_nameFirst text, p_guardian_nameMiddle text, 

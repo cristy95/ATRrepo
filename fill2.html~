@@ -61,7 +61,7 @@
 	
 		<a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addparents();">
+					onclick="addstudinfo();">
 					Next Page
 		</button></a>
 	</form>
