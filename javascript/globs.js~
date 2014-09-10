@@ -363,3 +363,22 @@ function addparents()
 	}
 	});
 }
+
+//kring2
+function del_stud_hs()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "delete_stud_hs.py",
+      data: {stud_id:$("#stud_id").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'DELETED'
+			answer += res[0][0]
+			$("#target").html(answer); 
+		  } // end if
+              }
+    });
+}
