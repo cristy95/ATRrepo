@@ -338,7 +338,19 @@ function addparents()
    $.ajax({
        
 	   url: siteloc + scriptloc + "addparents.py",
-       data: {stud_id:$("#stud_id").val()},
+       data: {stud_id:$("#stud_id").val(),
+		father_nameFirst:$("#father_nameFirst").val(),
+		father_nameMiddle:$("#father_nameMiddle").val(),
+		father_nameLast:$("#father_nameLast").val(),
+		mother_nameFirst:$("#mother_nameFirst").val(),
+		mother_nameMiddle:$("#mother_nameMiddle").val(),
+		mother_nameLast:$("#mother_nameLast").val(),
+		guardian_nameFirst:$("#guardian_nameFirst").val(),
+		guardian_nameMiddle:$("#guardian_nameMiddle").val(),
+		guardian_nameLast:$("#guardian_nameLast").val(),
+		spouse_nameFirst:$("#spouse_nameFirst").val(),
+		spouse_nameMiddle:$("#spouse_nameMiddle").val(),
+		spouse_nameLast:$("#spouse_nameLast").val()},
        dataType: 'json',
        success: function (res) {
                    console.log(res);
