@@ -81,7 +81,11 @@ a:hover, a:active {
 .mainHeader nav .active a:link, .mainHeader nav .active a:visited {
 	background-color: #FFA500;
 	text-shadow: none;
+<<<<<<< HEAD
 	height: 40px;
+=======
+	height: 50px;
+>>>>>>> 1903898280fd4dcd4e83d10b89afb4f7beb0ff2f
 }
 
 .mainHeader nav ul li a {
@@ -136,3 +140,8 @@ a:hover, a:active {
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1903898280fd4dcd4e83d10b89afb4f7beb0ff2f

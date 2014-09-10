@@ -49,7 +49,7 @@
 		<a href="welpage.html"> <button  
 					class="btn btn-lg btn-success"
 					onclick="addhonorstudent( );"> <!-- function for adding the user to the list-->
-					Next Page
+					Register
 		</button></a>
 	</form>
 

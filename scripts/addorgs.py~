@@ -1,6 +1,6 @@
 from dosql import *
 import cgi
-import simplejson as json
+import json
 
 def index(req, stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra):
     stud_id = cgi.escape(stud_id)
@@ -11,7 +11,7 @@ def index(req, stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra):
     stud_schGra = cgi.escape(stud_schGra)
     
     x = doSql()
-    studs = x.execqry("select * from addOrgs('" + stud_id + "', '" + org_Name + "', '" + org_Pos + "', '" + org_AcYr + "', '" + stud_aA_cA + "', '" + stud_schGra + "');", True)
+    studs = x.execqry("select * from addorgs('" + stud_id + "', '" + org_Name + "', '" + org_Pos + "', '" + org_AcYr + "', '" + stud_aA_cA + "', '" + stud_schGra + "');", True)
     result = []
   
     for stud in studs:

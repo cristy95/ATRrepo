@@ -1,3 +1,18 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+Dareen Mae Bandola thundervoice
+ 
+6  Unwatch 
+  Star 0
+ Fork 0cristy95/ATRrepo
+ tree: 845f71f38d ATRrepo / fill2.html
+Dareen Mae Bandolathundervoice 23 minutes ago succesfully linked fill2.html to fill3.html and successfully stored t…
+2 contributors Dareen Mae BandolaCristy Loraine Fuerzas
+81 lines (57 sloc)  3.163 kb RawBlameHistory  
 <!DOCTYPE html> <html lang="en">
 		
 	<head>
@@ -10,8 +25,8 @@
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/globs.js"></script>
-	        <script src="javascript/jqinit.js"></script>		
-
+	        <script src="javascript/jqinit.js"></script>
+		
 		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
 		
 	</head>
@@ -21,9 +36,9 @@
 				
 				<nav><ul>
 				
-					<li><a href="welpage.html">Home</a></li>
+					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
-					<li><a href="fill1.html">Student</a></li>
+					<li><a href="#">Student</a></li>
 					<li><a href="#">Admin</a></li>
 					
 				</ul></nav>
@@ -31,31 +46,41 @@
 			</header>
 			
 			<div class="container">
-	<form class="fill_up">
+	
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
-		<input type="char" id="stud_id" class="fill" placeholder="ID No."></br>
-		 Position held in official recognized Student Organization</br>
-		<br> &emsp; &emsp;&emsp; Position&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp; Organization&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;  Academic Year</br>
-		<input type="text" id="org_Pos" class="fill" placeholder="Position">
-		 <input type="text" id="org_Name" class="fill" placeholder="Organization">
-		<input type="text" id="org_AcYr" class"fill" placeholder="Academic Year"></br>
-		
-		<p></p>
-		Academic Awards/Co-curricular Awards</br>
-		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
-		<p></p>
-		Scholarship Grants</br>
-		<input type="text" id="stud_schGra" class="fill" placeholder="Scholarship Grant"></br></br>
+
+		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""></br>
+		<p>Family Background</p></br>
+		Name of Father</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="father_nameLast" class="fill" placeholder="Last Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="father_nameFirst" class="fill" placeholder="First Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="father_nameMiddle" class="fill" placeholder="Middle Name"><br/>
+		<br>Maiden Name of Mother</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="mother_nameLast" class="fill" placeholder="Last Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="mother_nameFirst" class="fill" placeholder="First Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="mother_nameMiddle" class="fill" placeholder="Middle Name"=""><br/>
+		<br>Name of Guradian (if applicable)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameLast" class="fill" placeholder="Last Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameFirst" class="fill" placeholder="First Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameMiddle" class="fill" placeholder="Middle Name"><br/>
+		<br>Name of Spouse (if applicable) </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameLast" class="fill" placeholder="Last Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameFirst" class="fill" placeholder="First Name" required="">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameMiddle" class="fill" placeholder="Middle Name"><br/>
+			
+		</div>	<p></p>
 		
 
 		<div id="target"></div>
-		<a href="fill4.html"><button  
+	
+		<a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addorgs( );">
+					onclick="addparents();">
 					Next Page
-		</button></a>
-	</form>
+		</button>
+		</a>
+	
 
 </div>
 			
@@ -68,3 +93,4 @@
 		</body>
 		
 </html>
+Status API Training Shop Blog About © 2014 GitHub, Inc. Terms Privacy Security Contact
