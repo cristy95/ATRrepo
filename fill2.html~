@@ -59,11 +59,11 @@
 
 		<div id="target"></div>
 	
-		<a href="fill3.html"><button  
+		<!a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addstudinfo();">
+					onclick="addparents();">
 					Next Page
-		</button></a>
+		</button><!/a>
 	</form>
 
 </div>
