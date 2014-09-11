@@ -31,7 +31,6 @@
 			</header>
 			
 			<div class="container">
-	<form class="fill_up">
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
 		<p>INFORMATION SHEET FOR TADMAN REGISTRATION</p>
@@ -66,7 +65,6 @@
 					onclick="addstudinfo();"> <!-- function for adding the user to the list-->
 					Next Page
 		</button></a>
-	</form>
 
 </div>
 			

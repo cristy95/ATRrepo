@@ -21,10 +21,10 @@
 				
 				<nav><ul>
 				
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Student</a></li>
-					<li><a href="#">Admin</a></li>
+					<li><a href="welpage.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="student.html">Student</a></li>
+					<li><a href="admin.html">Admin</a></li>
 					
 				</ul></nav>
 			
@@ -49,7 +49,7 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameLast" class="fill" placeholder="Last Name" required="">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameFirst" class="fill" placeholder="First Name" required="">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="guardian_nameMiddle" class="fill" placeholder="Middle Name"><br/>
-		<br>Name of Spouse (if applicable)</br>
+		<br>Name of Spouse (if applicable) </br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameLast" class="fill" placeholder="Last Name" required="">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameFirst" class="fill" placeholder="First Name" required="">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameMiddle" class="fill" placeholder="Middle Name"><br/>
@@ -59,18 +59,13 @@
 
 		<div id="target"></div>
 	
-		<!a href="fill3.html"><button  
+		<a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
 					onclick="addparents();">
 					Next Page
-<<<<<<< HEAD
-		</button><!/a>
-	</form>
-=======
 		</button>
 		</a>
 	
->>>>>>> 1903898280fd4dcd4e83d10b89afb4f7beb0ff2f
 
 </div>
 			
