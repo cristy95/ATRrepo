@@ -61,7 +61,7 @@
 	
 		<a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addparents();"> <!--window.location.replace('fill3.html')--">
+					onclick="addparents();">
 					Next Page
 		</button>
 		</a>
