@@ -77,6 +77,17 @@ $$
 
 language 'sql';
 
+create or replace
+	function del_orgs(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from orgs
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
+
+
 -- How to use:
 -- select * from get_orgs_perid(1);
 -- select * from get_orgs();
