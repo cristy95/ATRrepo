@@ -10,11 +10,10 @@ class doSql(object):
     errmsg ="" 
     #methods
     def __init__(self): #constructor
-<<<<<<< HEAD
-        self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='cuteKO143' host='127.0.0.1' port='5433'")
-=======
+
+
         self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='lllll' host='127.0.0.1' port='5432'")
->>>>>>> ceb3390a5245b8aa2dce9adc2130bb88699cbc0b
+
         self._cur = self._cxn.cursor()
         
     def __del__(self): #destructor
