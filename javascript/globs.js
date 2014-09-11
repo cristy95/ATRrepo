@@ -250,7 +250,7 @@ function addorgs()
              org_Pos:$("#org_Pos").val(),
 			 org_AcYr:$("#org_AcYr").val(),
 			 stud_aA_cA:$("#stud_aA_cA").val(),
-			 stud_aA_cA:$("#stud_aA_cA").val()},
+			 stud_schGra:$("#stud_schGra").val()},
       dataType: 'json',
       success: function (res) {
                   console.log(res);
@@ -380,5 +380,24 @@ function del_stud_hs()
 			$("#target").html(answer); 
 		  } // end if
               }
+    });
+}
+
+//Josh
+function deleteentry()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "deleteentry.py",
+      data: {stud_id:$("#stud_id").val()},
+      dataType: 'json',
+      success: function (res) {
+                console.log(res);
+                if(res[0][0] != "None")
+				{
+			answer = 'DELETED' + "<br>"
+			answer += res[0][0]
+			$("#target").html(answer); 
+				} 
+        }
     });
 }
