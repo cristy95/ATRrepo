@@ -31,7 +31,7 @@
 			</header>
 			
 			<div class="container">
-	<form class="fill_up">
+	
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
 
@@ -54,17 +54,18 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameFirst" class="fill" placeholder="First Name" required="">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="spouse_nameMiddle" class="fill" placeholder="Middle Name"><br/>
 			
-	<p></p>
+		</div>	<p></p>
 		
 
 		<div id="target"></div>
 	
 		<a href="fill3.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addstudinfo();">
+					onclick="addparents();"> <!--window.location.replace('fill3.html')--">
 					Next Page
-		</button></a>
-	</form>
+		</button>
+		</a>
+	
 
 </div>
 			

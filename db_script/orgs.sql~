@@ -1,9 +1,9 @@
-create table students(
+create table orgs(
 
 	stud_id char(9) primary key,
-	stud_orgName text, --Organization Name
-	stud_orgPos text, --Organization Postition
-	stud_orgAcYr text, --Organization Academic Year
+	org_Name text, --Organization Name
+	org_Pos text, --Organization Position
+	org_AcYr text, --Organization Academic Year
 	stud_aA_cA text, --Academic Achievements/Co-curricular Awards
 	stud_schGra text --Scholarship Grants
 
@@ -12,47 +12,54 @@ create table students(
 --controller
 
 create or replace
-	function addStudents(p_stud_id char(9), p_stud_orgName text, p_stud_orgPos text, p_stud_orgAcYr text, p_stud_aA_cA text, p_stud_schGra text)
+	function addOrgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
+	p_stud_aA_cA text, p_stud_schGra text)
+	
 	returns text as
-$$
+$BODY$
 declare
 	v_stud_id char(9);
 
 begin
-	select into v_stud_id stud_id from students
+	select into v_stud_id stud_id from orgs
 		where v_stud_id = p_stud_id;
 
 	if v_stud_id isnull then
-		insert into students(stud_id, stud_orgName, stud_orgPos, stud_orgAcYr, stud_aA_cA, stud_schGra) values (p_stud_id, p_stud_orgName, p_stud_orgPos, p_stud_orgAcYr, p_stud_aA_cA, p_stud_schGra);
+		insert into orgs(stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra)
+		values (p_stud_id, p_org_Name, p_org_Pos, p_org_AcYr, p_stud_aA_cA, p_stud_schGra);
 
 	else
-		update students
-			set stud_orgName = p_stud_orgName
+		update orgs
+			set org_Name = p_org_Name
 			where stud_id = p_stud_id;
-		update students
-			set stud_orgPos = p_stud_orgPos
+		update orgs
+			set org_Pos = p_org_Pos
 			where stud_id = p_stud_id;
-		update students
-			set stud_orgAcYr = p_stud_orgAcYr
+		update orgs
+			set org_AcYr = p_org_AcYr
 			where stud_id = p_stud_id;
-		update students
+		update orgs
 			set stud_aA_cA = p_stud_aA_cA
 			where stud_id = p_stud_id;
-		update students
+		update orgs
 			set stud_schGra = p_stud_schGra
 			where stud_id = p_stud_id;
 	end if;
 	return 'OK';
-end
-$$
+end;
+$BODY$
+
+language 'plpgsql';
 
 --view
 
 create or replace
-	function get_students_perid(in char(9), out char(9), out text, out text, out text, out text, out text)
+	function get_orgs_perid(in char(9), out char(9), out text, out text, out text,
+	out text, out text)
+	
 returns setof record as
 $$
-	select stud_id, stud_orgName, stud_orgPos, stud_orgAcYr, stud_aA_cA, stud_schGra from students
+	select stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra from orgs
 	where stud_id = $1;
 
 $$
@@ -60,14 +67,16 @@ $$
 language 'sql';
 
 create or replace
-	function get_students(out char(9), out text, out text, out text, out text, out text)
+	function get_orgs(out char(9), out text, out text, out text, out text, out text)
+	
 returns setof record as
 $$
-	select * from students;
+	select * from orgs;
 
 $$
 
 language 'sql';
+
 -- How to use:
--- select * from get_students_perid(1);
--- select * from get_
+-- select * from get_orgs_perid(1);
+-- select * from get_orgs();

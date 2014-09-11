@@ -12,7 +12,7 @@ create table orgs(
 --controller
 
 create or replace
-	function addOrgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
+	function addorgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
 	p_stud_aA_cA text, p_stud_schGra text)
 	
 	returns text as

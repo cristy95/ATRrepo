@@ -1,5 +1,5 @@
 create table confirm (
-    stud_id char(9),
+    stud_id char(9) primary key,
     status text
     
 );

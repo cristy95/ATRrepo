@@ -31,7 +31,6 @@
 			</header>
 			
 			<div class="container">
-	<form class="fill_up">
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
 		<input type="char" id="stud_id" class="fill" placeholder="ID No."></br>
@@ -50,12 +49,11 @@
 		
 
 		<div id="target"></div>
-		<!a href="fill4.html"><button  
+		<a href="fill4.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addorgs( );">
+					onclick="addOrgs();">
 					Next Page
-		</button><!/a>
-	</form>
+		</button></a>
 
 </div>
 			
