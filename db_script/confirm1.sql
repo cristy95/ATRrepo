@@ -57,3 +57,13 @@ $$
     where status = $1;
 $$
     language 'sql';
+
+	create or replace
+	function del_confirm(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from confirm
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';

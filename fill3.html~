@@ -40,17 +40,12 @@
 		<input type="text" id="org_Pos" class="fill" placeholder="Position">
 		 <input type="text" id="org_Name" class="fill" placeholder="Organization">
 		<input type="text" id="org_AcYr" class"fill" placeholder="Academic Year"></br>
-		<input type="text" id="position" class="fill" placeholder="Position">
-		 <input type="text" id="org" class="fill" placeholder="Organization">
-		<input type="text" id="ac_year" class"fill" placeholder="Academic Year"</br>
 		
 		<p></p>
 		Academic Awards/Co-curricular Awards</br>
 		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
-		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
 		<p></p>
 		Scholarship Grants</br>
-		<input type="text" id="stud_schGra" class="fill" placeholder="Sholarship Grant"></br>
 		<input type="text" id="stud_schGra" class="fill" placeholder="Scholarship Grant"></br></br>
 		
 
