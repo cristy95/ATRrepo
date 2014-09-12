@@ -29,7 +29,6 @@
 				</ul></nav>
 			
 			</header>
-			
 			<div class="container">
 		<h1 class="fill_up_heading">Fill Up!</h1>
 		<p></p>
@@ -42,11 +41,10 @@
 		<input type="text" id="nameFirst" class="fill" placeholder="First Name" required=""><br/>
 		<input type="text" id="nameMid" class="fill" placeholder="Middle Name" ><br/>
 		<input type="text" id="nickname" class="fill" placeholder="Nick Name"><br/>
-		<form>Gender
+		Gender
 		<input type="radio" id="gender" class="fill" name="gender" value="male">Male
 		<input type="radio" id="gender" class="fill" name="gender" value="female">Female
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please CHECK appropriate box</br>
-		</form>
 
 		<input type="int" id="birthdate" class="fill1" placeholder="Day" required=""> 
 		<input type="int" id="birthMonth" class="fill1" placeholder="Month" required="">
@@ -54,26 +52,25 @@
 		<input type="text" id="age" class="fill" placeholder="Age" required=""></br>
 		<input type="text" id="contactNum" class="fill" placeholder="Contact Number"></br>
 		Address</br>
-		
 		<input type="text" id="homeAddress" class="addbox" placeholder="Lot No.">
-		</div>		<p></p>
+		</div>	<p></p>
 		
 		<div id="target"></div>
 
-		<a href="fill2.html"><button  
+		<!a href="fill2.html"><button  
 					class="btn btn-lg btn-success"
-					onclick="addstudinfo();"> <!-- function for adding the user to the list-->
+					onclick="addstudinfo();">
 					Next Page
-		</button></a>
+		</button><!/a>
 
-</div>
 			
 			<footer class="mainFooter">
 				<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>
 			</footer>
 	
 	
-	
+	</div>
 		</body>
 		
 </html>
+
