@@ -109,5 +109,16 @@ $$
 $$
 
  language 'sql';
+ 
+ create or replace
+	function del_parents(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from parents
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
+
 
 -- select * from  get_object_perid(1)

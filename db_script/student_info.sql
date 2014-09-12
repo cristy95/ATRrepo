@@ -68,4 +68,15 @@ $$
 birthdate, birthMonth, birthYear, age, contactNum, homeAddress from stud_info
  where stud_id = $1;
 $$
- language 'sql'
+ language 'sql';
+ 
+ create or replace
+	function del_studinfo(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from stud_info 
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
+
