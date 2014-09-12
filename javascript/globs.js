@@ -382,3 +382,22 @@ function del_stud_hs()
               }
     });
 }
+
+//Josh
+function deleteentry()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "deleteentry.py",
+      data: {stud_id:$("#stud_id").val()},
+      dataType: 'json',
+      success: function (res) {
+                console.log(res);
+                if(res[0][0] != "None")
+				{
+			answer = 'DELETED' + "<br>"
+			answer += res[0][0]
+			$("#target").html(answer); 
+				} 
+        }
+    });
+}
