@@ -100,7 +100,7 @@
 		
 		<div id="target"></div>
 
-		<!a href="fill_up_success.html"><button  
+		<a href="fill_up_success.html"><button  
 					class="btn btn-lg btn-success"
 					onclick="settoPending();addstudinfo();">
 					Submit Form
