@@ -41,17 +41,92 @@ function addstudinfo()
 	    dissertation:$("#dissertation").val(),
 		special_project:$("#special_project").val(),
 		thesis_title:$("#thesis_title").val(),
-	    status:$("#status").val()},      
+	    status:'Pending'},      
       dataType: 'json',
       success: function (res) {
                   console.log(res);
                   if(res[0][0] != "None")
                   {
-			answer = 'SET'
+			answer = 'SUCCESS'
 			$("#target").html(answer); 
 		  } // end if
               }
     });
 }
 
+function editform()
+{
+  $.ajax({
+	url: siteloc + scriptloc + "getstudinfoperid.py",
+	data: {stud_id:$("#stud_id").val()}, 
+	dataType: 'json',
+	success: function(res){
+		console.log(res);
+		if(res[0][0] != "None")
+                    {
+			rets = '<head><title>AUTOMATED TADMAN REGISTRATION</title>' +
+				'<meta charset="utf-8"/>' +
+				'<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />'+
+                		'<link rel="stylesheet" href="css/bootstrap.min.css">'+
+				'<link rel="stylesheet" href="css/bootstrap-theme.min.css">'+
+				'<script src="javascript/jquery.js"></script>'+
+       				'<script src="javascript/bootstrap.min.js"></script>'+
+				'<script src="javascript/allinfo.js"></script>'+
+	      			'  <script src="javascript/jqinit.js"></script>	'+	
 
+				'<meta name="viewport" content="width-device-width, initial-scale-1.0"> '+
+		
+				'</head>'
+			 rets += '<div class="edit">';
+			rets += '<input type="character" value="'+res[0][0]+'" class="fill" id="stud_id" required="highly"></br>'
+				+ '<input type="text" value="'+ res[0][1] +'" class="fill" id="college" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][2]+'" class="fill" id="course" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][3]+'" class="fill" id="nameFirst" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][4]+'" class="fill" id="nameMid" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][5]+'" class="fill" id="nameLast" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][6]+'" class="fill" id="nickname" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][7]+'" class="fill" id="gender" required="highly"></br>'
+				+ '<input type="int" value="'+res[0][8]+'" class="fill" id="birthdate" required="highly"></br>'
+				+ '<input type="int" value="'+res[0][9]+'" class="fill" id="birthMonth" required="highly"></br>'
+				+ '<input type="int" value="'+res[0][10]+'" class="fill" id="birthYear" required="highly"></br>'
+				+ '<input type="int" value="'+res[0][11]+'" class="fill" id="age" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][12]+'" class="fill" id="contactNum" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][13]+'" class="fill" id="homeAddress" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][14]+'" class="fill" id="father_nameFirst" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][15]+'" class="fill" id="father_nameMiddle" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][16]+'" class="fill" id="father_nameLast" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][17]+'" class="fill" id="mother_nameFirst" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][18]+'" class="fill" id="mother_nameMiddle" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][19]+'" class="fill" id="mother_nameLast" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][20]+'" class="fill" id="guardian_nameFirst" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][21]+'" class="fill" id="guardian_nameMiddle" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][22]+'" class="fill" id="guardian_nameLast" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][23]+'" class="fill" id="spouse_nameFirst" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][24]+'" class="fill" id="spouse_nameMiddle" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][25]+'" class="fill" id="spouse_nameLast" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][26]+'" class="fill" id="org_Name" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][27]+'" class="fill" id="org_Pos" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][28]+'" class="fill" id="org_AcYr" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][29]+'" class="fill" id="stud_aA_cA" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][30]+'" class="fill" id="stud_schGra" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][31]+'" class="fill" id="dissertation" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][32]+'" class="fill" id="special_project" required="highly"></br>'
+				+ '<input type="text" value="'+res[0][33]+'" class="fill" id="thesis_title" required="highly"></br>';
+			rets += '<button onclick="addstudinfo();">Edit Registration</button>'  + '</div>';
+					  $("#target").html(rets); 
+				  } // end if
+		}
+	});
+}
+
+function settoPending()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "settoPending.py",
+      data: {stud_id:$("#stud_id").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+              }
+    });
+}

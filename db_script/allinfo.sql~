@@ -65,8 +65,8 @@ begin
 					contactNum, homeAddress, father_nameFirst, father_nameMiddle, 
 					father_nameLast, mother_nameFirst, mother_nameMiddle, 
 					mother_nameLast, guardian_nameFirst, guardian_nameMiddle, 						guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, 					spouse_nameLast, org_Name, org_Pos, org_AcYr, stud_aA_cA, 
-					stud_schGra, p_dissertation text, p_special_project text, 
-					p_thesis_title text, p_status text)
+					stud_schGra, dissertation, special_project, 
+					thesis_title, status )
 		values (p_stud_id, p_college, p_course, p_nameFirst, p_nameMid, p_nameLast, 
 				p_nickname, p_gender, p_birthdate, p_birthMonth, p_birthYear, 
 				p_age, p_contactNum, p_homeAddress, p_father_nameFirst, 
@@ -109,6 +109,16 @@ $BODY$
 $BODY$
 language 'sql';
 
+---------------------------------------------
+--view
 
+create or replace function
+ getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+returns setof record as
 
+$$
+ select * from allinfo
+ where stud_id = $1;
+$$
+ language 'sql';
 
