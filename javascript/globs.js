@@ -248,9 +248,9 @@ function addorgs()
       data: {stud_id:$("#stud_id").val(),
              org_Name:$("#org_Name").val(),
              org_Pos:$("#org_Pos").val(),
-			 org_AcYr:$("#org_AcYr").val(),
-			 stud_aA_cA:$("#stud_aA_cA").val(),
-			 stud_schGra:$("#stud_schGra").val()},
+	     org_AcYr:$("#org_AcYr").val(),
+		stud_aA_cA:$("#stud_aA_cA").val(),
+		stud_schGra:$("#stud_schGra").val()},
       dataType: 'json',
       success: function (res) {
                   console.log(res);
@@ -267,7 +267,7 @@ function addorgs()
 function addstudinfo()
 {
 	$.ajax({
-      url: siteloc + scriptloc + "addstudent.py",
+      url: siteloc + scriptloc + "addallinfo.py",
       data: {stud_id : $("#stud_id").val(),
              college : $("#college").val(),
              course  : $("#course").val(),
