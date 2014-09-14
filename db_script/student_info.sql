@@ -65,7 +65,7 @@ returns setof record as
 
 $$
  select stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender,
-birthdate, birthMonth, birthYear, age, contactNum, homeAddress from stud_info
+birthdate, birthMonth, birthYear, age, contactNum, homeAddress from allinfo
  where stud_id = $1;
 $$
  language 'sql';

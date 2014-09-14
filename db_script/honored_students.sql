@@ -41,13 +41,13 @@ language 'plpgsql';
 
 --view
 create or replace 
-	function get_hon_stud(in char(9), out char(9), out text, out text, out text)
+	function get_honstud_perid(in char(9), out char(9), out text, out text, out text)
 		returns setof record as
 $$
 	select stud_id, dissertation, 
 		special_project, 
 		thesis_title 
-	from honored_students
+	from allinfo
 	where stud_id = $1;
 $$
 language 'sql';
@@ -57,7 +57,7 @@ create or replace
 	function get_list_hs(out char(9), out text, out text, out text)
 		returns setof record as
 $$
-	select * from honored_students;
+	select * from allinfo;
 $$
 language 'sql';
 

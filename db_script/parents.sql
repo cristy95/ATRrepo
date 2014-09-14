@@ -104,7 +104,7 @@ $$
 	select stud_id, father_nameFirst, father_nameMiddle, father_nameLast, 
 		    mother_nameFirst, mother_nameMiddle, mother_nameLast, 
 		    guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, 
-			spouse_nameFirst, spouse_nameMiddle, spouse_nameLast from parents
+			spouse_nameFirst, spouse_nameMiddle, spouse_nameLast from allinfo
 	where stud_id = $1;
 $$
 

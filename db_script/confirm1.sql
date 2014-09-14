@@ -39,10 +39,10 @@ $$
 
 --view
 create or replace function
-    get_object_perstud_id(in char(9), out char(9), out text)
+    get_status_perid(in char(9), out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from confirm
+    select stud_id, status from allinfo
     where stud_id = $1;
 $$
     language 'sql';
@@ -50,14 +50,15 @@ $$
 
 --display confirmed
 create or replace
-    function getconfirmed (in text, out char(9), out text)
+    function getstatuslist (in text, out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from confirm
+    select stud_id, status from allinfo
     where status = $1;
 $$
     language 'sql';
 
+---------------------------------------------------------
 	create or replace
 	function del_confirm(in char(9), out char(9))
 		returns character as

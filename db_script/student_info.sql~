@@ -48,7 +48,7 @@ p_age, p_contactNum, p_homeAddress);
  nameMid = p_nameMid, nameLast = p_nameLast, nickname = p_nickname, 
  gender = p_gender, birthdate = p_birthdate, birthMonth = p_birthMonth, 
  birthYear = p_birthYear, age = p_age, contactNum = p_contactNum, 
- homeAddress = p_homeAddressn where stud_id = p_stud_id;
+ homeAddress = p_homeAddress where stud_id = p_stud_id;
  end if;
  return 'OK';
  end;

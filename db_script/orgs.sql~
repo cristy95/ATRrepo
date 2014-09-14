@@ -12,7 +12,7 @@ create table orgs(
 --controller
 
 create or replace
-	function addOrgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
+	function addorgs(p_stud_id char(9), p_org_Name text, p_org_Pos text, p_org_AcYr text,
 	p_stud_aA_cA text, p_stud_schGra text)
 	
 	returns text as
@@ -76,6 +76,17 @@ $$
 $$
 
 language 'sql';
+
+create or replace
+	function del_orgs(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from orgs
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
+
 
 -- How to use:
 -- select * from get_orgs_perid(1);

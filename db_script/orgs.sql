@@ -59,13 +59,14 @@ create or replace
 	
 returns setof record as
 $$
-	select stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra from orgs
+	select stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra from allinfo
 	where stud_id = $1;
 
 $$
 
 language 'sql';
 
+-----------------------------------------
 create or replace
 	function get_orgs(out char(9), out text, out text, out text, out text, out text)
 	

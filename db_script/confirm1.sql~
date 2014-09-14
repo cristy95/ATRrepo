@@ -1,5 +1,5 @@
 create table confirm (
-    stud_id char(9),
+    stud_id char(9) primary key,
     status text
     
 );
@@ -39,10 +39,10 @@ $$
 
 --view
 create or replace function
-    get_object_perstud_id(in char(9), out char(9), out text)
+    get_status_perid(in char(9), out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from confirm
+    select stud_id, status from allinfo
     where stud_id = $1;
 $$
     language 'sql';
@@ -57,3 +57,13 @@ $$
     where status = $1;
 $$
     language 'sql';
+
+	create or replace
+	function del_confirm(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from confirm
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';

@@ -401,3 +401,22 @@ function deleteentry()
         }
     });
 }
+
+//dar2
+function addconfirmed()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "addconfirmed.py",
+      data: {stud_id:$("#stud_id").val(),
+	     status: $("#status").val()},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+			answer = 'CONFIRMED'
+			$("#target").html(answer); 
+		  } // end if
+              }
+    });
+}
