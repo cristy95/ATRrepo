@@ -32,7 +32,7 @@
 			
 			<div class="container">
 				<h2>What do you want to do?</h2></br>
-				<div class="choices">
+				<div class="choices" font-size="20px">
 					<ul>
 						<li><a href="fill1.html">FILL-UP</li>
 						<li><a href="cancel.html">CANCEL APPLICATION</li>
