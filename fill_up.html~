@@ -89,7 +89,7 @@
 		<p></p>
 		<p>Dissertation/SpecialProject/Thesis Title</p>
 		 
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="char" id="stud_id" class="fill" placeholder="ID No" required=""></br></br>
+		</br></br>
 		Specify Dissertations</br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="dissertation" class="fill" placeholder="Dissertation"></br></br>
 		Specify Special Projects</br>
