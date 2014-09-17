@@ -1,0 +1,6 @@
+create table status
+{
+	status_id serial primary key;
+	stud_id_fk char(9) reference personal_info (stud_id);
+	status text;
+}
