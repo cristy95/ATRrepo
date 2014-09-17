@@ -59,7 +59,7 @@ create or replace
 	
 returns setof record as
 $$
-	select stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra from allinfo
+	select stud_id, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra from orgs
 	where stud_id = $1;
 
 $$
