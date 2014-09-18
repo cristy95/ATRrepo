@@ -30,11 +30,11 @@ $$
 
 -------------------------------------
 create or replace function
-    getcollege(in int, out text)
+    getcourse(in int, out text)
 returns text as
 $$
-    select college_name from colleges
-    where college_id = $1;
+    select course_name from courses
+    where course_id = $1;
 $$
     language 'sql';
 
