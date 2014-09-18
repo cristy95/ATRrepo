@@ -47,7 +47,7 @@ $$
 	select stud_id, dissertation, 
 		special_project, 
 		thesis_title 
-	from allinfo
+	from honored_students
 	where stud_id = $1;
 $$
 language 'sql';
@@ -57,7 +57,7 @@ create or replace
 	function get_list_hs(out char(9), out text, out text, out text)
 		returns setof record as
 $$
-	select * from allinfo;
+	select * from honored_students;
 $$
 language 'sql';
 
