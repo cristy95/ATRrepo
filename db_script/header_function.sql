@@ -13,3 +13,5 @@ select stud_id, nameFirst, nameMid, nameLast, birthdate, birthMonth, birthYear, 
 	   where stud_id = $1;
 	   
 $$
+
+language 'sql';

@@ -111,7 +111,11 @@ language 'sql';
 --view
 
 create or replace function
+<<<<<<< HEAD
  getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+=======
+ getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+>>>>>>> d906e58a4a8b11e3423c0bf394fb2d9d4d575413
 returns setof record as
 
 $$
