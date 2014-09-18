@@ -40,8 +40,7 @@ function addstudinfo()
 		stud_schGra:$("#stud_schGra").val(),
 	    dissertation:$("#dissertation").val(),
 		special_project:$("#special_project").val(),
-		thesis_title:$("#thesis_title").val(),
-	    status:$("#status").val()},      
+		thesis_title:$("#thesis_title").val()},      
       dataType: 'json',
       success: function (res) {
                   console.log(res);
@@ -82,6 +81,7 @@ function editform()
 			rets += '<input type="character" value="'+res[0][0]+'" class="fill" id="stud_id" required="highly" placeholder="Student Id"></br>'
 				+'<input type="text" value="'+ res[0][1] +'" class="fill" id="college" required="highly" placeholder="College"></br>'
 				+ '<input type="text" value="'+res[0][2]+'" class="fill" id="course" required="highly" placeholder="Course"></br>'
+				+ 'Personal Information of Graduating Student</br>'
 				+ '<input type="text" value="'+res[0][3]+'" class="fill" id="nameFirst" required="highly" placeholder="First Name"></br>'
 				+ '<input type="text" value="'+res[0][4]+'" class="fill" id="nameMid" required="highly" placeholder="Middle Name"></br>'
 				+ '<input type="text" value="'+res[0][5]+'" class="fill" id="nameLast" required="highly" placeholder="Last Name"></br>'
@@ -92,7 +92,8 @@ function editform()
 				+ '<input type="int" value="'+res[0][10]+'" class="fill" id="birthYear" required="highly" placeholder="Birth Year"></br>'
 				+ '<input type="int" value="'+res[0][11]+'" class="fill" id="age" required="highly" placeholder="Age"></br>'
 				+ '<input type="text" value="'+res[0][12]+'" class="fill" id="contactNum" required="highly" placeholder="Contact Number"></br>'
-				+ '<input type="text" value="'+res[0][13]+'" class="fill" id="homeAddress" required="highly" placeholder="Home Address"></br>'
+				+ '<input type="text" value="'+res[0][13]+'" class="fill" id="homeAddress" required="highly" placeholder="Home Address"></br>'				
+				+ 'Family Background'
 				+'Father</br>'
 				+ '<input type="text" value="'+res[0][14]+'" class="fill" id="father_nameFirst" required="highly" placeholder="First Name"></br>'
 				+ '<input type="text" value="'+res[0][15]+'" class="fill" id="father_nameMiddle" required="highly" placeholder="Middle Name"></br>'
@@ -109,15 +110,17 @@ function editform()
 				+ '<input type="text" value="'+res[0][23]+'" class="fill" id="spouse_nameFirst" required="highly" placeholder="First Name"></br>'
 				+ '<input type="text" value="'+res[0][24]+'" class="fill" id="spouse_nameMiddle" required="highly" placeholder="Middle Name"></br>'
 				+ '<input type="text" value="'+res[0][25]+'" class="fill" id="spouse_nameLast" required="highly" placeholder="Last Name"></br></br>'
+				+ 'Position held in official recognized Student Organization:'
 				+ '<input type="text" value="'+res[0][26]+'" class="fill" id="org_Name" required="highly" placeholder="Name of Organization"></br>'
 				+ '<input type="text" value="'+res[0][27]+'" class="fill" id="org_Pos" required="highly" placeholder="Position"></br>'
 				+ '<input type="text" value="'+res[0][28]+'" class="fill" id="org_AcYr" required="highly" placeholder="Academic Year"></br>'
+				+ 'Academic Awards/Co-curricular Awards'
 				+ '<input type="text" value="'+res[0][29]+'" class="fill" id="stud_aA_cA" required="highly" placeholder="Academic Awards"></br>'
 				+ '<input type="text" value="'+res[0][30]+'" class="fill" id="stud_schGra" required="highly" placeholder="Scholarship Grant"></br>'
+				+ 'Dissertation/SpecialProject/Thesis Title'
 				+ '<input type="text" value="'+res[0][31]+'" class="fill" id="dissertation" required="highly" placeholder="Dissertation"></br>'
 				+ '<input type="text" value="'+res[0][32]+'" class="fill" id="special_project" required="highly" placeholder="Special Project"></br>'
-				+ '<input type="text" value="'+res[0][33]+'" class="fill" id="thesis_title" required="highly" placeholder="Thesis Title"></br>'
-				+'<input type="text" value="'+res[0][34]+'" class="fill" id="status" required="highly" placeholder="Status"></br>';
+				+ '<input type="text" value="'+res[0][33]+'" class="fill" id="thesis_title" required="highly" placeholder="Thesis Title"></br>';
 			rets += '<button onclick="addstudinfo();">Edit Registration</button>'  + '</div>';
 					  $("#target").html(rets); 
 				  } // end if
