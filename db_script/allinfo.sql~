@@ -33,8 +33,7 @@ create table allinfo
  stud_schGra text,
  dissertation text,
  special_project text,
- thesis_title text,
-	status text
+ thesis_title text
 );
 
 
@@ -47,7 +46,7 @@ create or replace
 			p_guardian_nameMiddle text, p_guardian_nameLast text, p_spouse_nameFirst text, 
 			p_spouse_nameMiddle text, p_spouse_nameLast text, p_org_Name text, 
 			p_org_Pos text, p_org_AcYr text, p_stud_aA_cA text, p_stud_schGra text, 
-			p_dissertation text, p_special_project text, p_thesis_title text, p_status text)
+			p_dissertation text, p_special_project text, p_thesis_title text)
  returns text as
 
 $BODY$
@@ -66,14 +65,14 @@ begin
 					father_nameLast, mother_nameFirst, mother_nameMiddle, 
 					mother_nameLast, guardian_nameFirst, guardian_nameMiddle, 						guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, 					spouse_nameLast, org_Name, org_Pos, org_AcYr, stud_aA_cA, 
 					stud_schGra, dissertation, special_project, 
-					thesis_title, status )
+					thesis_title)
 		values (p_stud_id, p_college, p_course, p_nameFirst, p_nameMid, p_nameLast, 
 				p_nickname, p_gender, p_birthdate, p_birthMonth, p_birthYear, 
 				p_age, p_contactNum, p_homeAddress, p_father_nameFirst, 
 				p_father_nameMiddle, p_father_nameLast, p_mother_nameFirst, 					p_mother_nameMiddle, p_mother_nameLast,	p_guardian_nameFirst,
 				p_guardian_nameMiddle, p_guardian_nameLast, p_spouse_nameFirst, 				p_spouse_nameMiddle, p_spouse_nameLast, p_org_Name, p_org_Pos, 
 				p_org_AcYr, p_stud_aA_cA, p_stud_schGra, p_dissertation, 
-				p_special_project, p_thesis_title, p_status);
+				p_special_project, p_thesis_title);
 	else
  		update allinfo
 		set college = p_college, course = p_course, nameFirst = p_nameFirst,
@@ -89,8 +88,7 @@ begin
 			spouse_nameLast = p_spouse_nameLast, org_Name = p_org_Name,
 			org_Pos = p_org_Pos, org_AcYr = p_org_AcYr, stud_aA_cA = p_stud_aA_cA,
 			stud_schGra = p_stud_schGra, dissertation = p_dissertation, 
-			special_project = p_special_project, thesis_title = p_thesis_title, 
-			status = p_status
+			special_project = p_special_project, thesis_title = p_thesis_title
            	where stud_id = p_stud_id;
     	end if;
 	return 'SET';
@@ -113,7 +111,7 @@ language 'sql';
 --view
 
 create or replace function
- getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+ getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
 returns setof record as
 
 $$

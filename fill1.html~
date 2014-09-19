@@ -21,7 +21,7 @@
 				
 				<nav><ul>
 				
-					<li><a href="welpage.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="student.html">Student</a></li>
 					<li><a href="admin.html">Admin</a></li>
@@ -42,8 +42,8 @@
 		<input type="text" id="nameMid" class="fill" placeholder="Middle Name" ><br/>
 		<input type="text" id="nickname" class="fill" placeholder="Nick Name"><br/>
 		Gender
-		<input type="radio" id="gender" class="fill" name="gender" value="male">Male
-		<input type="radio" id="gender" class="fill" name="gender" value="female">Female
+		<input type="radio" id="gender" class="fill" value="male">Male
+		<input type="radio" id="gender" class="fill" value="female">Female
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please CHECK appropriate box</br>
 
 		<input type="int" id="birthdate" class="fill1" placeholder="Day" required=""> 
@@ -57,11 +57,11 @@
 		
 		<div id="target"></div>
 
-		<a href="fill2.html"><button  
+		<!a href="fill2.html"><button  
 					class="btn btn-lg btn-success"
 					onclick="addstudinfo();">
 					Next Page
-		</button></a>
+		</button><!/a>
 
 			
 			<footer class="mainFooter">
