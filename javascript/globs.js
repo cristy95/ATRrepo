@@ -103,29 +103,41 @@ function fetchconfirm(stud_id)
     });
 }
 
-//dar2
+//josh
 function fetchconfirmlist(status)
 {
-    $.ajax({
-        url: siteloc + scriptloc + "getconfirmlist.py",
-        data: { status: status},
-        dataType: 'json',
-        success: function (cons) {
-                    console.log(cons);
-                    if(cons[0][0] != "None")
-                    {
-			table = '<table border="1">';
-                        for(i=0; i<cons.length; i++)
-                        {
-                              row = cons[i];
-                              table += "<tr>";
-                              for (j=0; j<row.length; j++)
-                              {
-                                  table += "<td>" + row[j] + "</td>";
+  $.ajax({
+      url: siteloc + scriptloc + "getgradesheet.py",
+      data: {status:$("#status").val())},
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+				      table = '<div class="table-responsive">';
+					  table += '<table class="table table-condensed">';
+					  table += '<thead>' +
+					           '<tr>' +
+							     '<th>ID No.</th>' +
+								 '<th>Prelim</th>' +
+								 '<th>Midterm</th>' +
+								 '<th>Finals</th>' +
+							   '</tr>' +
+					           '</thead>';
+					  table += "<tbody>";		   
+					  for (i = 0; i < res.length; i++)
+					  {
+						  row = res[i];
+						  table += "<tr>";
+						  for (j = 0; j < row.length; j++)
+						  {
+							  table += "<td>" + row[j] + "</td>";
 						  }
 						  table += "</tr>";
 					  }
+					  table += "</tbody>";
 					  table += "</table>";
+					  table += "</div>";
 					  $("#target").html(table); 
 				  } // end if
               }
