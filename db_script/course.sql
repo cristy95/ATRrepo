@@ -1,12 +1,13 @@
 create table courses
 (
 	course_id serial primary key,
-	course_name text
+	course_name text,
+	college_id_fk int references colleges(college_id)
 )
 
 
 create or replace
-    function setcourse (p_course_name text)
+    function setcourse (p_course_name text, p_college_id_fk int)
     returns text as
 
 $$
@@ -18,9 +19,9 @@ $$
         where course_name = p_course_name;
 
     if v_course_name isnull then
-        insert into courses(course_name) values (p_course_name);
+        insert into courses(course_name, college_id_fk) values (p_course_name, p_college_id_fk);
     else
-        return 'Unable to Set'
+        return 'Unable to Set';
     end if;
 
     return 'Done';

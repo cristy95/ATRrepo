@@ -1,8 +1,8 @@
 create table courses
-{
-	course_id serial primary key;
-	course_name text;
-}
+(
+	course_id serial primary key,
+	course_name text
+)
 
 
 create or replace
@@ -14,7 +14,7 @@ $$
      v_course_name text;
 
   begin
-    select into v_course course_name from courses
+    select into v_course_name course_name from courses
         where course_name = p_course_name;
 
     if v_course_name isnull then
