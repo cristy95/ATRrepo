@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
 		<script src="javascript/jquery.js"></script>
        	<script src="javascript/bootstrap.min.js"></script>
        	<script src="javascript/confirm.js"></script>
@@ -28,11 +29,11 @@
 			
 		<div id="target"></div>
 	   
-		<div class="search"></br>
-			<form action = "filledform.html">
-				<input type = "text" name = "stud_id" placeholder = "ID No."/>
-				<input type = "submit" value = "Search Submission">
+		<div id="header"></br>
+			<form id = "search" method = "get" action = "#">
+				<input type = "text" class = "textinput" name = "stud_id" size = "21" maxlength = "9" placeholder = "Search ID No."><input type = "submit" value = "Search" class = "button">
 			</form>
+			<div class = "clear"></div>
 		</div>
 			
 		<footer class="mainFooter">
