@@ -73,6 +73,7 @@ begin
 				p_guardian_nameMiddle, p_guardian_nameLast, p_spouse_nameFirst, 				p_spouse_nameMiddle, p_spouse_nameLast, p_org_Name, p_org_Pos, 
 				p_org_AcYr, p_stud_aA_cA, p_stud_schGra, p_dissertation, 
 				p_special_project, p_thesis_title);
+		insert into confirm(stud_id, status)  values (p_stud_id, 'Pending');
 	else
  		update allinfo
 		set college = p_college, course = p_course, nameFirst = p_nameFirst,

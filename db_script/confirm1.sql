@@ -4,10 +4,6 @@ create table confirm (
     
 );
 
-
-insert into confirm(stud_id, status)  values ('2012-0186', 'Pending');
-insert into confirm(stud_id, status)  values ('2012-1531', 'Confirmed');
-
 --controller
 
 create or replace
@@ -53,7 +49,7 @@ create or replace
     function getstatuslist (in text, out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from allinfo
+    select stud_id, status from confirm
     where status = $1;
 $$
     language 'sql';
