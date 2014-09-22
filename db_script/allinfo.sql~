@@ -42,7 +42,7 @@ create or replace
 			p_nameMid text, p_nameLast text, p_nickname text, p_gender text, 
 			p_birthdate int, p_birthMonth int, p_birthYear int, p_age int, 
 			p_contactNum text, p_homeAddress text, p_father_nameFirst text, 
-			p_father_nameMiddle text, p_father_nameLast text, p_mother_nameFirst text,  				p_mother_nameMiddle text, p_mother_nameLast text, p_guardian_nameFirst text,
+			p_father_nameMiddle text, p_father_nameLast text, p_mother_nameFirst text, p_mother_nameMiddle text, p_mother_nameLast text, p_guardian_nameFirst text,
 			p_guardian_nameMiddle text, p_guardian_nameLast text, p_spouse_nameFirst text, 
 			p_spouse_nameMiddle text, p_spouse_nameLast text, p_org_Name text, 
 			p_org_Pos text, p_org_AcYr text, p_stud_aA_cA text, p_stud_schGra text, 
@@ -111,7 +111,11 @@ language 'sql';
 --view
 
 create or replace function
- getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+--<<<<<<< HEAD
+-- getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+--=======
+ getstudinfoperid(in char(9), out char(9), out text, out text, out text, out text, out text, out text, out text, out int, out int, out int, out int, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text, out text)
+-->>>>>>> d906e58a4a8b11e3423c0bf394fb2d9d4d575413
 returns setof record as
 
 $$
