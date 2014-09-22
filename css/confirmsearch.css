@@ -12,6 +12,14 @@
 	padding: 20px;
 }
 
+.content{
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
 .column{
 	-webkit-column-count: 2;
     -moz-column-count: 2;

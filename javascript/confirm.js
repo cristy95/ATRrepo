@@ -37,7 +37,7 @@ function fetchstudstatus()
             }
             table += "</tbody>";
             table += "</table>";
-            table += "</div>";
+            table += "<br></div>";
             $("#target").html(table); 
           } 
           else{
@@ -58,12 +58,11 @@ function displayform(stud_id)
     console.log(res);
     if(res[0][0] != "None")
                     {
-      display = '<div class="filledform">';
-      display +='</br></br>'
+      display = '<div class="content">';
       display += '<p>&nbsp;ID No.:&nbsp;<u>' + res[0][0] + '</u></p>'
         + '<p>&nbsp;College:&nbsp;<u>'+ res[0][1] + '</u></p>'
         + '<p>&nbsp;Course:&nbsp;<u>'+res[0][2] + '</u></p>'
-        + '<p><h2>&nbsp;Personal Information of Graduating Student</h2></p>'
+        + '<p><h2>&nbsp;Personal Information of Graduating Student</h2></p><br>'
         + '<div class = "column">'
         + '<p>&nbsp;First Name:&nbsp;<u>'+res[0][3] + '</u></p>'
         + '<p>&nbsp;Middle Name:&nbsp;<u>'+res[0][4] + '</u></p>'
@@ -96,7 +95,7 @@ function displayform(stud_id)
         + '<p>&nbsp;Middle Name:&nbsp;<u>'+res[0][24] + '</u></p>'
         + '<p>&nbsp;Last Name:&nbsp;<u>'+res[0][25] + '</u></p>'
         + '</div>'
-        + '<p><h2>&nbsp;Position held in official recognized Student Organization</h2></p>'
+        + '<p><h2>&nbsp;Position held in official recognized Student Organization</h2></p><br><br>'
         + '<div class="column">'
         + '<p>&nbsp;Name of Organization:&nbsp;<u>'+res[0][26] + '</u></p>'
         + '<p>&nbsp;Position:&nbsp;<u>'+res[0][27] + '</u></p>'
@@ -105,11 +104,11 @@ function displayform(stud_id)
         + '<p&nbsp;>Academic Awards:&nbsp;<u>'+res[0][29] + '</u></p>'
         + '<p>&nbsp;Scholarship Grant:&nbsp;<u>'+res[0][30] + '</u></p>'
         + '</div>'
-        + '<p><h2>&nbsp;Dissertation/SpecialProject/Thesis Title</h2></p>'
+        + '<p><h2>&nbsp;Dissertation/SpecialProject/Thesis Title</h2></p><br>'
         + '<p>&nbsp;Dissertation:&nbsp;<u>'+res[0][31] + '</u></p>'
         + '<p>&nbsp;Special Project:&nbsp;<u>'+res[0][32] + '</u></p>'
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][33] + '</u></p>';
-      display += '<button class="confbutton" onclick="confirmform('+ res[0][0] + ')">Confirm</button></div>';
+      display += '<a href="#top"><button class="confbutton" onclick="confirmform('+ res[0][0] + ')">Confirm</button></a></div>';
             $("#target").html(display); 
           }
     }
@@ -122,12 +121,9 @@ function confirmform(stud_id){
     data: {stud_id:$("#stud_id").val()},
     dataType: 'json',
     success: function (res) {
-                  console.log(res);
-                  if(res[0][0] != "None")
-                  {
-      answer = alert('Form confirmed.');
-      $("#target").html(answer); 
-      } // end if
-              }
+      display = '<div class="content">';
+      display = '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Successfully confirmed status.</p><br></div>'
+      $("#target").html(display); 
+      }
   });
 }
