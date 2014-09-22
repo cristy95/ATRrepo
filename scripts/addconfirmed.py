@@ -3,7 +3,6 @@ import cgi
 import json
 def index(req, stud_id):
     stud_id =  cgi.escape(stud_id)
-    status = cgi.escape(stud_id)
     x = doSql()
 
     studs = x.execqry("select * from setconfirm('" + stud_id + "', 'Confirmed');", True)
