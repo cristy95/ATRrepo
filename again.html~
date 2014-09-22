@@ -67,22 +67,45 @@
 
 <legend>Basic Information</legend>
 	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br />
-	Nickname:</br> <input id="nickname" type="text" placeholder="Nick Name"/></br>
-	Age:<br /> <input id="age" type="int" size="6" placeholder="Age"/><br /><br>
-	Gender: <input type="radio" id="gender" value="male" /> Male <input type="radio" id="gender" value="female" /> Female <br/> <br>
-	Birthday: <select><option>Day</option><option type="int" id="birthdate" value="1">01</option><option type="int" id="birthdate" value="2">02</option><option type="int" id="birthdate" value="3">03</option><option type="int" id="birthdate" value="4">04</option>
-</select>	<select><option>Month</option><option type="int" id="birthMonth" value="1">January</option><option type="int" id="birthMonth" value="2">February</option><option type="int" id="birthMonth" value="3">March</option><option type="int" id="birthMonth" value="4">April</option>
-</select>	<select><option>Year</option><option type="int" id="birthYear" value="2014">2014</option><option type="int" id="birthYear" value="2013">2013</option><option type="int" id="birthYear" value="2012">2012</option><option type="int" id="birthYear" value="2011">2012</option></select><br/><br>
+	Nickname:<br> <input id="nickname" type="text" placeholder="Nick Name"/><br><br>
+	
+	Birthday: <select id="birthdate">
+		<option>Day</option>
+		<option type="int" value="1">01</option>
+		<option type="int" value="2">02</option>
+		<option type="int" value="3">03</option>
+		<option type="int" value="4">04</option></select>
+		<select id="birthMonth">
+		<option>Month</option>
+		<option type="int" value="1">January</option>
+		<option type="int" value="2">February</option>
+		<option type="int" value="3">March</option>
+		<option type="int" value="4">April</option></select>
+		<select id="birthYear" >
+		<option>Year</option>
+		<option type="int" value="2014">2014</option>
+		<option type="int" value="2013">2013</option>
+		<option type="int" value="2012">2012</option>
+		<option type="int" value="2011">2011</option></select>
+		<br/><br>
+	Age: <input id="age" type="int" size="6" placeholder="Age"><br><br>
+	
+	Gender: <select id="gender">
+		<option type="text" value="male">Male</option>
+		<option type="text" value="female">Female</option>
+		</select>
+		<br><br>
+
 	Contact Number: <br><input id="contactNum" type="text" placeholder="Contact Number"/><br/>
 	Address: <br> <input id="homeAddress" type="text" placeholder="Address"/>
 </fieldset>
 
 <fieldset class="sectionwrap">
 <legend>Family Background</legend>
-	Name of Father:<br /> <input id="father_nameLast" type="text" placeholder="Last Name"/> <input id="father_nameFirst" type="text" placeholder="First Name"/> <input id="father_nameMiddle" type="text" placeholder="Middle Name"/><br />
-	Name of Mother: <br /> <input id="mother_nameLast" type="text" placeholder="Last Name"/> <input id="mother_nameFirst" type="text" placeholder="First Name"/> <input id="mother_nameMiddle" type="text" placeholder="Middle Name"/><br />
-	Name of Gurdian (if applicable): <br /> <input id="guardian_nameLast" type="text" placeholder="Last Name"/> <input id="guardian_nameFirst" type="text" placeholder="First Name"/> <input id="guardian_nameMiddle" type="text" placeholder="Middle Name"/><br />
-	Name of Spouse (if applicable): <br /> <input id="spouse_nameLast" type="text" placeholder="Last Name"/><input id="spouse_nameFirst" type="text" placeholder="First Name"/><input id="spouse_nameMiddle" type="text" placeholder="Middle Name"/><br />
+	Name of Father:<br> <input id="father_nameLast" type="text" placeholder="Last Name"/> <input id="father_nameFirst" type="text" placeholder="First Name"/> <input id="father_nameMiddle" type="text" placeholder="Middle Name"/><br>
+	Name of Mother: <br> <input id="mother_nameLast" type="text" placeholder="Last Name"/> <input id="mother_nameFirst" type="text" placeholder="First Name"/> <input id="mother_nameMiddle" type="text" placeholder="Middle Name"/><br>
+	Name of Gurdian (if applicable): <br> <input id="guardian_nameLast" type="text" placeholder="Last Name"> <input id="guardian_nameFirst" type="text" placeholder="First Name"/> <input id="guardian_nameMiddle" type="text" placeholder="Middle Name"/><br>
+	Name of Spouse (if applicable): <br> <input id="spouse_nameLast" type="text" placeholder="Last Name"/><input id="spouse_nameFirst" type="text" placeholder="First Name"/><input id="spouse_nameMiddle" type="text" placeholder="Middle Name"/><br>
 </fieldset>
 
 <fieldset class="sectionwrap">
@@ -116,11 +139,11 @@ Specify Dissertations</br>
 
 <div id="target"></div>
 
-<!a href="welpage.html">
+<a href="welpage.html">
 	<button  class="default"
 		 onclick="addstudinfo();">
-			Submit Forms
-		</button><!/a>
+			Submit Form
+	</button></a>
 
 </fieldset>
 
