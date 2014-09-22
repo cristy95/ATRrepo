@@ -1,8 +1,8 @@
 create table colleges
-{
-	college_id serial primary key;
-	college_name;
-}
+(
+	college_id serial primary key,
+	college_name text
+);
 
 create or replace
     function setcollege (p_college_name text)
@@ -19,9 +19,8 @@ $$
     if v_college_name isnull then
         insert into colleges(college_name) values (p_college_name);
     else
-        return 'Unable to Set'
+        return 'Unable to Set';
     end if;
-
     return 'Done';
   end;
 $$
