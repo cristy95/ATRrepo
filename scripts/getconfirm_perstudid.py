@@ -1,11 +1,11 @@
 from dosql import *
 import cgi
-import json
+import simplejson as json
 
 def index(req, stud_id):
     stud_id = cgi.escape(stud_id)
     z = doSql()
-    confirm = z.execqry("select * from get_object_perstud_id('" + stud_id + "');", False)
+    confirm = z.execqry("select * from get_status_perid('" + stud_id + "');", False)
 
     result = []
     for con in confirm:

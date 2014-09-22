@@ -42,7 +42,7 @@ create or replace function
     get_status_perid(in char(9), out char(9), out text)
 returns setof record as
 $$
-    select stud_id, status from allinfo
+    select stud_id, status from confirm
     where stud_id = $1;
 $$
     language 'sql';

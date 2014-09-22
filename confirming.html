@@ -23,19 +23,21 @@
 				<li><a href="student.html">Student</a></li>
 				<li><a href="admin.html">Admin</a></li>
 					
-			</ul></nav>
+			</ul>
+			</nav>
 			
 		</header>
-			
-		<div id="target"></div>
-	   
-		<div id="header"></br>
-			<form id = "search" method = "get" action = "#">
-				<input type = "text" class = "textinput" name = "stud_id" size = "21" maxlength = "9" placeholder = "Search ID No."><input type = "submit" value = "Search" class = "button">
-			</form>
-			<div class = "clear"></div>
-		</div>
-			
+		<br>
+			<div id="searchbox">
+				<div id = "search">
+		    	    <input type="text" class="textinput" id = "stud_id" size="15" maxlength="9">
+		    	    <button class="button" onclick="fetchstudstatus();">search</button>
+				</div>
+				<div class="tfclear"></div>
+			</div>
+
+		<br><br><br><div id="target"></div>
+
 		<footer class="mainFooter">
 			<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>
 		</footer>
