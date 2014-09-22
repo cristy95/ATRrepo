@@ -1,7 +1,7 @@
 from dosql import *
 import cgi
 import json
-def index(req, stud_id, status):
+def index(req, stud_id):
     stud_id =  cgi.escape(stud_id)
     status = cgi.escape(stud_id)
     x = doSql()
