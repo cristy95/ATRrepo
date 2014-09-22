@@ -117,7 +117,7 @@ function displayform(stud_id)
 
 function confirmform(stud_id){
   $.ajax({
-    url: siteloc + scriptloc + "changestatus.py",
+    url: siteloc + scriptloc + "addconfirmed.py",
     data: {stud_id:$("#stud_id").val()},
     dataType: 'json',
     success: function (res) {
