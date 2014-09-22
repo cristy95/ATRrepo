@@ -3,14 +3,33 @@
 }
 
 #searchbox{
-	float: left;
-	padding:5px;
-	padding-right: 689px;
+	background: white;
 }
 
 #search{
-	float:right;
-	padding: 3px;
+	background: white;
+	float:left;
+	padding: 20px;
+}
+
+.content{
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.column{
+	-webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+.buttonlink{
+	margin: 0;
+	border: none;
+	background-color: transparent;
 }
 .textinput{
 	margin: 0;

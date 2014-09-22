@@ -4,10 +4,6 @@ create table confirm (
     
 );
 
-
-insert into confirm(stud_id, status)  values ('2012-0186', 'Pending');
-insert into confirm(stud_id, status)  values ('2012-1531', 'Confirmed');
-
 --controller
 
 create or replace
