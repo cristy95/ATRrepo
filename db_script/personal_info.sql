@@ -28,14 +28,14 @@ create table personal_info
 
 
 create or replace
- function regstudent(p_stud_id char(9), p_nameFirst text, 
+ function addpersonalinfo(p_stud_id char(9), p_nameFirst text, 
 			p_nameMid text, p_nameLast text, p_nickname text, p_gender text, 
 			p_birthdate int, p_birthMonth int, p_birthYear int, p_age int, 
 			p_contactNum text, p_homeAddress text, p_father_nameFirst text, 
 			p_father_nameMiddle text, p_father_nameLast text, p_mother_nameFirst text,  				p_mother_nameMiddle text, p_mother_nameLast text, p_guardian_nameFirst text,
 			p_guardian_nameMiddle text, p_guardian_nameLast text, p_spouse_nameFirst text, 
 			p_spouse_nameMiddle text, p_spouse_nameLast text)
- returns text as
+ returns character as
 
 $BODY$
 
@@ -72,7 +72,7 @@ begin
 			spouse_nameLast = p_spouse_nameLast
            	where stud_id = p_stud_id;
     	end if;
-	return 'SET';
+	return p_stud_id;
 end;
 $BODY$
 language 'plpgsql';
