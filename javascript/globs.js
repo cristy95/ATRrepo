@@ -458,26 +458,11 @@ function getheader()
                    console.log(res);
                    if(res[0][0] != "None")
                    {
-			
-			table = '<table border="1">';
-			
-			for(i=0; i<res.length; i++)
-			{
-				
-				row = res[i];
-				table += "<tr>";
-				for(j=0; j<row.length; j++)
-				
-				{
-					
-					table += "<td>" + row[j] + "</td>";
-				
-				}
-				table += "</tr>";
-			
-			}
-			table += "</table>";
-			$("#target").html(table);
+			ans = '<h3>TEMPLATE</h3>' 
+				+ 'Student ID: ' + res[0][0] + '<br>'
+				+ 'Name: ' + res[0][1] +  res[0][2] + res[0][3] + '<br>'
+				+ 'Birthday: ' + res[0][6] + '&nbsp' + res[0][4] +'&nbsp'+ res[0][5] + '<br>';
+			$("#target").html(ans);
 		} //end if
 	}
 	});
