@@ -447,12 +447,12 @@ function editform()
 	});
 }
 //Pio
-function getheader(stud_id)
+function getheader()
 {
    $.ajax({
        
 	   url: siteloc + scriptloc + "header.py",
-       data: {stud_id:stud_id},
+       data: {stud_id:$("#stud_id").val()},
        dataType: 'json',
        success: function (res) {
                    console.log(res);
