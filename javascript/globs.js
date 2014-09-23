@@ -465,7 +465,7 @@ function getheader()
 				+ 'Birthday: ' + res[0][5] + &nbsp; + res[0][7] + &nbsp; + res[0][6] + '<br>'
 				+ 'Fathers Name: ' + res[0][9] + &nbsp; + res[0][10] + &nbsp; + res[0][11] + '<br>'
 				+ 'Mothers Name: ' res[0][12] + &nbsp; + res[0][13] + &nbsp; + res[0][14] + '<br>'
-				+ 'AD/Thesis: ' res[0][15] + &nbsp; + res[0][16] + &nbsp; + res[0][17] + '<br>'
+				+ 'AD/Thesis: ' res[0][15] + &nbsp; + res[0][16] + &nbsp; + res[0][17] + '<br>';
 			$("#target").html(ans);
 		} //end if
 	}
