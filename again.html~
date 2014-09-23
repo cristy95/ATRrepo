@@ -57,7 +57,7 @@
 
 		<h1>INFORMATION SHEET FOR TADMAN REGISTRATION</h1>
 
-<form id="feedbackform">
+<form action="welpage.html" id="feedbackform">
 
 	<fieldset class="sectionwrap">
 
@@ -126,29 +126,26 @@ Academic Awards/Co-curricular Awards</br>
 
 <fieldset class="sectionwrap">
 
-<legend>Dissertations</legend>
-<p>Student Dissertations</p><br>
-Specify Dissertations</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="dissertation" placeholder="Dissertation"></br></br>
-		Specify Special Projects</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="special_project" placeholder="Special Project"></br></br>
-		Specify Thesis Title</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="thesis_title" placeholder="Thesis Title"></br><br><br>
+<legend>Dissertations</legend><br>
+Specify Dissertations (Input 'NONE' if not available)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="dissertation" placeholder="Dissertation" size="50"></br></br>
+		Specify Special Projects (Input 'NONE' if not available)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="special_project" placeholder="Special Project" size="50"></br></br>
+		Specify Thesis Title (Input 'NONE' if not available)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="thesis_title" placeholder="Thesis Title" size="50"></br><br><br>
 
 <p></p>
 
-<div id="target"></div>
+</fieldset>
+</form>
 
-<a href="welpage.html">
+
+
+<div id="target"></div>
 	<button  class="default"
 		 onclick="addstudinfo();">
 			Submit Form
-	</button></a>
-
-</fieldset>
-
-
-</form>
+	</button>
 
 
 
