@@ -5,7 +5,7 @@ function fetchstudstatus()
 {
   $.ajax({
       url: siteloc + scriptloc + "getconfirm_perstudid.py",
-      data: {stud_id:$("#stud_id").val()},
+      data: {stud_id:$("#stud_id").val(),},
       dataType: 'json',
       success: function (res) {
                   console.log(res);
