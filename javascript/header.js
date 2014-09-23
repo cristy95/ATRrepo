@@ -2,7 +2,7 @@ var siteloc = "http://localhost/ATRrepo";
 var scriptloc = "/scripts/"
 
 
-function getparents_perid(stud_id)
+function getheader(stud_id)
 {
    $.ajax({
        

@@ -446,8 +446,8 @@ function editform()
 		}
 	});
 }
-
-function getparents_perid(stud_id)
+//Pio
+function getheader(stud_id)
 {
    $.ajax({
        
