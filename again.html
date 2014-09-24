@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
        	<script src="javascript/bootstrap.min.js"></script>
-	<script src="javascript/allinfo.js"></script>
+	<script src="javascript/new.js"></script>
 	<script src="javascript/jqinit.js"></script>		
 
 	<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
@@ -62,8 +62,8 @@
 	<fieldset class="sectionwrap">
 
 		<input type="text" id="stud_id" class="fill" placeholder="ID No." required="">
-		<input type="text" id="course" class="fill" placeholder="Course" required="">
-		<input type="text" id="college" class="fill" placeholder="College" required=""></br></br>
+		<input type="text" id="course_fk" class="fill" placeholder="Course" required="">
+		<input type="text" id="college_fk" class="fill" placeholder="College" required=""></br></br>
 
 <legend>Basic Information</legend>
 	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br />
@@ -113,14 +113,14 @@
 <p>Positions held in Official Recognized Student</p>
 
 <br> &emsp; &emsp;&emsp; Position&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Organization&emsp;&emsp;&emsp;&emsp;&emsp;  Academic Year</br>
-		<input type="text" id="org_Pos" placeholder="Position">
-		<input type="text" id="org_Name" placeholder="Organization">
-		<input type="text" id="org_AcYr" placeholder="Academic Year"></br><br>
+		<input type="text" id="position" placeholder="Position">
+		<input type="text" id="organization_name" placeholder="Organization">
+		<input type="text" id="academic_year" placeholder="Academic Year"></br><br>
 Academic Awards/Co-curricular Awards</br>
-		<input type="text" id="stud_aA_cA" class="fill" placeholder="Specific Award"></br>
+		<input type="text" id="aa_ca" class="fill" placeholder="Specific Award"></br>
 		<p></p>
 		Scholarship Grants</br>
-		<input type="text" id="stud_schGra" class="fill" placeholder="Scholarship Grant">
+		<input type="text" id="scholar_grant" class="fill" placeholder="Scholarship Grant">
 
 </fieldset>
 
@@ -139,8 +139,8 @@ Specify Dissertations (Input 'NONE' if not available)</br>
 
 
 <div id="target"></div>
-	<button  class="default"
-		 onclick="addstudinfo();">
+	<button  class="btn btn-lg btn-success"
+		 onclick="add_student_application();">
 			Submit Form
 	</button>
 </fieldset>
