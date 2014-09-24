@@ -1,6 +1,6 @@
 create table courses
 (
-	course_id serial primary key,
+	course_id int primary key,
 	course_name text,
 	college_id_fk int references colleges(college_id)
 )

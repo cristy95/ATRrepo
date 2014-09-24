@@ -1,6 +1,6 @@
 create table colleges
 (
-	college_id serial primary key,
+	college_id int primary key,
 	college_name text
 );
 

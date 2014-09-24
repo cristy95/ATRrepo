@@ -1,25 +1,25 @@
 create table status
 (
 	status_id serial primary key,
-	stud_id_fk char(9) references personal_info (stud_id),
-	status text
+	stud_id char(9),
+	stat text
 )
 
 
 create or replace
-    function setstatus (p_stud_id_fk char(9), p_status text)
+    function setstatus (p_stud_id char(9), p_stat text)
     returns text as
 
 $$
   declare
-     v_stud_id_fk text;
+     v_stud_id char(9);
 
   begin
-    select into v_stud_id_fk stud_id_fk from status
-        where stud_id_fk = p_stud_id_fk;
+    select into v_stud_id stud_id from status
+        where stud_id = p_stud_id;
 
-    if v_stud_id_fk isnull then
-        insert into status(status) values (p_status);
+    if v_stud_id isnull then
+        insert into status(stud_id, stat) values (p_stud_id, p_stat);
     else
         return 'Unable to Set';
     end if;
@@ -34,7 +34,7 @@ create or replace function
     getstatus(in char, out char, out text)
 returns text as
 $$
-    select stud_id_fk, status from status
-    where status_id_fk = $1;
+    select stud_id, status from status
+    where stud_id = $1;
 $$
     language 'sql';

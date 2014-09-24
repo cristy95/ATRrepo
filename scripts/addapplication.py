@@ -2,10 +2,10 @@ from dosql import *
 import cgi
 import simplejson as json
 
-def index(req, stud_id_fk, course_fk, college_fk, organization_name, position, academic_year,
+def index(req, stud_id, course_fk, college_fk, organization_name, position, academic_year,
 					aa_ca, scholar_grant, dissertation, special_project, thesis_title):
 
-  stud_id_fk = cgi.escape(stud_id_fk)
+  stud_id = cgi.escape(stud_id)
   course_fk = cgi.escape(course_fk)
   college_fk = cgi.escape(college_fk)
   organization_name = cgi.escape(organization_name)
@@ -18,7 +18,7 @@ def index(req, stud_id_fk, course_fk, college_fk, organization_name, position, a
   thesis_title = cgi.escape(thesis_title)
 
   x = doSql()
-  student = x.execqry("select * from regstudent('" + stud_id_fk + "', '" + course_fk + "', '" + college_fk + "', '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', " + dissertation + ", " + special_project + ", " + thesis_title + "');", True)
+  student = x.execqry("select * from apply('" + stud_id + "', " + course_fk + ", " + college_fk + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "', 'Pending');", True)
 
   result = []
   for stud in student:
