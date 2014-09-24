@@ -103,34 +103,6 @@ function fetchconfirm(stud_id)
     });
 }
 
-//dar2
-function fetchconfirmlist(status)
-{
-    $.ajax({
-        url: siteloc + scriptloc + "getconfirmlist.py",
-        data: { status: status},
-        dataType: 'json',
-        success: function (cons) {
-                    console.log(cons);
-                    if(cons[0][0] != "None")
-                    {
-			table = '<table border="1">';
-                        for(i=0; i<cons.length; i++)
-                        {
-                              row = cons[i];
-                              table += "<tr>";
-                              for (j=0; j<row.length; j++)
-                              {
-                                  table += "<td>" + row[j] + "</td>";
-						  }
-						  table += "</tr>";
-					  }
-					  table += "</table>";
-					  $("#target").html(table); 
-				  } // end if
-              }
-    });
-}
 
 //josh
 function fetchorgs_perid(stud_id)
@@ -472,5 +444,26 @@ function editform()
 					  $("#target").html(table); 
 				  } // end if
 		}
+	});
+}
+//Pio
+function getheader()
+{
+   $.ajax({
+       
+	   url: siteloc + scriptloc + "header.py",
+       data: {stud_id:$("#stud_id").val()},
+       dataType: 'json',
+       success: function (res) {
+                   console.log(res);
+                   if(res[0][0] != "None")
+                   {
+			ans = '<h3>TEMPLATE</h3>' 
+				+ 'Student ID: ' + res[0][0] + '<br>'
+				+ 'Name: ' + res[0][1] +  res[0][2] + res[0][3] + '<br>'
+				+ 'Birthday: ' + res[0][5] + '&nbsp' + res[0][4] +'&nbsp'+ res[0][6] + '<br>';
+			$("#target").html(ans);
+		} //end if
+	}
 	});
 }
