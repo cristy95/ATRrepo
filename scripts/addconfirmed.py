@@ -5,7 +5,7 @@ def index(req, stud_id):
     stud_id =  cgi.escape(stud_id)
     x = doSql()
 
-    studs = x.execqry("select * from setconfirm('" + stud_id + "', 'Confirmed');", True)
+    studs = x.execqry("select * from setconfirm('" + stud_id + "',1,1, 'Confirmed');", True)
     result = []
 
     for stud in studs:

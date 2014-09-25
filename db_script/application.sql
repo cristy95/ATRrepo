@@ -68,23 +68,25 @@ $$
 
 ---------------------------------------------------------
 
---set to confirm
+--set status to confirmed
 create or replace
-    function setconfirm (p_stud_id char(9), p_status text)
+    function setconfirm (p_stud_id char(9), p_course_fk int, p_college_fk int, p_status text)
     returns text as
 
 $$
   declare
      v_stud_id char(9);
+     v_course_fk int;
+     v_college_fk int;
 
   begin
-    select into v_stud_id stud_id from applications
-        where stud_id = p_stud_id;
+    select into v_stud_id stud_id, v_course_fk course_fk, v_college_fk college_fk from applications
+        where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
         
-        update confirm
+        update applications
             set status = p_status
-            where stud_id = p_stud_id;
-
+            where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+            
     return 'SET';
   end;
 $$
