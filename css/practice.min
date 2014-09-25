@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body{
+		background-color: white;
+	}
+	
+	div {
+		background: url(img_flwr.gif);
+		background-size: 80px 60px;
+	}
+	
+	
+</style>
+</head>
+</html>

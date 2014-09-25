@@ -1,6 +1,7 @@
 from dosql import *
 import cgi
-import json
+import simplejson as json
+
 def index(req, status):
     status = cgi.escape(status)
     y = doSql()

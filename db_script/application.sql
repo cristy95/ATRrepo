@@ -91,3 +91,13 @@ $$
   end;
 $$
   language 'plpgsql';
+---------------------------------------------------------
+create or replace
+	function del_app(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from applications
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';

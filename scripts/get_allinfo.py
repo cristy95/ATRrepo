@@ -7,7 +7,7 @@ def index(req, stud_id, college, course):
     x = doSql()
     rets = x.execqry("select personal_info.stud_id, courses.course_name,\
 			colleges.college_name, personal_info.nameLast, \
-			personal_info.nameFirst, personal_info.nameMid, \
+			personal_info.nameFirst, personal_info.nameMid, personal_info.nickname, \
 			personal_info.birthdate, personal_info.birthMonth, \
 			personal_info.birthYear, personal_info.gender, \
 			personal_info.contactNum, personal_info.homeAddress, \
