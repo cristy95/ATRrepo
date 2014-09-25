@@ -11,7 +11,7 @@ class doSql(object):
     #methods
     def __init__(self): #constructor
 
-        self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='yourpasswordhere' host='127.0.0.1' port='5432'")
+        self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='castillano88' host='127.0.0.1' port='5432'")
 
         self._cur = self._cxn.cursor()
         
