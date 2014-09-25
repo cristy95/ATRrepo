@@ -1,6 +1,6 @@
 from dosql import *
 import cgi
-import json
+import simplejson as json
 
 def index(req, stud_id, nameFirst, nameMid, nameLast, nickname, gender, 
 			birthdate, birthMonth, birthYear, age, 

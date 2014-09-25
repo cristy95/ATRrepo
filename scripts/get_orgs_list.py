@@ -1,5 +1,5 @@
 from dosql import *
-import json
+import simplejson as json
 
 def index(req):
     x = doSql()
