@@ -16,6 +16,8 @@ function fetchstudstatus()
             table += '<thead>' +
                     '<tr>' +
                     '<th>ID No.</th>' +
+                    '<th>Course ID</th>' +
+                    '<th>College ID</th>'+
                     '<th>Status</th>' +
                     '</tr>' +
                      '</thead>';
@@ -27,7 +29,7 @@ function fetchstudstatus()
               for (j = 0; j < row.length; j++)
               {
                 if (j == 0) {
-                  table += '<td><button class = "buttonlink" onclick="displayform('+ row[j] +')"><emp><u>' + row[j] + '</emp></u></button></td>';
+                  table += '<td><button class = "buttonlink" onclick="displayform('+ row[j] +',1,1)"><emp><u>' + row[j] + '</emp></u></button></td>';
                 }
                 else {
                   table += '<td>' + row[j] + '</td>';
@@ -48,11 +50,13 @@ function fetchstudstatus()
     });
 }
 
-function displayform(stud_id)
+function displayform(stud_id,course,college)
 {
   $.ajax({
-  url: siteloc + scriptloc + "getstudinfoperid.py",
-  data: {stud_id:$("#stud_id").val()}, 
+  url: siteloc + scriptloc + "get_allinfo.py",
+  data: {stud_id:$("#stud_id").val(),
+         course:$("#course").val(),
+         college:$("#college").val()}, 
   dataType: 'json',
   success: function(res){
     console.log(res);

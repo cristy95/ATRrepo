@@ -55,13 +55,37 @@ $BODY$
 language 'plpgsql';
 
 ---------------------------------------------------------
+
 --view per id
 create or replace function
-    get_status_perid(in char(9), out char(9), out text)
+    get_status_perid(in char(9), out char(9), out int, out int, out text)
 returns setof record as
 $$
-    select stud_id, status from applications
+    select stud_id, course_fk, college_fk, status from applications
     where stud_id = $1;
 $$
     language 'sql';
+
 ---------------------------------------------------------
+
+--set to confirm
+create or replace
+    function setconfirm (p_stud_id char(9), p_status text)
+    returns text as
+
+$$
+  declare
+     v_stud_id char(9);
+
+  begin
+    select into v_stud_id stud_id from applications
+        where stud_id = p_stud_id;
+        
+        update confirm
+            set status = p_status
+            where stud_id = p_stud_id;
+
+    return 'SET';
+  end;
+$$
+  language 'plpgsql';
