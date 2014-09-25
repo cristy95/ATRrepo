@@ -1,8 +1,8 @@
 from dosql import *
 import cgi
-import simplejson as json
+import json
 
-def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle,father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra, dissertation, special_project, thesis_title):
+def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle, father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, organization_name, position, academic_year, aa_ca, scholar_grant, dissertation, special_project, thesis_title):
   stud_id = cgi.escape(stud_id)
   college = cgi.escape(college)
   course = cgi.escape(course)
@@ -29,18 +29,22 @@ def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname,
   spouse_nameFirst = cgi.escape(spouse_nameFirst)
   spouse_nameMiddle = cgi.escape(spouse_nameMiddle)
   spouse_nameLast = cgi.escape(spouse_nameLast)
-  org_Name = cgi.escape(org_Name)
-  org_Pos = cgi.escape(org_Pos)
-  org_AcYr = cgi.escape(org_AcYr)
-  stud_aA_cA = cgi.escape(stud_aA_cA)
-  stud_schGra = cgi.escape(stud_schGra)
+  organization_name = cgi.escape(organization_name)
+  position = cgi.escape(position)
+  academic_year = cgi.escape(academic_year)
+  aa_ca = cgi.escape(aa_ca)
+  scholar_grant = cgi.escape(scholar_grant)
   dissertation = cgi.escape(dissertation)
   special_project = cgi.escape(special_project)
   thesis_title = cgi.escape(thesis_title)
 
   x = doSql()
   y = doSql()
-  student = x.execqry("select * from regstudent('" + stud_id + "', '" + college + "', '" + course + "', '" + nameFirst + "', '" + nameMid + "', '" + nameLast + "', '" + nickname + "', '" + gender + "', " + birthdate + ", " + birthMonth + ", " + birthYear + ", " + age + ", '" + contactNum + "', '" + homeAddress +  "', '" + father_nameFirst + "', '" + father_nameMiddle + "', '" + father_nameLast + "', '" + mother_nameFirst + "', '" + mother_nameMiddle + "', '" + mother_nameLast + "', '" + guardian_nameFirst + "', '" + guardian_nameMiddle + "', '" + guardian_nameLast + "', '" + spouse_nameFirst + "', '" + spouse_nameMiddle + "', '" + spouse_nameLast + "', '" + org_Name + "', '" + org_Pos + "', '" + org_AcYr + "', '" + stud_aA_cA + "', '" + stud_schGra +  "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "');", True)
+
+  student1 = y.execqry("select * from addpersonalinfo('" + stud_id +  "', '" + nameFirst + "', '" + nameMid + "', '" + nameLast + "', '" + nickname + "', '" + gender + "', " + birthdate + ", " + birthMonth + ", " + birthYear + ", " + age + ", '" + contactNum + "', '" + homeAddress + "', '" + father_nameFirst + "', '" + father_nameMiddle + "', '" + father_nameLast + "', '" + mother_nameFirst + "', '" + mother_nameMiddle + "', '" + mother_nameLast + "', '" + guardian_nameFirst + "', '" + guardian_nameMiddle + "', '" + guardian_nameLast + "', '" + spouse_nameFirst + "', '" + spouse_nameMiddle + "', '" + spouse_nameLast + "');", True)
+
+
+  student = x.execqry("select * from apply('" + stud_id + "', " + course_fk + ", " + college_fk + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "', 'Pending');", True)
 
   result = []
   for stud in student:

@@ -99,8 +99,8 @@ function edit_allinfo()
 			'<fieldset class="sectionwrap">'+
 
 		'<input type="text" id="stud_id" class="fill" placeholder="ID No." value="' + res[0][0] + '" required="">'+
-		'<input type="text" id="course_fk" class="fill" placeholder="Course" value="' + res[0][1] + '" required="">'+
-		'<input type="text" id="college_fk" class="fill" placeholder="College" value ="' + res[0][2] + '" required=""></br></br>'+
+		'<input type="text" id="course" class="fill" placeholder="Course" value="' + res[0][1] + '" required="">'+
+		'<input type="text" id="college" class="fill" placeholder="College" value ="' + res[0][2] + '" required=""></br></br>'+
 
 			'<legend>Basic Information</legend>'+
 	'Name:<br /> <input id="nameLast" type="text" placeholder="Last Name" value="' + res[0][3] + '"/> <input id="nameFirst" type="text" placeholder="First Name" value="'+res[0][4]+'"/> <input id="nameMid" type="text" placeholder="Middle Name" value="'+res[0][5]+'"/><br />'+
@@ -131,7 +131,7 @@ function edit_allinfo()
 		'<option type="text" value="female">Female</option>'+
 		'</select>'+
 		'<br><br>'+
-
+	'Age: <input id="age" type="int" size="6" placeholder="Age" value="'+res[0][33]+'"><br><br>'+
 	'Contact Number: <br><input id="contactNum" type="text" placeholder="Contact Number" value="' + res[0][11] +'"/><br/>'+
 	'Address: <br> <input id="homeAddress" type="text" placeholder="Address" value="'+ res[0][12] +'"/>'+
 	'</fieldset>'+
@@ -175,23 +175,31 @@ function edit_allinfo()
 
 
 '<div id="target"></div>'+
-	'<button  class="btn btn-lg btn-success"'+
+	
+'</fieldset>'+
+'</form>'+
+'<button  class="btn btn-lg btn-success"'+
 		 'onclick="add_edition();">'+
 			'Submit Form'+
-	'</button>'+
-'</fieldset>'+
-'</form>'
+	'</button>'
 					  $( "#target").html(rets); 
 			}
+			else{
+			rets = '<h4>No Result Found</h4>'+
+				'<p>Please check your input values. Make sure that you have registered first. Maybe you can search first. :)';
+			$("#target").html(rets);
 		}
+	}
   });
 }
 
 function add_edition()
 {
   $.ajax({
-      url: siteloc + scriptloc + "personal_info.py",
+      url: siteloc + scriptloc + "edit_allinfo.py",
       data: {stud_id:$("#stud_id").val(),
+		college:$("#college").val(),
+  		course:$("#course").val(),
 		nameFirst:$("#nameFirst").val(),
   		nameMid:$("#nameMid").val(),
   		nameLast:$("#nameLast").val(),
@@ -200,6 +208,7 @@ function add_edition()
   		birthdate:$("#birthdate").val(),
   		birthMonth:$("#birthMonth").val(),
   		birthYear:$("#birthYear").val(),
+		age:$("#age").val(),
   		contactNum:$("#contactNum").val(),
   		homeAddress:$("#homeAddress").val(),
   		father_nameFirst:$("#father_nameFirst").val(),
@@ -214,8 +223,6 @@ function add_edition()
   		spouse_nameFirst:$("#spouse_nameFirst").val(),
   		spouse_nameMiddle:$("#spouse_nameMiddle").val(),
   		spouse_nameLast:$("#spouse_nameLast ").val(),
-		course_fk:$("#course_fk").val(),
-  		college_fk:$("#college_fk").val(),
   		organization_name:$("#organization_name").val(),
   		position:$("#position").val(),
   		academic_year:$("#academic_year").val(),
@@ -227,9 +234,9 @@ function add_edition()
       dataType: 'json',
       success: function (res) {
                   console.log(res);
-                  if(res[0][0] == "None")
+                  if(res[0][0] != "None")
                   {
-         		rets = 'SET'
+         		rets = '&nbsp;&nbsp;<br><h4>Done Editing!<br><br>'
            		 $("#target").html(rets); 
         	  } 
               }
