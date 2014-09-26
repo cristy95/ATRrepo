@@ -462,12 +462,31 @@ function getheader()
 				+ 'Name: ' + res[0][1] +  res[0][2] + res[0][3] + '<br>'
 				+ 'Course: ' + res[0][4] + '<br>'
 				+ 'Adress: ' + res[0][8] + '<br>'
-				+ 'Birthday: ' + res[0][5] + &nbsp; + res[0][7] + &nbsp; + res[0][6] + '<br>'
-				+ 'Fathers Name: ' + res[0][9] + &nbsp; + res[0][10] + &nbsp; + res[0][11] + '<br>'
-				+ 'Mothers Name: ' res[0][12] + &nbsp; + res[0][13] + &nbsp; + res[0][14] + '<br>'
-				+ 'AD/Thesis: ' res[0][15] + &nbsp; + res[0][16] + &nbsp; + res[0][17] + '<br>';
+				+ 'Birthday: ' + res[0][5] + '&nbsp;' + res[0][7] + '&nbsp;' + res[0][6] + '<br>'
+				+ 'Fathers Name: ' + res[0][9] + '&nbsp;' + res[0][10] + '&nbsp;' + res[0][11] + '<br>'
+				+ 'Mothers Name: ' + res[0][12] + '&nbsp;' + res[0][13] + '&nbsp;' + res[0][14] + '<br>'
+				+ 'AD/Thesis: ' + res[0][15] + '&nbsp;' + res[0][16] + '&nbsp;' + res[0][17] + '<br>';
 			$("#target").html(ans);
 		} //end if
 	}
 	});
+}
+
+//lorie
+function delperapp()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "delperapp.py",
+      data: {stud_id:$("#stud_id").val()},
+      dataType: 'json',
+      success: function (res) {
+                console.log(res);
+                if(res[0][0] != "None")
+				{
+			answer = 'DELETED' + "<br>"
+			answer += res[0][0]
+			$("#target").html(answer); 
+				} 
+        }
+    });
 }
