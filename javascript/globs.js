@@ -459,6 +459,7 @@ function getheader()
                    if(res[0][0] != "None")
                    {
 			ans = '<h3>TEMPLATE</h3>' 
+<<<<<<< HEAD
 				+ 'Name: ' + res[0][1] +  res[0][2] + res[0][3] + '<br>'
 				+ 'Course: ' + res[0][4] + '<br>'
 				+ 'Adress: ' + res[0][8] + '<br>'
@@ -466,6 +467,16 @@ function getheader()
 				+ 'Fathers Name: ' + res[0][9] + '&nbsp;' + res[0][10] + '&nbsp;' + res[0][11] + '<br>'
 				+ 'Mothers Name: ' + res[0][12] + '&nbsp;' + res[0][13] + '&nbsp;' + res[0][14] + '<br>'
 				+ 'AD/Thesis: ' + res[0][15] + '&nbsp;' + res[0][16] + '&nbsp;' + res[0][17] + '<br>';
+=======
+				+ 'Name: ' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '&nbsp;''&nbsp;''&nbsp;''&nbsp;' '<img src="pictures/yots.jpg" width = "144" height = "144" />' '<br>'
+				+ 'Course: ' + res[0][18] + '<br>'
+				+ 'College: ' + res[0][17] + '<br>'
+				+ 'Adress: ' + res[0][7] + '<br>'
+				+ 'Birthday: ' + res[0][4] + '&nbsp;' + res[0][6] + '&nbsp;' + res[0][5] + '<br>'
+				+ 'Fathers Name: ' + res[0][8] + '&nbsp;' + res[0][9] + '&nbsp;' + res[0][10] + '<br>'
+				+ 'Mothers Name: ' res[0][11] + '&nbsp;' + res[0][12] + '&nbsp;' + res[0][13] + '<br>'
+				+ 'AD/Thesis: ' res[0][14] + '&nbsp;' + res[0][15] + '&nbsp;' + res[0][16] + '<br>';
+>>>>>>> 1bf9281a611d1687d4128fc50651e1fe7a27caf3
 			$("#target").html(ans);
 		} //end if
 	}

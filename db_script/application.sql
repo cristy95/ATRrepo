@@ -13,7 +13,7 @@ create table applications
 	special_project text,
 	thesis_title text,
 	status text
-)
+);
 
 create or replace
  function apply(p_stud_id char(9), p_course_fk int, p_college_fk int, p_organization_name text, 
@@ -55,15 +55,13 @@ $BODY$
 language 'plpgsql';
 
 ---------------------------------------------------------
+--view per id
 create or replace function
- getstudinfoperid(in char(9), out int, out int, out text, out text, out text, out text, out text, out text, out text, out text)
+    get_status_perid(in char(9), out char(9), out text)
 returns setof record as
-
 $$
- select college_fk, course_fk, organization_name, position, academic_year,
-		aa_ca, scholar_grant, dissertation, special_project, thesis_title from applications
- where stud_id_fk = $1;
+    select stud_id, status from applications
+    where stud_id = $1;
 $$
- language 'sql';
-
-
+    language 'sql';
+---------------------------------------------------------
