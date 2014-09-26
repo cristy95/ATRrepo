@@ -90,4 +90,14 @@ $$
 $$
  language 'sql';
 
+------------------------------------------
+create or replace
+	function del_perinfo(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from courses
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
 
