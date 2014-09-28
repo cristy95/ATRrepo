@@ -1,6 +1,6 @@
 from dosql import *
 import cgi
-import json
+import simplejson as json
 
 def index(req, stud_id, course_fk, college_fk, organization_name, position, academic_year,
 					aa_ca, scholar_grant, dissertation, special_project, thesis_title):
@@ -18,7 +18,7 @@ def index(req, stud_id, course_fk, college_fk, organization_name, position, acad
   thesis_title = cgi.escape(thesis_title)
 
   x = doSql()
-  student = x.execqry("select * from apply('" + stud_id + "', " + course_fk + ", " + college_fk + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "');", True)
+  student = x.execqry("select * from apply('" + stud_id + "', " + course_fk + ", " + college_fk + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "', 'Pending');", True)
 
   result = []
   for stud in student:
