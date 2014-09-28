@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
-		<script src="javascript/globs.js"></script>
+		<script src="javascript/new.js"></script>
 	        <script src="javascript/jqinit.js"></script>		
 
 		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
@@ -33,15 +33,18 @@
 			<h2>Please enter your student id number</h2>
 				
 			<div class="container1">
-				</br><input type="text" id="stud_id" class="delete" placeholder="ID No." required=""></br></br>
-			</div>
-
-      			<div id="target"></div>
-
+				</br><input type="text" id="stud_id" class="delete" placeholder="ID No." required="">
+				&nbsp;<input type="int" id="college" class="delete" placeholder="College">
+				&nbsp;<input type="int" id="course" class="delete" placeholder="Course">
+			
+			&nbsp;
 			<button
 				class="btn btn-success btn-mini"
-				onclick="#"> Edit Registration
+				onclick="edit_allinfo();"> Edit Registration
 			</button>
+			</div>
+
+			<div id="target"></div>
 			
 			<footer class="mainFooter">
 				<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>

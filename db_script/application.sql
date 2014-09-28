@@ -28,10 +28,12 @@ declare
 	V_appli_id int;
 
 begin
- 	select into v_stud_id stud_id from applications
- 		where stud_id = p_stud_id;
+ 	select into v_appli_id appli_id from applications
+ 		where stud_id = p_stud_id and
+			college_fk = p_college_fk and
+			course_fk = p_course_fk;
 	
-	if v_stud_id isnull then
+	if v_appli_id isnull then
 		insert into applications(stud_id, course_fk, college_fk, organization_name, position, academic_year,
 					aa_ca, scholar_grant, dissertation, special_project, thesis_title, status)
 		values (p_stud_id, p_course_fk, p_college_fk, p_organization_name, 
@@ -55,13 +57,49 @@ $BODY$
 language 'plpgsql';
 
 ---------------------------------------------------------
+
 --view per id
 create or replace function
-    get_status_perid(in char(9), out char(9), out text)
+    get_status_perid(in char(9), out char(9), out int, out int, out text)
 returns setof record as
 $$
-    select stud_id, status from applications
+    select stud_id, course_fk, college_fk, status from applications
     where stud_id = $1;
 $$
     language 'sql';
+
 ---------------------------------------------------------
+
+--set status to confirmed
+create or replace
+    function setconfirm (p_stud_id char(9), p_course_fk int, p_college_fk int, p_status text)
+    returns text as
+
+$$
+  declare
+     v_stud_id char(9);
+     v_course_fk int;
+     v_college_fk int;
+
+  begin
+    select into v_stud_id stud_id, v_course_fk course_fk, v_college_fk college_fk from applications
+        where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+        
+        update applications
+            set status = p_status
+            where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+            
+    return 'SET';
+  end;
+$$
+  language 'plpgsql';
+---------------------------------------------------------
+create or replace
+	function del_app(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from applications
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';

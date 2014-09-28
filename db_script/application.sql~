@@ -11,9 +11,9 @@ create table applications
 	scholar_grant text,
 	dissertation text,
 	special_project text,
-	thesis_title text
-	status text,
-)
+	thesis_title text,
+	status text
+);
 
 create or replace
  function apply(p_stud_id char(9), p_course_fk int, p_college_fk int, p_organization_name text, 
@@ -29,7 +29,9 @@ declare
 
 begin
  	select into v_stud_id stud_id from applications
- 		where stud_id = p_stud_id;
+ 		where stud_id = p_stud_id and
+			college_fk = p_college_fk and
+			course_fk = p_course_fk;
 	
 	if v_stud_id isnull then
 		insert into applications(stud_id, course_fk, college_fk, organization_name, position, academic_year,
@@ -55,15 +57,49 @@ $BODY$
 language 'plpgsql';
 
 ---------------------------------------------------------
+
+--view per id
 create or replace function
- getstudinfoperid(in char(9), out int, out int, out text, out text, out text, out text, out text, out text, out text, out text)
+    get_status_perid(in char(9), out char(9), out int, out int, out text)
 returns setof record as
+$$
+    select stud_id, course_fk, college_fk, status from applications
+    where stud_id = $1;
+$$
+    language 'sql';
+
+---------------------------------------------------------
+
+--set status to confirmed
+create or replace
+    function setconfirm (p_stud_id char(9), p_course_fk int, p_college_fk int, p_status text)
+    returns text as
 
 $$
- select college_fk, course_fk, organization_name, position, academic_year,
-		aa_ca, scholar_grant, dissertation, special_project, thesis_title from applications
- where stud_id_fk = $1;
+  declare
+     v_stud_id char(9);
+     v_course_fk int;
+     v_college_fk int;
+
+  begin
+    select into v_stud_id stud_id, v_course_fk course_fk, v_college_fk college_fk from applications
+        where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+        
+        update applications
+            set status = p_status
+            where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+            
+    return 'SET';
+  end;
 $$
- language 'sql';
-
-
+  language 'plpgsql';
+---------------------------------------------------------
+create or replace
+	function del_app(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from applications
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';

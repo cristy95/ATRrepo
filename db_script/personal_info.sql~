@@ -28,7 +28,7 @@ create table personal_info
 
 
 create or replace
- function regstudent(p_stud_id char(9), p_nameFirst text, 
+ function addpersonalinfo(p_stud_id char(9), p_nameFirst text, 
 			p_nameMid text, p_nameLast text, p_nickname text, p_gender text, 
 			p_birthdate int, p_birthMonth int, p_birthYear int, p_age int, 
 			p_contactNum text, p_homeAddress text, p_father_nameFirst text, 
@@ -90,4 +90,14 @@ $$
 $$
  language 'sql';
 
+------------------------------------------
+create or replace
+	function del_perinfo(in char(9), out char(9))
+		returns character as
+$BODY$
+	delete from courses
+		where stud_id = $1	
+	returning stud_id;
+$BODY$
+language 'sql';
 
