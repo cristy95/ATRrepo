@@ -4,7 +4,7 @@
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="welpage.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<script src="javascript/jquery.js"></script>
@@ -22,9 +22,9 @@
 				<nav><ul>
 				
 					<li><a href="welpage.html">Home</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="about.html">About</a></li>
 					<li><a href="student.html">Student</a></li>
-					<li><a href="#">Admin</a></li>
+					<li><a href="admin.html">Admin</a></li>
 					
 				</ul></nav>
 			
