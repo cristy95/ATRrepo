@@ -23,6 +23,18 @@ function fetchcollege()
   		}
 		}
 	});
+	ans = ' <select id="course_fk">'+
+		'<option>College</option>';
+	for(i=0; i<colleges.length; i++){
+		
+if(i in colleges){
+
+	var c = colleges[i];
+	ans +=	'<option type="text" value=' + i+1 + '>' +c +'</option>';
+}
+}
+	ans += ' </select>';
+	$("#getcoll").html(ans);
 }
 
 function fetchcourses(college_id_fk)
@@ -52,3 +64,15 @@ function fetchcourses(college_id_fk)
 		}
 	});
 }
+
+function makedd_college(){
+	ans = ' <select id="course_fk">'+
+		'<option>College</option>';
+	for(i=0; i<colleges.length; i++){
+	ans +=	'<option type="text" value=' + i+1 + '>' +colleges[i] +'</option>';
+}
+	ans += ' </select>';
+	$("#getcoll").html(ans);
+}
+
+
