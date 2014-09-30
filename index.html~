@@ -19,7 +19,7 @@
 				
 				<nav><ul>
 				
-					<li><a href="welpage.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="student.html">Student</a></li>
 					<li><a href="admin.html">Admin</a></li>
@@ -39,7 +39,7 @@
 						<content>
 							<p>If you are a graduating student, you are required to fill-up and provide us with relevant information that will be used for the Tadman, your MSU-IIT Yearbook. 
 							</p>
-			<img src='img.jpg'>
+			<img src='img.png'>
 						</content>
 						
 					</article>
