@@ -4,7 +4,7 @@
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="welpage.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<script src="javascript/jquery.js"></script>
@@ -17,7 +17,7 @@
 	</head>
 		
 		<body class="body">
-			<header class="mainHeader">
+<!--			<header class="mainHeader">
 				
 				<nav><ul>
 				
@@ -28,7 +28,7 @@
 					
 				</ul></nav>
 			
-			</header>
+			</header> -->
 			
 			<div class="container">
 				<h2>What do you want to do?</h2></br>

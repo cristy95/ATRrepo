@@ -32,9 +32,9 @@ a:hover, a:active {
 	margin: 2% 0; 
 }
 
-.mainHeader nav {
+nav {
 	background-color: #666;
-	height: 50px;
+	height: 40px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
