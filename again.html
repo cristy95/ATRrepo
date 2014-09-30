@@ -31,7 +31,7 @@
 	var myform=new formtowizard({
 		formid: 'feedbackform',
 		persistsection: true,
-		validate: ['Last Name','First Name'],
+		validate: ['stud_id','nameFirst', 'nameLast', 'course_fk', 'college_fk'],
 		revealfx: ['fade', 500]
 	})
 
@@ -103,7 +103,7 @@
 
 <h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>		
 
-<form class="form"action="welpage.html" id="feedbackform">
+<form class="form" action="welpage.html" id="feedbackform">
 	<fieldset class="sectionwrap">
 
 		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
@@ -112,8 +112,8 @@
 		<input type="text" id="course_fk" class="fill" placeholder="Course" required="">
 		<input type="text" id="college_fk" class="fill" placeholder="College" required=""></br></br>
 
-<legend>Basic Information</legend>
-	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br />
+<legend class="legend">Basic Information</legend>
+	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br><br>
 	Nickname:<br> <input id="nickname" type="text" placeholder="Nick Name"/><br><br>
 	
 	Birthday: <select id="birthdate">
@@ -143,16 +143,16 @@
 		</select>
 		<br><br>
 
-	Contact Number: <br><input id="contactNum" type="text" placeholder="Contact Number"/><br/>
+	Contact Number: <br><input id="contactNum" type="text" placeholder="Contact Number"/><br/><br>
 	Address: <br> <input id="homeAddress" type="text" placeholder="Address"/>
 </fieldset>
 
 <fieldset class="sectionwrap">
 <legend>Family Background</legend>
-	Name of Father:<br> <input id="father_nameLast" type="text" placeholder="Last Name"/> <input id="father_nameFirst" type="text" placeholder="First Name"/> <input id="father_nameMiddle" type="text" placeholder="Middle Name"/><br>
-	Name of Mother: <br> <input id="mother_nameLast" type="text" placeholder="Last Name"/> <input id="mother_nameFirst" type="text" placeholder="First Name"/> <input id="mother_nameMiddle" type="text" placeholder="Middle Name"/><br>
-	Name of Gurdian (if applicable): <br> <input id="guardian_nameLast" type="text" placeholder="Last Name"> <input id="guardian_nameFirst" type="text" placeholder="First Name"/> <input id="guardian_nameMiddle" type="text" placeholder="Middle Name"/><br>
-	Name of Spouse (if applicable): <br> <input id="spouse_nameLast" type="text" placeholder="Last Name"/><input id="spouse_nameFirst" type="text" placeholder="First Name"/><input id="spouse_nameMiddle" type="text" placeholder="Middle Name"/><br>
+	Name of Father:<br> <input id="father_nameLast" type="text" placeholder="Last Name"/> <input id="father_nameFirst" type="text" placeholder="First Name"/> <input id="father_nameMiddle" type="text" placeholder="Middle Name"/><br><br>
+	Name of Mother: <br> <input id="mother_nameLast" type="text" placeholder="Last Name"/> <input id="mother_nameFirst" type="text" placeholder="First Name"/> <input id="mother_nameMiddle" type="text" placeholder="Middle Name"/><br><br>
+	Name of Gurdian (if applicable): <br> <input id="guardian_nameLast" type="text" placeholder="Last Name"> <input id="guardian_nameFirst" type="text" placeholder="First Name"/> <input id="guardian_nameMiddle" type="text" placeholder="Middle Name"/><br><br>
+	Name of Spouse (if applicable): <br> <input id="spouse_nameLast" type="text" placeholder="Last Name"/> <input id="spouse_nameFirst" type="text" placeholder="First Name"/> <input id="spouse_nameMiddle" type="text" placeholder="Middle Name"/><br>
 </fieldset>
 
 <fieldset class="sectionwrap">
