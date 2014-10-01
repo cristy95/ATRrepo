@@ -30,7 +30,7 @@ function fetchcollege()
 if(i in colleges){
 
 	var c = colleges[i];
-	ans +=	'<option type="text" value=' + i+1 + '>' +colleges[i] +'</option>';
+	ans +=	'<option type="text" value=' + i+1 + '>' +c +'</option>';
 }
 }
 	ans += ' </select>';

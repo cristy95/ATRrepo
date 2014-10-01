@@ -21,9 +21,7 @@ function fetchcollege()
 			colleges[i] = stud[i];
 			  }
   		}
-		}
-	});
-	ans = ' <select id="course_fk">'+
+		ans = ' <select id="course_fk">'+
 		'<option>College</option>';
 	for(i=0; i<colleges.length; i++){
 		
@@ -35,6 +33,9 @@ if(i in colleges){
 }
 	ans += ' </select>';
 	$("#getcoll").html(ans);
+		}
+	});
+	
 }
 
 function fetchcourses(college_id_fk)
