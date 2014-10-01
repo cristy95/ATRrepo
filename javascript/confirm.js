@@ -16,8 +16,8 @@ function fetchstudstatus()
             table += '<thead>' +
                     '<tr>' +
                     '<th>ID No.</th>' +
-                    '<th>Course ID</th>' +
-                    '<th>College ID</th>'+
+                    '<th>Course</th>' +
+                    '<th>College</th>'+
                     '<th>Status</th>' +
                     '</tr>' +
                      '</thead>';
@@ -28,17 +28,17 @@ function fetchstudstatus()
               table += "<tr>";
               for (j = 0; j < row.length; j++)
               {
-                if (j == 0) {
+                if (j <= 2) {
                   table += '<td>' + row[j] + '</td>';
                 }
-                else if (j == 1) {
-                  table += '<td><input type="hidden" id="course" value="' + row[j] + '">' + row[j] + '</td>';
+                else if (j == 3) {
+                  table += '<td>' + row[j] + '</td><td><button class = "buttonlink" onclick = "displayform();" >[more...]</button></td>';
                 }
-                else if (j == 2) {
-                  table += '<td><input type="hidden" id="college" value="' + row[j] + '">' + row[j] + '</td>';
+                else if (j == 4) {
+                  table += '<input type="hidden" id="course" value="' + row[j] + '">';
                 }
-                else {
-                  table += '<td>' + row[j] + '</td><td><button class = "buttonlink" onclick = "displayform();" >info..</button></td>';
+                else{
+                  table += '<input type="hidden" id="college" value="' + row[j] + '">';
                 };
               }
               table += "</tr>";
@@ -78,9 +78,7 @@ function displayform()
         + '<p>&nbsp;Middle Name:&nbsp;<u>'+res[0][4] + '</u></p>'
         + '<p>&nbsp;First Name:&nbsp;<u>'+res[0][5] + '</u></p>'
         + '<p>&nbsp;Nickname:&nbsp;<u>'+res[0][6] + '</u></p>'
-        + '<p>&nbsp;Birth Date:&nbsp;<u>'+res[0][7] + '</u></p>'
-        + '<p>&nbsp;Birth Month:&nbsp;<u>'+res[0][8] + '</u></p>'
-        + '<p>&nbsp;Birth Year:&nbsp;<u>'+res[0][9] + '</u></p>'
+        + '<p>&nbsp;Birthdate(mm/dd/yy):&nbsp;<u>'+res[0][8] +'/'+ res[0][7] +'/'+ res[0][9] +'</u></p>'
         + '<p>&nbsp;Age:&nbsp;<u>'+res[0][35] + '</u></p>'
         + '<p>&nbsp;Gender:&nbsp;<u>'+res[0][10] + '</u></p>'
         + '<p>&nbsp;Contact Number:&nbsp;<u>'+res[0][11] + '</u></p>'
