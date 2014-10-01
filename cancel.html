@@ -4,34 +4,19 @@
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		<link rel="stylesheet" type="text/css" href="welpage.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="final.css" />
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/globs.js"></script>
-	        <script src="javascript/jqinit.js"></script>		
-
-		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
-		
+	        <script src="javascript/jqinit.js"></script>
 	</head>
 		
 		<body class="body">
-<!--			<header class="mainHeader">
-				
-				<nav><ul>
-				
-					<li><a href="welpage.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="student.html">Student</a></li>
-					<li><a href="admin.html">Admin</a></li>
-					
-				</ul></nav>
-			
-			</header>-->
 <!---navbar-->
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -41,13 +26,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">ATR</a>
+      <a class="navbar-brand" href="index.html">Automated Tadman Registration</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav nav-pills">
-        <li><a href="about.html">About</a></li>
+      <ul class="nav navbar-nav">
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -62,42 +47,36 @@
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="admin.html">Confirm</a></li>
+            <li><a href="confirming.html">Confirm</a></li>
 			
           </ul>
       </ul>
-      <!--<form class="navbar-form navbar-left navbar-fixed-top" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form> 
+	<div class="col-sm-3 col-md-3 pull-right">
+		<form class="navbar-form" role="search">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<div class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			</div>
+		</div>
+		</form>
+		</div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li> -->
+        <li><a href="about.html">About the Developers</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+<img src="h.jpg">
 </nav>
+
 
 
 <!--end navbar-->
 
 			
-			<h2>Please enter your student id number</h2>
-				
-			<div class="container1">
-				</br><input type="text" id="stud_id" class="delete" placeholder="ID No." required=""></br></br>
-			</div>
+		<h1 class="banner">Cancel Submitted Application</h1>
+		<div class="form1">
+			<p>Please input a valid student's ID No. (ex: 2012-1212)</p><input type="text" id="stud_id" class="delete" placeholder="ID No." required=""></br></br>
 
       			<div id="target"></div>
 
@@ -105,13 +84,13 @@
 				class="btn btn-success btn-mini"
 				onclick="delperapp();"> Cancel Registration
 			</button>
-			
-			<footer class="mainFooter">
-				<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>
-			</footer>
+		</div>
 	
-	
-	
+	<div class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
+      </div>
+    </div>
 		</body>
 		
 </html>
