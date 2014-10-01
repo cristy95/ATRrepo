@@ -1,6 +1,6 @@
 from dosql import *
 import cgi
-import simplejson as json
+import json
 
 def index(req, stud_id, college, course):
   stud_id = cgi.escape(stud_id)
@@ -8,7 +8,7 @@ def index(req, stud_id, college, course):
   course = cgi.escape(course)
 
   x = doSql()
-  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course + ", " + college + ", 'Cancelled');", True)
+  studs = x.execqry("select * from setcancelstatus('" + stud_id + ", " + course + ", " + college + ", 'Cancelled');", True)
   ##delete(stud_id)
   result = []
 

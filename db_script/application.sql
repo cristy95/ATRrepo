@@ -127,3 +127,30 @@ where personal_info.stud_id = $1;
 $$
 
 language 'sql';
+
+----------------------------------------------------------------
+create or replace function
+	setcancelstatus(p_stud_id char(9), p_course_fk int, p_college_fk int, p_status text)
+    returns text as
+
+$$
+  declare
+     v_stud_id char(9);
+     v_course_fk int;
+     v_college_fk int;
+
+  begin
+    select into v_stud_id stud_id from applications
+        where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+        
+    if v_stud_id isnull then
+	  update applications
+            set status = p_status
+            where stud_id = p_stud_id and course_fk = p_course_fk and college_fk = p_college_fk;
+            
+    return 'SET';
+  end if;
+	return 'SET';
+  end;
+$$
+  language 'plpgsql';
