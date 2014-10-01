@@ -116,7 +116,8 @@ function displayform()
         + '<p>&nbsp;Dissertation:&nbsp;<u>'+res[0][30] + '</u></p>'
         + '<p>&nbsp;Special Project:&nbsp;<u>'+res[0][31] + '</u></p>'
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
-        + '<input type="hidden" id="course" value="' + res[0][33] + '"/><input type="hidden" id="college" value="' + res[0][34] + '"/>' ;
+        + '<input type="hidden" id="course" value="' + res[0][33] + '"/><input type="hidden" id="stud_id" value="' + res[0][0] + '"/>'
+        + '<input type="hidden" id="college" value="' + res[0][34] + '"/>';
       display += '<a href="#top"><button class="confbutton" onclick="confirmform();">Confirm</button></a></div>';
             $("#target").html(display); 
           }
@@ -133,7 +134,7 @@ function confirmform(){
     dataType: 'json',
     success: function (res) {
       display = '<div class="content">';
-      display = '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Successfully confirmed status.</p><br></div>'
+      display = '<p><br><br><br><br><br>Successfully confirmed status.</p><br></div>'
       $("#target").html(display); 
       }
   });

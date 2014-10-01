@@ -7,10 +7,13 @@
 	float:right;
 }
 
+#searchbox{
+	background: white;
+}
+
 #search{
 	background: white;
 	float:left;
-	padding: 20px;
 }
 
 .content{
