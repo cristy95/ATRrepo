@@ -63,7 +63,7 @@ function displayform(course,college)
     console.log(res);
     if(res[0][0] != "None")
                     {
-      display = '<div class="content"><br><br><br><br>';
+      display = '<div class="content"><br><br>';
       display += '<p>&nbsp;ID No.:&nbsp;<u>' + res[0][0] + '</u></p>'
         + '<p>&nbsp;Course:&nbsp;<u>'+ res[0][1] + '</u></p>'
         + '<p>&nbsp;College:&nbsp;<u>'+res[0][2] + '</u></p>'
@@ -111,6 +111,8 @@ function displayform(course,college)
         + '<p>&nbsp;Dissertation:&nbsp;<u>'+res[0][30] + '</u></p>'
         + '<p>&nbsp;Special Project:&nbsp;<u>'+res[0][31] + '</u></p>'
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
+        + '<input type="hidden" id="stud_id" value="' + res[0][0] + '"><input type="hidden" id="course" value="' + res[0][33] + '">'
+        + '<input type="hidden" id="college" value="' + res[0][34] + '">'
       display += '<a href="#top"><button class="confbutton" onclick="confirmform();">Confirm</button></a></div>';
             $("#target").html(display); 
           }
@@ -160,11 +162,8 @@ function fetchperstatus()
               for (j = 0; j < row.length; j++)
               {
 
-                if (j <= 2){
+                if (j <= 3){
                   table += '<td>' + row[j] + '</td>';
-                }
-                else if (j == 3) {
-                  table += '<td>' + row[j] + '</td><td><input type="hidden" id="stud_id" value="' + row[0] + '"><button class = "buttonlink" onclick = "displayform('+res[i][4]+','+res[i][5]+');" >[more...]</button></td>';
                 };
               }
               table += "</tr>";
