@@ -4,14 +4,13 @@
 	<head>
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
+		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
 		<script src="javascript/jquery.js"></script>
        	<script src="javascript/bootstrap.min.js"></script>
        	<script src="javascript/confirm.js"></script>
-		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
 	</head>
 		
 	<body class="body">
@@ -72,28 +71,26 @@
 </nav>
 
 <!--end navbar-->
- <h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>
+ <h1 class="banner">CONFIRMATION PAGE FOR PENDING APPLICATIONS</h1>
 
-		<br><a href="top"></a>
+	<form class="form"><a href="top"></a>
 			<div id="searchbox">
 				<div id = "search">
+		<p>Please input a valid student's ID No. (ex: 2012-1212)</p>
 		    	    <input type="text" class="textinput" id = "stud_id" size="15" maxlength="9">
-		    	    <input type="text" class="textinput" id = "college" size="15" maxlength="9">
-		    	    <input type="text" class="textinput" id = "course" size="15" maxlength="9">
 		    	    <button class="button" onclick="fetchstudstatus();">search</button>
 				</div>
 				<div class="clear"></div>
 			</div>
 			
 			<div id="target"></div>
+	</form>
 
-		<div class="footer">
-      <div class="container">
-        <p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
-      </div>
-    </div>
-	
-	
+	<div class="footer">
+     		<div class="container">
+        		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
+    		</div>
+   	 </div>
 	
 	</body>
 		
