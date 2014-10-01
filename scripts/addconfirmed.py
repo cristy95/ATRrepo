@@ -1,12 +1,14 @@
 from dosql import *
 import cgi
-import simplejson as json
+import json
 
-def index(req, stud_id):
+def index(req, stud_id, course, college):
     stud_id =  cgi.escape(stud_id)
+    course = cgi.escape(course)
+    college = cgi.escape(college)
     x = doSql()
 
-    studs = x.execqry("select * from setconfirm('" + stud_id + "',1,1, 'Confirmed');", True)
+    studs = x.execqry("select * from setconfirm('" + stud_id + "','" + course + "','" + college + "', 'Confirmed');", True)
     result = []
 
     for stud in studs:
