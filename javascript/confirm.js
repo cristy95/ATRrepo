@@ -29,10 +29,16 @@ function fetchstudstatus()
               for (j = 0; j < row.length; j++)
               {
                 if (j == 0) {
-                  table += '<td><button class = "buttonlink" onclick="displayform('+ row[j] +',1,1)"><emp><u>' + row[j] + '</emp></u></button></td>';
+                  table += '<td>' + row[j] + '</td>';
+                }
+                else if (j == 1) {
+                  table += '<td><input type="hidden" id="course" value="' + row[j] + '">' + row[j] + '</td>';
+                }
+                else if (j == 2) {
+                  table += '<td><input type="hidden" id="college" value="' + row[j] + '">' + row[j] + '</td>';
                 }
                 else {
-                  table += '<td>' + row[j] + '</td>';
+                  table += '<td>' + row[j] + '</td><td><button class = "buttonlink" onclick = "displayform();" >info..</button></td>';
                 };
               }
               table += "</tr>";
@@ -50,10 +56,10 @@ function fetchstudstatus()
     });
 }
 
-function displayform(stud_id,course,college)
+function displayform()
 {
   $.ajax({
-  url: siteloc + scriptloc + "get_allinfo.py",
+  url: siteloc + scriptloc + "display_allinfo.py",
   data: {stud_id:$("#stud_id").val(),
          course:$("#course").val(),
          college:$("#college").val()}, 
@@ -75,6 +81,7 @@ function displayform(stud_id,course,college)
         + '<p>&nbsp;Birth Date:&nbsp;<u>'+res[0][7] + '</u></p>'
         + '<p>&nbsp;Birth Month:&nbsp;<u>'+res[0][8] + '</u></p>'
         + '<p>&nbsp;Birth Year:&nbsp;<u>'+res[0][9] + '</u></p>'
+        + '<p>&nbsp;Age:&nbsp;<u>'+res[0][35] + '</u></p>'
         + '<p>&nbsp;Gender:&nbsp;<u>'+res[0][10] + '</u></p>'
         + '<p>&nbsp;Contact Number:&nbsp;<u>'+res[0][11] + '</u></p>'
         + '<p>&nbsp;Home Address:&nbsp;<u>'+res[0][12] + '</u></p>'
@@ -110,18 +117,21 @@ function displayform(stud_id,course,college)
         + '<p><h2>&nbsp;Dissertation/SpecialProject/Thesis Title</h2></p><br>'
         + '<p>&nbsp;Dissertation:&nbsp;<u>'+res[0][30] + '</u></p>'
         + '<p>&nbsp;Special Project:&nbsp;<u>'+res[0][31] + '</u></p>'
-        + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>';
-      display += '<a href="#top"><button class="confbutton" onclick="confirmform('+ res[0][0] + ')">Confirm</button></a></div>';
+        + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
+        + '<input type="hidden" id="course" value="' + res[0][33] + '"/><input type="hidden" id="college" value="' + res[0][34] + '"/>' ;
+      display += '<a href="#top"><button class="confbutton" onclick="confirmform();">Confirm</button></a></div>';
             $("#target").html(display); 
           }
     }
   });
 }
 
-function confirmform(stud_id){
+function confirmform(){
   $.ajax({
     url: siteloc + scriptloc + "addconfirmed.py",
-    data: {stud_id:$("#stud_id").val()},
+    data: {stud_id:$("#stud_id").val(),
+         course:$("#course").val(),
+         college:$("#college").val()}, 
     dataType: 'json',
     success: function (res) {
       display = '<div class="content">';
