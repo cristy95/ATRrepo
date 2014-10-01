@@ -113,7 +113,7 @@ function displayform(course,college)
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
         + '<input type="hidden" id="stud_id" value="' + res[0][0] + '"><input type="hidden" id="course" value="' + res[0][33] + '">'
         + '<input type="hidden" id="college" value="' + res[0][34] + '">'
-      display += '<a href="#top"><button class="confbutton" onclick="confirmform();">Confirm</button></a></div>';
+      display += '<button class="confbutton" onclick="confirmform();">Confirm</button></div>';
             $("#target").html(display); 
           }
     }
@@ -129,7 +129,7 @@ function confirmform(){
     dataType: 'json',
     success: function (res) {
       display = '<div class="content">';
-      display = '<p><br><br><br><br>Successfully confirmed status.</p><br></div>'
+      display = '<p><br><br><br><br>Successfully confirmed application.</p><br></div>'
       $("#target").html(display); 
       }
   });
