@@ -28,17 +28,12 @@ function fetchstudstatus()
               table += "<tr>";
               for (j = 0; j < row.length; j++)
               {
-                if (j <= 2) {
+
+                if (j <= 2){
                   table += '<td>' + row[j] + '</td>';
                 }
                 else if (j == 3) {
-                  table += '<td>' + row[j] + '</td><td><button class = "buttonlink" onclick = "displayform();" >[more...]</button></td>';
-                }
-                else if (j == 4) {
-                  table += '<input type="hidden" id="course" value="' + row[j] + '"><input type="hidden" id="stud_id" value="' + row[0] + '">';
-                }
-                else{
-                  table += '<input type="hidden" id="college" value="' + row[j] + '">';
+                  table += '<td>' + row[j] + '</td><input type="hidden" id="stud_id" value="' + row[0] + '"><td><button class = "buttonlink" onclick = "displayform('+res[i][4]+','+res[i][5]+');" >[more...]</button></td>';
                 };
               }
               table += "</tr>";
@@ -49,20 +44,20 @@ function fetchstudstatus()
             $("#target").html(table); 
           } 
           else{
-            display = '<div class="table-responsive">&nbsp;&nbsp;&nbsp;&nbsp;No Results Found.<br><br></div>'
+            display = '<div class="table-responsive">No Results Found.<br><br></div>'
             $("#target").html(display);
           }
               }
     });
 }
 
-function displayform()
+function displayform(course,college)
 {
   $.ajax({
   url: siteloc + scriptloc + "display_allinfo.py",
   data: {stud_id:$("#stud_id").val(),
-         course:$("#course").val(),
-         college:$("#college").val()}, 
+         course:course,
+         college:college}, 
   dataType: 'json',
   success: function(res){
     console.log(res);
@@ -116,8 +111,6 @@ function displayform()
         + '<p>&nbsp;Dissertation:&nbsp;<u>'+res[0][30] + '</u></p>'
         + '<p>&nbsp;Special Project:&nbsp;<u>'+res[0][31] + '</u></p>'
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
-        + '<input type="hidden" id="course" value="' + res[0][33] + '"/><input type="hidden" id="stud_id" value="' + res[0][0] + '"/>'
-        + '<input type="hidden" id="college" value="' + res[0][34] + '"/>';
       display += '<a href="#top"><button class="confbutton" onclick="confirmform();">Confirm</button></a></div>';
             $("#target").html(display); 
           }
@@ -134,7 +127,7 @@ function confirmform(){
     dataType: 'json',
     success: function (res) {
       display = '<div class="content">';
-      display = '<p><br><br><br><br><br>Successfully confirmed status.</p><br></div>'
+      display = '<p><br><br><br><br>Successfully confirmed status.</p><br></div>'
       $("#target").html(display); 
       }
   });
@@ -159,24 +152,19 @@ function fetchperstatus()
                     '<th>Status</th>' +
                     '</tr>' +
                      '</thead>';
-            table += "<tbody>";      
+            table += "<tbody>";
             for (i = 0; i < res.length; i++)
             {
               row = res[i];
               table += "<tr>";
               for (j = 0; j < row.length; j++)
               {
-                if (j == 3) {
-                  table += '<td>' + row[j] + '</td><td><button class = "buttonlink" onclick = "displayform();" >[more...]</button></td>';
-                }
-                else if (j == 4) {
-                  table += '<input type="hidden" id="course" value="' + row[j] + '"><input type="hidden" id="stud_id" value="' + row[0] + '">';
-                }
-                else if(j == 5){
-                  table += '<input type="hidden" id="college" value="' + row[j] + '">';
-                }
-                else{
+
+                if (j <= 2){
                   table += '<td>' + row[j] + '</td>';
+                }
+                else if (j == 3) {
+                  table += '<td>' + row[j] + '</td><td><input type="hidden" id="stud_id" value="' + row[0] + '"><button class = "buttonlink" onclick = "displayform('+res[i][4]+','+res[i][5]+');" >[more...]</button></td>';
                 };
               }
               table += "</tr>";
