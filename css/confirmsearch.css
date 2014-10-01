@@ -2,8 +2,9 @@
 	background: white;
 }
 
-#searchbox{
+#sideoption{
 	background: white;
+	float:right;
 }
 
 #search{
