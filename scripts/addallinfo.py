@@ -1,6 +1,9 @@
 from dosql import *
 import cgi
-import simplejson as json
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
 def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle,father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, org_Name, org_Pos, org_AcYr, stud_aA_cA, stud_schGra, dissertation, special_project, thesis_title):
   stud_id = cgi.escape(stud_id)

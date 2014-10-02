@@ -1,6 +1,9 @@
 from dosql import *
-import simplejson as json
-
+try:
+    import json
+except ImportError:
+    import simplejson as json
+	
 def index(req):
     x = doSql()
     rets = x.execqry("select * from get_orgs();", False)
