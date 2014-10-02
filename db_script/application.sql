@@ -127,3 +127,18 @@ where personal_info.stud_id = $1;
 $$
 
 language 'sql';
+
+-----------------------------------------------------------------
+create or replace function
+	searchstatus(in char(9), out char(9), out text)
+returns setof record as
+
+$$
+
+select stud_id, status from applications
+where stud_id = $1;
+
+$$
+
+language 'sql';
+-------------------------------------------------------------------
