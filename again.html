@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="final.css"/>
        	<script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/fetchcoco.js"></script>
 	<script src="javascript/new.js"></script>
 	<script src="javascript/jqinit.js"></script>
-<!--	<script src="javascript/fetchcoco.js"></script>	-->	
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="formwizard.css" />
@@ -38,7 +38,7 @@
 
 	</script>
     </head>
-    <body class="body">
+    <body class="body" onload="fetchcollege();">
         <script>
             $("#wizard").steps();
         </script>
@@ -111,13 +111,14 @@
 	<fieldset class="sectionwrap">
 
 		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
+
+	<div id="getcoll"></div>
 		
-		<select id="college_fk">
+<!--		<select id="college_fk">
 		<option>College</option>
-		<option type="int" value="1">School of Computer Studies</option><option type="int" value="2">School of Engineering Technology</option><option type="int" value="3">College of Science and Mathematics</option><option type="int" value="4">College of Education</option><option type="int" value="5">College of Engineering</option><option type="int" value="6">College of Nursing</option><option type="int" value="7">College of Business Administration and Accountancy</option><option type="int" value="8">College of Arts and Social Sciences</option></select>
-<!--		<div id="getcoll"></div>-->
-		</body>
-</br></br>
+		<option type="int" value="1">School of Computer Studies</option><option type="int" value="2">School of Engineering Technology</option><option type="int" value="3">College of Science and Mathematics</option><option type="int" value="4">College of Education</option><option type="int" value="5">College of Engineering</option><option type="int" value="6">College of Nursing</option><option type="int" value="7">College of Business Administration and Accountancy</option><option type="int" value="8">College of Arts and Social Sciences</option></select>-->
+
+</br>
 		<select type="int" id="course_fk">
 		<option>Courses</option>
 		<option type="int" value="1">BS Computer Science</option><option type="int" value="2">BS Information Technology</option><option type="int" value="3">BS Information System</option><option type="int" value="4">BS Electronics and Computer Technology</option></select></br></br>
