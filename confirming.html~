@@ -13,7 +13,7 @@
        	<script src="javascript/confirm.js"></script>
 	</head>
 		
-	<body class="body">
+	<body class="body" onload="fetchperstatus();">
 
 <!---navbar-->
 
@@ -72,24 +72,21 @@
 
 <!--end navbar-->
  <h1 class="banner">CONFIRMATION PAGE FOR PENDING APPLICATIONS</h1>
-<a href="top"></a>
-	<div class="form1">
-			<div id="searchbox">
 
-
-	<a href="top"></a>
 			<div class="form">
 				<div id = "search">
 					<p>Please input a valid student's ID No. (ex: 2012-1212)</p>
-		    	    <input type="text" class="textinput" id = "stud_id" size="15" maxlength="9">
+		    	    <input type="text" class="textinput" id = "searchvalue" size="15" maxlength="9">
 		    	    <button class="button" onclick="fetchstudstatus();">search</button>
 				</div>
+				<div id="sideoption">
+				<br><br>
+					<button class="buttonlink" onclick="fetchperstatus();">back to pending list..</button>
+				</div>
+				<br>
 				<div id="target"></div>
 				<div class="clear"></div>
 			</div>
-			
-			<div id="target"></div>
-	</div>
 
 	<div class="footer">
      		<div class="container">

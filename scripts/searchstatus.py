@@ -1,15 +1,16 @@
 from dosql import *
 import cgi
-import json
-	
+import simplejson as json
+
 def index(req, stud_id):
   stud_id = cgi.escape(stud_id)
 
   x = doSql()
-  student = x.execqry("select * from get_header_perid('" + stud_id + "');", True)
+  studs = x.execqry("select * from searchstatus('" + stud_id + "');", True)
   result = []
-  for stud in student:
+
+  for stud in studs:
     stringed = map(str, stud)
     result.append(stringed)
-
+	
   return json.dumps(result)

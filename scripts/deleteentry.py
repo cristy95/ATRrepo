@@ -1,9 +1,6 @@
 from dosql import *
 import cgi
-try:
-    import json
-except ImportError:
-    import simplejson as json
+import json
 
 def index(req, stud_id):
   stud_id = cgi.escape(stud_id)

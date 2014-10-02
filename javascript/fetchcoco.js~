@@ -33,7 +33,11 @@ function fetchcollege()
 	console.log("heyooou")	
 if(i in colleges){
 
+<<<<<<< HEAD
 	var c = colleges[i][0];
+=======
+	var c = colleges[i];
+>>>>>>> bf15cadee5756656b9f5e3b95f8c7c8915c7391b
 	ans +=	'<option type="text" value=' + i+1 + '>' +c +'</option>';
 }
 }

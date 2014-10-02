@@ -6,10 +6,10 @@
 		
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="final.css"/>
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
-		<script src="javascript/globs.js"></script>
+		<script src="javascript/new.js"></script>
 	        <script src="javascript/jqinit.js"></script>		
 
 		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
@@ -19,7 +19,6 @@
 		<body class="body">
 
 <!---navbar-->
-
 	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -72,32 +71,39 @@
   </div><!-- /.container-fluid -->
 <img src="h.jpg">
 </nav>
-
 <!--end navbar-->
 
 			
-<<<<<<< HEAD
 			<h1 class="banner">Edit Submitted Applications</h1>
-=======
-			<h1 class="banner">Show Application Template</h1>
->>>>>>> bf15cadee5756656b9f5e3b95f8c7c8915c7391b
 				
 			<div class="form1">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
-			<input type="text" id="stud_id" class="delete" placeholder="ID No." required=""></br></br>
-      			<div id="target"></div>
-
+				<input type="text" id="stud_id" class="delete" placeholder="ID No." required="">
+				&nbsp;<input type="int" id="college" class="delete" placeholder="College">
+				&nbsp;<input type="int" id="course" class="delete" placeholder="Course"></br></br>
+			
 			<button
 				class="btn btn-success btn-mini"
-				onclick="getheader();"> Show Template
-			</button> </div>
+				onclick="edit_allinfo();"> Display Information
+			</button>
+			</div>
+
+			<div id="target"></div>
+<<<<<<< HEAD
+			<br>
+			<footer class="mainFooter">
+				<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>
+			</footer>
+	
+=======
 			
-	<div class="footer">
+			
+<div class="footer">
       <div class="container">
         <p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
       </div>
     </div>
-	
+>>>>>>> 074dcc79e45c2ddb87821cab1dbc8c77f51d25b3
 	
 	
 		</body>
