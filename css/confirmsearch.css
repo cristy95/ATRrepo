@@ -2,14 +2,14 @@
 	background: white;
 }
 
-#searchbox{
+#sideoption{
 	background: white;
+	float:right;
 }
 
 #search{
 	background: white;
 	float:left;
-	padding: 20px;
 }
 
 .content{
@@ -30,6 +30,7 @@
 	margin: 0;
 	border: none;
 	background-color: transparent;
+	color: blue;
 }
 .textinput{
 	margin: 0;

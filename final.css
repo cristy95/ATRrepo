@@ -24,9 +24,19 @@ font-size: 20px;
 	background: white;
 	font-size: 13px;
 	border-radius: 5px;
-	
 }
-.banner {
+
+.form1{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: thin;
+	background: white;
+	font-size: 13px;
+	margin:  1% 10% 5% 10%;
+	padding: 2% 2% 2% 2%;
+}
+
+.banner{
 	padding: 1% 1% 1% 1%;
 	margin:  5% 10% 0% 10%;
 	font-size: 35px;
