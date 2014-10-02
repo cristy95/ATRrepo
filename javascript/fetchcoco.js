@@ -25,13 +25,9 @@ function fetchcollege()
 			colleges[i] = stud[i];
 			  }
   		}
-<<<<<<< HEAD
 		}
 	});
-	ans = ' <select id="college_fk">'+
-=======
 		ans = ' <select id="course_fk">'+
->>>>>>> bf15cadee5756656b9f5e3b95f8c7c8915c7391b
 		'<option>College</option>';
 	for(i=0; i<colleges.length; i++){
 if(i in colleges){
@@ -42,13 +38,9 @@ if(i in colleges){
 }
 	ans += ' </select>';
 	$("#getcoll").html(ans);
-<<<<<<< HEAD
 	display_courses();
-=======
-		}
-	});
+		
 	
->>>>>>> bf15cadee5756656b9f5e3b95f8c7c8915c7391b
 }
 
 function fetchcourses(college_id_fk)
@@ -122,6 +114,6 @@ jQuery(document).ready(function($){
 
 }
 }
-	});
 });
 }
+
