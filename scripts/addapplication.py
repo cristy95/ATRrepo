@@ -1,6 +1,10 @@
 from dosql import *
 import cgi
-import json
+try:
+    import json
+except ImportError:
+    import simplejson as json
+	
 
 def index(req, stud_id, course_fk, college_fk, organization_name, position, academic_year,
 					aa_ca, scholar_grant, dissertation, special_project, thesis_title):
