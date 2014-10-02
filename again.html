@@ -11,8 +11,9 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="final.css"/>
        	<script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/fetchcoco.js"></script>
 	<script src="javascript/new.js"></script>
-	<script src="javascript/jqinit.js"></script>		
+	<script src="javascript/jqinit.js"></script>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="formwizard.css" />
@@ -37,7 +38,7 @@
 
 	</script>
     </head>
-    <body class="body">
+    <body class="body" onload="fetchcollege();">
         <script>
             $("#wizard").steps();
         </script>
@@ -66,16 +67,15 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="again.html">Fill-Up</a></li>
-            <li><a href="cancel.html">Cancel Application</a></li>
             <li><a href="edit.html">Edit Application</a></li>
             <li><a href="template.html">Show Template</a></li>
-            <li><a href="search.html">Search</a></li>
 			
           </ul>
         </li>
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <li><a href="cancel.html">Cancel Application</a></li>
             <li><a href="confirming.html">Confirm</a></li>
 			
           </ul>
@@ -111,33 +111,42 @@
 	<fieldset class="sectionwrap">
 
 		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
-		<div id="getcoll">
-		</div>
-		<input type="text" id="course_fk" class="fill" placeholder="Course" required="">
-		<input type="text" id="college_fk" class="fill" placeholder="College" required=""></br></br>
+
+	<div id="getcoll"></div>
+		
+<!--		<select id="college_fk">
+		<option>College</option>
+		<option type="int" value="1">School of Computer Studies</option><option type="int" value="2">School of Engineering Technology</option><option type="int" value="3">College of Science and Mathematics</option><option type="int" value="4">College of Education</option><option type="int" value="5">College of Engineering</option><option type="int" value="6">College of Nursing</option><option type="int" value="7">College of Business Administration and Accountancy</option><option type="int" value="8">College of Arts and Social Sciences</option></select>-->
+
+</br>
+		<select type="int" id="course_fk">
+		<option>Courses</option>
+		<option type="int" value="1">BS Computer Science</option><option type="int" value="2">BS Information Technology</option><option type="int" value="3">BS Information System</option><option type="int" value="4">BS Electronics and Computer Technology</option></select></br></br>
 
 <legend class="legend">Basic Information</legend>
 	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br><br>
 	Nickname:<br> <input id="nickname" type="text" placeholder="Nick Name"/><br><br>
 	
-	Birthday: <select id="birthdate">
+	Birthday: <select id="birthdate" width="10">
 		<option>Day</option>
 		<option type="int" value="1">01</option>
 		<option type="int" value="2">02</option>
 		<option type="int" value="3">03</option>
-		<option type="int" value="4">04</option></select>
+		<option type="int" value="4">04</option>
+		<option type="int" value="5">05</option>
+		<option type="int" value="6">06</option><option type="int" value="7">07</option><option type="int" value="8">08</option><option type="int" value="9">09</option><option type="int" value="10">10</option><option type="int" value="11">11</option><option type="int" value="12">12</option><option type="int" value="13">13</option><option type="int" value="14">14</option><option type="int" value="15">15</option><option type="int" value="16">16</option><option type="int" value="17">17</option><option type="int" value="18">18</option><option type="int" value="19">19</option><option type="int" value="20">20</option><option type="int" value="21">21</option><option type="int" value="22">22</option><option type="int" value="23">23</option><option type="int" value="24">24</option><option type="int" value="25">25</option><option type="int" value="26">26</option><option type="int" value="27">27</option><option type="int" value="28">28</option><option type="int" value="29">29</option><option type="int" value="30">30</option><option type="int" value="31">31</option></select>
 		<select id="birthMonth">
 		<option>Month</option>
 		<option type="int" value="1">January</option>
 		<option type="int" value="2">February</option>
 		<option type="int" value="3">March</option>
-		<option type="int" value="4">April</option></select>
+		<option type="int" value="4">April</option><option type="int" value="5">May</option><option type="int" value="6">June</option><option type="int" value="7">July</option><option type="int" value="8">August</option><option type="int" value="9">September</option><option type="int" value="10">October</option><option type="int" value="11">November</option><option type="int" value="12">December</option></select>
 		<select id="birthYear" >
 		<option>Year</option>
 		<option type="int" value="2014">2014</option>
 		<option type="int" value="2013">2013</option>
 		<option type="int" value="2012">2012</option>
-		<option type="int" value="2011">2011</option></select>
+		<option type="int" value="2011">2011</option><option type="int" value="2010">2010</option><option type="int" value="2009">2009</option><option type="int" value="2008">2008</option><option type="int" value="2007">2007</option><option type="int" value="2006">2006</option><option type="int" value="2005">2005</option><option type="int" value="2004">2004</option><option type="int" value="2003">2003</option><option type="int" value="2002">2002</option><option type="int" value="2001">2001</option><option type="int" value="2000">2000</option><option type="int" value="1999">1999</option><option type="int" value="1998">1998</option><option type="int" value="1997">1997</option><option type="int" value="1996">1996</option><option type="int" value="1995">1995</option><option type="int" value="1994">1994</option><option type="int" value="1993">1993</option><option type="int" value="1992">1992</option><option type="int" value="1991">1991</option><option type="int" value="1990">1990</option><option type="int" value="1989">1989</option><option type="int" value="1988">1988</option><option type="int" value="1987">1987</option><option type="int" value="1986">1986</option><option type="int" value="1985">1985</option><option type="int" value="1984">1984</option><option type="int" value="1983">1983</option><option type="int" value="1982">1982</option><option type="int" value="1981">1981</option><option type="int" value="1980">1980</option><option type="int" value="1979">1979</option><option type="int" value="1978">1978</option><option type="int" value="1977">1977</option><option type="int" value="1976">1976</option><option type="int" value="1975">1975</option></select>
 		<br/><br>
 	Age: <input id="age" type="int" size="6" placeholder="Age"><br><br>
 	

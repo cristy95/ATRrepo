@@ -1,20 +1,15 @@
 from dosql import *
 import cgi
-<<<<<<< HEAD
 import json
-=======
-try:
-    import json
-except ImportError:
-    import simplejson as json
->>>>>>> 85c83f0a60ca980155b966f7f3c5d8c3101d0751
 
-def index(req, stud_id):
+def index(req, stud_id, college, course):
   stud_id = cgi.escape(stud_id)
+  college = cgi.escape(college)
+  course = cgi.escape(course)
 
   x = doSql()
-  studs = x.execqry("select * from del_perinfo('" + stud_id + "');", True)
-  delete(stud_id)
+  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course + ", " + college + ", 'Cancelled');", True)
+  ##delete(stud_id)
   result = []
 
   for stud in studs:

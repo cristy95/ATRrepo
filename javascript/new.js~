@@ -92,9 +92,45 @@ function edit_allinfo()
 			console.log(res);
 			if(res[0][0] != 'None')
 			{
-				rets = '<h1>INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
+				rets = '<html>'+
+    '<head>'+
+       ' <title>AUTOMATED TADMAN REGISTRATION</title>'+
+        '<meta charset="utf-8">'+
 
-			'<form action="welpage.html" id="feedbackform">'+
+	'<script src="javascript/jquery.js"></script>'+
+       ' <script src="javascript/jquery.steps.js"></script>'+
+        '<link href="jquery.steps.css" rel="stylesheet">'+
+	'<link rel="stylesheet" href="css/bootstrap.min.css">'+
+	'<link rel="stylesheet" href="css/bootstrap-theme.min.css">'+
+	'<link rel="stylesheet" type="text/css" href="final.css"/>'+
+       	'<script src="javascript/bootstrap.min.js"></script>'+
+	'<script src="javascript/new.js"></script>'+
+	'<script src="javascript/jqinit.js"></script>'+		
+
+	'<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>'+
+	'<link rel="stylesheet" type="text/css" href="formwizard.css" />'+
+	'<script src="javascript/formwizard.js" type="text/javascript">'
+		rets += '</script>'+
+
+	'<script type="text/javascript">'+
+
+	'var myform=new formtowizard({'+
+		"formid: 'feedbackform',"+
+		'persistsection: true,'+
+		"validate: ['stud_id','nameFirst', 'nameLast', 'course_fk', 'college_fk'],"+
+		"revealfx: ['fade', 500]"+
+	'})'+
+
+	'</script>'+
+    '</head>'+
+   ' <body class="body" onload="fetchcollege();">'+
+       ' <script>'+
+           ' $("#wizard").steps();'+
+       ' </script>'+
+      '  <div id="wizard"></div>'
+				rets += '<h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
+
+			'<form class="form" id="feedbackform">'+
 
 			'<fieldset class="sectionwrap">'+
 
@@ -152,7 +188,7 @@ function edit_allinfo()
 		'<input type="text" id="position" placeholder="Position" value="'+res[0][25]+'">'+
 		'<input type="text" id="organization_name" placeholder="Organization" value="'+res[0][26]+'">'+
 		'<input type="text" id="academic_year" placeholder="Academic Year" value="'+res[0][27]+'"></br><br>'+
-'+Academic Awards/Co-curricular Awards</br>'+
+'Academic Awards/Co-curricular Awards</br>'+
 		'<input type="text" id="aa_ca" class="fill" placeholder="Specific Award" value="'+res[0][28]+'"></br>'+
 		'<p></p>'+
 		'Scholarship Grants</br>'+
@@ -170,6 +206,10 @@ function edit_allinfo()
 		'Specify Thesis Title (Input "NONE" if not available)</br>'+
 		'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" id="thesis_title" placeholder="Thesis Title" size="50" value="'+res[0][32]+'"></br><br><br>'+
 
+'<button  class="btn btn-lg btn-success"'+
+		 'onclick="add_edition();">'+
+			'Submit Form'+
+	'</button>'+
 '<p></p>'+
 
 
@@ -177,16 +217,12 @@ function edit_allinfo()
 '<div id="target"></div>'+
 	
 '</fieldset>'+
-'</form>'+
-'<button  class="btn btn-lg btn-success"'+
-		 'onclick="add_edition();">'+
-			'Submit Form'+
-	'</button>'
+'</form>'
 					  $( "#target").html(rets); 
 			}
 			else{
-			rets = '<h4>No Result Found</h4>'+
-				'<p>Please check your input values. Make sure that you have registered first. Maybe you can search first. :)';
+			rets = '<div class="form1" padding=1%><h4>No Result Found</h4>'+
+				'<p>Please check your input values. Make sure that you have registered first. Maybe you can search first. :)</div>';
 			$("#target").html(rets);
 		}
 	}
