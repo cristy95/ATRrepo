@@ -28,12 +28,12 @@ declare
 	V_appli_id int;
 
 begin
- 	select into v_stud_id stud_id from applications
+ 	select into v_appli_id appli_id from applications
  		where stud_id = p_stud_id and
 			college_fk = p_college_fk and
 			course_fk = p_course_fk;
 	
-	if v_stud_id isnull then
+	if v_appli_id isnull then
 		insert into applications(stud_id, course_fk, college_fk, organization_name, position, academic_year,
 					aa_ca, scholar_grant, dissertation, special_project, thesis_title, status)
 		values (p_stud_id, p_course_fk, p_college_fk, p_organization_name, 
