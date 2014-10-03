@@ -459,8 +459,8 @@ function getheader()
                    if(res[0][0] != "None")
                    {
 			ans = '<h3>TEMPLATE</h3>' 
-				+ '&nbsp;'+'&nbsp;'+'&nbsp;'+'&nbsp;'+ '<img src="pictures/yots.jpg" width = "50" height = "50" />' + '<br>' + '<br>'
-				+ 'Name: ' + '<div>' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '<br>'
+				+ '<div>' + '&nbsp;'+'&nbsp;'+'&nbsp;'+'&nbsp;'+ '<img src="pictures/yots.jpg" width = "50" height = "50" />' + '<br>' + '<br>' + '</div>'
+			    + '<div>' + 'Name: ' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '<br>'
 				+ 'Course: ' + res[0][4] + '<br>'
 				+ 'Adress: ' + res[0][8] + '<br>'
 				+ 'Birthday: ' + res[0][5] + '&nbsp;' + res[0][7] + '&nbsp;' + res[0][6] + '<br>'
