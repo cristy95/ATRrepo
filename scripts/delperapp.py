@@ -8,7 +8,7 @@ def index(req, stud_id, college, course):
   course = cgi.escape(course)
 
   x = doSql()
-  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course + ", " + college + ", 'Cancelled');", True)
+  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course + ", " + college + ");", True)
   ##delete(stud_id)
   result = []
 
