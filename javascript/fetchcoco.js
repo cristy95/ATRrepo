@@ -2,11 +2,20 @@ var siteloc = "http://localhost/ATRrepo"
 var scriptloc = "/scripts/"
 
 var colleges = [];
-var courses = [];
+var courses = [courses1, courses2, courses3, courses4, courses5, courses6, courses7, courses8];
 var entry = [];
 var orig_html;
 var orig_value;
 var course_value;
+var college_val;
+var courses1 = [];
+var courses2 = [];
+var courses3 = [];
+var courses4 = [];
+var courses5 = [];
+var courses6 = [];
+var courses7 = [];
+var courses8 = [];
 
 
 function fetchcollege()
@@ -34,6 +43,14 @@ if(i in colleges){
 	ans +=	'<option type="text" value=' + i+1 + '>' +c +'</option>';
 }
 }
+	courses1 = fetchcourses(1);
+	courses2 = fetchcourses(2);
+	courses3 = fetchcourses(3);
+	courses4 = fetchcourses(4);
+	courses5 = fetchcourses(5);
+	courses6 = fetchcourses(6);
+	courses7 = fetchcourses(7);
+	courses8 = fetchcourses(8);
 	ans += ' </select>';
 	$("#getcoll").html(ans);
 	display_courses();
@@ -95,7 +112,7 @@ jQuery(document).ready(function($){
 			var str='<select id="college" type="int"name="loc_college" >';		
 			orig_html = $("#getcollege").html();
 			orig_value = $("#college").val();
-			for(var st in courses){
+			for(var st in courses[a]){
 			    if(st == course_value)
 				str +='<option value="'+st+'"selected="selected">'+courses[st]+'</option>';
 			    else
