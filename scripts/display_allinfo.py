@@ -6,7 +6,6 @@ except ImportError:
     import simplejson as json
 
 def index(req, stud_id, college, course):
-    stud_id = cgi.escape(stud_id)
     x = doSql()
     rets = x.execqry("select personal_info.stud_id, courses.course_name,\
 			colleges.college_name, personal_info.nameLast, \
