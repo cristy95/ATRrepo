@@ -54,6 +54,7 @@ if(i in colleges){
 	ans += ' </select>';
 	$("#getcoll").html(ans);
 	display_courses();
+	
 }
 });
 }
@@ -87,49 +88,40 @@ function fetchcourses(college_id_fk)
 	});
 }
 
-/*function makedd_college(){
-	ans = ' <select id="course_fk">'+
-		'<option>College</option>';
-	for(i=0; i<colleges.length; i++){
-	ans +=	'<option type="text" value=' + i+1 + '>' +colleges[i] +'</option>';
-}
-	ans += ' </select>';
-	$("#getcourses").html(ans);
-}*/
-
 function display_courses(){
-
 jQuery(document).ready(function($){
+	console.log("heyooou")
 	var $el = $("#getcourses");
 	$el.data('oldval', $el.val());
+	console.log("heyooou");
+
 	$el.change(function(){
-		console.log("heyooou")
+	console.log("heyooou")
 		var $this = $(this);
-		
-		for(var a=0; a<colleges.length; a++){
+		a=1;
 	
 		    if(this.value==colleges[a] && $this.data('oldval')!=colleges[a]){
-			var str='<select id="college" type="int"name="loc_college" >';		
+			var str='<select id="course_id" type="int" name="loc_college" >';		
 			orig_html = $("#getcollege").html();
-			orig_value = $("#college").val();
+			orig_value = $("#course_id").val();
 			for(var st in courses[a]){
 			    if(st == course_value)
-				str +='<option value="'+st+'"selected="selected">'+courses[st]+'</option>';
+				str +='<option value="'+st+'">'+courses[a][st]+'</option>';
 			    else
-				str +='<option value="'+st+'">'+courses[st]+'</option>';
+				str +='<option value="'+st+'">'+courses[a][st]+'</option>';
 			}
 			str +="</select>";
 			$("#getcourses").html(str);
 			$this.data('oldval', $this.val());
 		}
 		else if($this.data('oldval')==colleges[a]&& $this.val()!=colleges[a]){
-		course_value = $("#college").val();
+		course_value = $("#course_id").val();
 		$("#getcourses").html(orig_html);
-		$("#college").val(orig_value);
+		$("#course_id").val(orig_value);
 		$this.data('oldval', $this.val());
 
 }
-}
+
 	});
 });
 }
