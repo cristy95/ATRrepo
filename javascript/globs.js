@@ -460,14 +460,15 @@ function getheader()
                    {
 			ans = '<h1 class="banner">TEMPLATE</h1>' 
 
-				+ '<div class="form">' + '&nbsp;'+'&nbsp;'+'&nbsp;'+'&nbsp;'+ '<img src="pictures/yots.jpg" width = "50" height = "50" />' + '<br>' + '<br>' + '</div>'
-			    + '<div class="form">' + 'Name: ' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '<br>'
-				+ 'Course: ' + res[0][4] + '<br>'
-				+ 'Adress: ' + res[0][8] + '<br>'
-				+ 'Birthday: ' + res[0][5] + '&nbsp;' + res[0][7] + '&nbsp;' + res[0][6] + '<br>'
-				+ 'Fathers Name: ' + res[0][9] + '&nbsp;' + res[0][10] + '&nbsp;' + res[0][11] + '<br>'
-				+ 'Mothers Name: ' + res[0][12] + '&nbsp;' + res[0][13] + '&nbsp;' + res[0][14] + '<br>'
-				+ 'AD/Thesis: ' + res[0][15] + '&nbsp;' + res[0][16] + '&nbsp;' + res[0][17] + '<br>' + '</div>';
+				+ '<div class="form">' + '<div class="form">' + '&nbsp;'+'&nbsp;'+'&nbsp;'+'&nbsp;'+ '<img src="pictures/yots.jpg"/>' + '<br>' + '<br>' + '</div>'
+			    + '<div class="form">' + 'Name: ' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '<br>' + '<br>'
+				+ 'Course: ' + res[0][18] + '<br>' + '<br>'
+				+ 'College: ' + res[0][17] + '<br>' + '<br>'
+				+ 'Adress: ' + res[0][7] + '<br>' + '<br>'
+				+ 'Birthday: ' + res[0][6] + '&nbsp;' + res[0][4] + '&nbsp;' + res[0][5] + '<br>' + '<br>'
+				+ 'Fathers Name: ' + res[0][8] + '&nbsp;' + res[0][9] + '&nbsp;' + res[0][10] + '<br>' + '<br>'
+				+ 'Mothers Name: ' + res[0][11] + '&nbsp;' + res[0][12] + '&nbsp;' + res[0][13] + '<br>' + '<br>'
+				+ 'AD/Thesis: ' + res[0][14] + '&nbsp;' + res[0][15] + '&nbsp;' + res[0][16] + '<br>' + '<br>' + '</div>' + '</div>';
 			$("#target").html(ans);
 		} //end if
 	}
@@ -497,4 +498,50 @@ function delperapp()
 		} 
         }
     });
+}
+
+//lorie
+function searchstatus()
+{
+
+  $.ajax({
+      url: siteloc + scriptloc + "searchstatus.py",
+      data: {stud_id:$("#srchterm").val()},
+      dataType: 'json',
+      success: function (res) {
+                if(res[0][0] != "None")
+				{
+              table = '<div class="table-responsive">';
+            table += '<table class="table table-condensed">';
+            table += '<thead>' +
+                    '<tr>' +
+                    '<th>ID No.</th>' +
+                    '<th>Status</th>' +
+                    '</tr>' +
+                     '</thead>';
+            table += "<tbody>";      
+            for (i = 0; i < res.length; i++)
+            {
+              row = res[i];
+              table += "<tr>";
+              for (j = 0; j < row.length; j++)
+              {
+
+                if (j <= 1){
+                  table += '<td>' + row[j] + '</td>';
+                };
+              }
+              table += "</tr>";
+            }
+            table += "</tbody>";
+            table += "</table>";
+            table += "<br></div>";
+            $("#target").html(table); 
+          } 
+          else{
+            display = '<div class="table-responsive">No Results Found<br><br></div>'
+            $("#target").html(display);
+          }
+		 }
+	});
 }
