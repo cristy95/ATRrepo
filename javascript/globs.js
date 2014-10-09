@@ -491,7 +491,7 @@ function delperapp()
 			$("#target").html(answer); 
 				}
 		else {
-			answer = '<h3>res[0][0]</h3>';
+			answer = '<h3>'+res[0][0]+'</h3>';
 			answer += '<p>Make sure that you enter the correct values</p>';
 			$("#target").html(answer);	
 		} 
