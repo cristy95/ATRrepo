@@ -221,7 +221,7 @@ function edit_allinfo()
 					  $( "#target").html(rets); 
 			}
 			else{
-			rets = '<div class="form1" padding=1%><h4>No Result Found</h4>'+
+			rets = '<div class="form1"><h3>No Result Found</h3>'+
 				'<p>Please check your input values. Make sure that you have registered first. Maybe you can search first. :)</div>';
 			$("#target").html(rets);
 		}
@@ -279,3 +279,22 @@ function add_edition()
     });
 }
 
+function confirmKey(password)
+{
+  $.ajax({
+	url: siteloc + scriptloc + "confirmKey.py",
+	data: {password: password},
+   	dataType: 'json',
+	success: function (res) {
+				if (res[0][0] != "N"){
+					$('#incorrectGP').empty();
+					document.location.href = '/ATRrepo/admin.html' + res[0][0];
+				}
+				else{
+					$('#incorrectGP').empty();
+					$('#incorrectGP').append("Incorrect password");
+					$('#incorrectGP').css('color','#FF0000');
+				}
+	}
+	});
+}

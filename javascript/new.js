@@ -279,3 +279,22 @@ function add_edition()
     });
 }
 
+function confirmKey(password)
+{
+  $.ajax({
+	url: siteloc + scriptloc + "confirmKey.py",
+	data: {password: password},
+   	dataType: 'json',
+	success: function (res) {
+				if (res[0][0] != "N"){
+					$('#incorrectGP').empty();
+					document.location.href = '/ATRrepo/admin.html';
+				}
+				else{
+					$('#incorrectGP').empty();
+					$('#incorrectGP').append("Incorrect password");
+					$('#incorrectGP').css('color','#FF0000');
+				}
+	}
+	});
+}
