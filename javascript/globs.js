@@ -499,3 +499,49 @@ function delperapp()
         }
     });
 }
+
+//lorie
+function searchstatus()
+{
+
+  $.ajax({
+      url: siteloc + scriptloc + "searchstatus.py",
+      data: {stud_id:$("#srchterm").val()},
+      dataType: 'json',
+      success: function (res) {
+                if(res[0][0] != "None")
+				{
+              table = '<div class="table-responsive">';
+            table += '<table class="table table-condensed">';
+            table += '<thead>' +
+                    '<tr>' +
+                    '<th>ID No.</th>' +
+                    '<th>Status</th>' +
+                    '</tr>' +
+                     '</thead>';
+            table += "<tbody>";      
+            for (i = 0; i < res.length; i++)
+            {
+              row = res[i];
+              table += "<tr>";
+              for (j = 0; j < row.length; j++)
+              {
+
+                if (j <= 1){
+                  table += '<td>' + row[j] + '</td>';
+                };
+              }
+              table += "</tr>";
+            }
+            table += "</tbody>";
+            table += "</table>";
+            table += "<br></div>";
+            $("#target").html(table); 
+          } 
+          else{
+            display = '<div class="table-responsive">No Results Found<br><br></div>'
+            $("#target").html(display);
+          }
+		 }
+	});
+}
