@@ -62,7 +62,8 @@
       <div class="modal-body">
 	<form class="modal-form" id="confirmpasskey" method="get">
         <p class="modal-description">Please enter the authentication key provided to you.</p>
-	<br>
+	</br>
+	</br>
 	<p>
 	&nbsp;&nbsp;<input type="password" id="passkey" placeholder="Enter Key">
 	</p>

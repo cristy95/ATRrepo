@@ -288,7 +288,7 @@ function confirmKey(password)
 	success: function (res) {
 				if (res[0][0] != "N"){
 					$('#incorrectGP').empty();
-					document.location.href = '/ATRrepo/admin.html' + res[0][0];
+					document.location.href = '/ATRrepo/admin.html';
 				}
 				else{
 					$('#incorrectGP').empty();
