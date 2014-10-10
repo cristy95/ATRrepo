@@ -1,4 +1,0 @@
-select * from regstudent('2012-6368', 'p_college text', 'p_course text', 'p_namefirst text', 'p_namemid text', 'p_namelast text', 'p_nickname text', 'p_gender text', 27, 12, 1995, 18, 'text', 'p_homeaddress text', 'p_father_namefirst text', 'p_father_namemiddle text', 'p_father_namelast text', 'p_mother_namefirst text', 'p_mother_namemiddle text', 'p_mother_namelast text', 'p_guardian_namefirst text', 'p_guardian_namemiddle text', 'p_guardian_namelast text', 'p_spouse_namefirst text', 'p_spouse_namemiddle text', 'p_spouse_namelast text', 'p_org_name text', 'p_org_pos text', 'p_org_acyr text', 'p_stud_aa_ca text', 'p_stud_schgra text', 'p_dissertation text', 'p_special_project text', 'p_thesis_title text', 'p_status text')
-kenrothwyn.mira@g.msuiit.edu.ph
-subject: CSC 151 - P1
-deadline: thursday 12:00AM, sept. 25
