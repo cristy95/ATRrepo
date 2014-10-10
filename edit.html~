@@ -10,7 +10,8 @@
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/new.js"></script>
-	        <script src="javascript/jqinit.js"></script>		
+	        <script src="javascript/jqinit.js"></script>	
+	        	
 
 		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
 		
@@ -73,13 +74,13 @@
 <!--end navbar-->
 
 			
-			<h1 class="banner">Edit Submitted Applications</h1>
-				
-			<div class="form1">
+			<h1 class="banner">Edit Submitted Applications</h1>	
+			
+			<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
-				<input type="text" id="stud_id" class="delete" placeholder="ID No." required="">
-				&nbsp;<input type="int" id="college" class="delete" placeholder="College">
-				&nbsp;<input type="int" id="course" class="delete" placeholder="Course"></br></br>
+				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
+				&nbsp;<input type="int" id="college" class="delete" placeholder="College" required>
+				&nbsp;<input type="int" id="course" class="delete" placeholder="Course" required></br></br>
 			
 			<button
 				class="btn btn-success btn-mini"
