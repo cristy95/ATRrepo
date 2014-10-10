@@ -1,5 +1,5 @@
 //define functions and global variables here..
-var siteloc = "http:/localhost/ATRrepo"
+var siteloc = "http://localhost/ATRrepo"
 var scriptloc = "/scripts/"
 
 function fetchinfo(stud_id)
@@ -43,5 +43,24 @@ function fetchinfo(stud_id)
 });
 }
 
-
+function confirmKey(password)
+{
+  $.ajax({
+	url: siteloc + scriptloc + "confirmKey.py",
+	data: {password: password},
+   	dataType: 'json',
+	success: function (res) {
+				if (res[0][0] == "None"){
+					$('#wrongkey').empty();
+					var feedback = "Incorrect password";
+					$('#wrongkey').append(feedback);
+					$('#wrongkey').css('color','#003300');
+				}
+				else{
+					$('#wrongkey').empty();
+					document.location.href = '/ATRrepo/admin.html';
+				}
+	}
+	});
+}
 
