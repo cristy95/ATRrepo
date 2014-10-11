@@ -4,7 +4,10 @@ var scriptloc = "/scripts/"
 var colleges = [];
 var entry = [];
 var temp;
-var courses = [courses1, courses2, courses3, courses4, courses5, courses6, courses7, courses8];
+var orig_html;
+var orig_value;
+var course_value;
+var college_val;
 var courses1;
 var courses2;
 var courses3;
@@ -13,6 +16,8 @@ var courses5;
 var courses6;
 var courses7;
 var courses8;
+var courses = [courses1, courses2, courses3, courses4, courses5, courses6, courses7, courses8];
+
 
 function fetchcollege()
 {
@@ -43,6 +48,7 @@ function fetchcollege()
 }
 	
 	ans += ' </select>';
+	//display_courses();
 	$("#getcoll").html(ans);
 }
 });
@@ -66,4 +72,36 @@ function fetchcourses(college_id_fk)
 		}
   		}
 	});
+}
+
+
+function display_courses(){
+jQuery(document).ready(function($){
+	var $el = $("#college_fk");
+	$el.data('oldval', $el.val());
+	$('select').on('change', function(){
+	console.log("heyooou")
+		var $this = $(this);
+	
+		    if($this.value==colleges[1] && $this.data('oldval')!=colleges[1]){
+			var str='<select id="course_id" type="int" name="course">';		
+			orig_html = $("#getcourses").html();
+			orig_value = $("#course_fk").val();
+			for(var st in courses[1]){
+				str +='<option value='+st[0][0]+'>'+courses1[0][1]+'</option>';
+			}
+			str +="</select>";
+			$("#getcourses").html(str);
+			$this.data('oldval', $this.val());
+		}
+		else if($this.data('oldval')==colleges[1]&& $this.val()!=colleges[1]){
+		course_value = $("#course_fk").val();
+		$("#getcourses").html(orig_html);
+		$("#course_fk").val(orig_value);
+		$this.data('oldval', $this.val());
+
+}
+
+	});
+});
 }
