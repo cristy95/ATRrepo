@@ -8,10 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<script src="javascript/underscore.js"></script>
+		<!--script src="javascript/underscore.js"></script-->
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
-		<script src="javascript/fetchcoco.js"></script>
+		<!--script src="javascript/fetchcoco.js"></script-->
+		<script src 
 	        <script src="javascript/jqinit.js"></script>
 	<script>
 
@@ -28,7 +29,7 @@
 		</body>
 		
 		<div id="getcourses">
-		<select id="course_id" type="int" name="college" />
+		<select id="course_fk" type="int" name="college" />
 		<option>Courses</option>
 </div>
 		
