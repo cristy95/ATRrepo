@@ -1,6 +1,6 @@
 create table colleges
 (
-	college_id serial primary key,
+	college_id int primary key,
 	college_name text
 );
 
@@ -36,4 +36,18 @@ $$
 $$
     language 'sql';
 
+----------------------------------------
+----this is an addition for the password
 
+create table possibleKeys(
+	password char(6)
+);
+
+create or replace function
+    confirmKey(in int, out char(6))
+returns text as
+$$
+    select password from possibleKeys
+    where password = $1;
+$$
+    language 'sql';

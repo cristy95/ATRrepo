@@ -5,16 +5,12 @@ try:
 except ImportError:
     import simplejson as json
 
-def index(req, stud_id):
-
-  stud_id = cgi.escape(stud_id)
-
+def index(req, password):
   x = doSql()
-  studs = x.execqry("select * from del_studid_hs('" + stud_id + "');", True)
+  rets = x.execqry("select * from confirmKey('" +  password + "');", 'False')
   result = []
-
-  for stud in studs:
-    stringed = map(str, stud)
+  for ret in rets:
+    stringed = map(str, ret)
     result.append(stringed)
 
   return json.dumps(result)

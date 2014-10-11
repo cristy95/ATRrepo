@@ -36,4 +36,18 @@ $$
 $$
     language 'sql';
 
+----------------------------------------
+----this is an addition for the password
 
+create table possibleKeys(
+	password char(6)
+);
+
+create or replace function
+    confirmKey(in char(6), out char(6))
+returns character as
+$$
+    select password from possibleKeys
+    where password = $1;
+$$
+    language 'sql';

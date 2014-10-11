@@ -10,9 +10,10 @@
 		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
 		<script src="javascript/jquery.js"></script>
        	<script src="javascript/bootstrap.min.js"></script>
-       	<script src="javascript/searchstat.js"></script>
+       	<script src="javascript/globs.js"></script>
 	</head>
 
+	<body class="body" onload="searchstatus();">
 <!---navbar-->
 
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -69,15 +70,11 @@
 </nav>
 
 <!--end navbar-->
-
 			<div class="form">
-				<h3>
-				
-				</h3>
+				<input type="hidden" id="srchterm" value="2012-6368"/>
 				<div id="target"></div>
 				<div class="clear"></div>
 			</div>
-
 	<div class="footer">
      		<div class="container">
         		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>

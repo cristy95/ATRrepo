@@ -117,6 +117,8 @@
 <!--		<select id="college_fk">
 		<option>College</option>
 		<option type="int" value="1">School of Computer Studies</option><option type="int" value="2">School of Engineering Technology</option><option type="int" value="3">College of Science and Mathematics</option><option type="int" value="4">College of Education</option><option type="int" value="5">College of Engineering</option><option type="int" value="6">College of Nursing</option><option type="int" value="7">College of Business Administration and Accountancy</option><option type="int" value="8">College of Arts and Social Sciences</option></select>-->
+
+</br>
 		<select type="int" id="course_fk">
 		<option>Courses</option>
 		<option type="int" value="1">BS Computer Science</option><option type="int" value="2">BS Information Technology</option><option type="int" value="3">BS Information System</option><option type="int" value="4">BS Electronics and Computer Technology</option></select></br></br>
