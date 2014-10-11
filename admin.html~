@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="final.css"/>
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
-       		<script src="javascript/confirm.js"></script>
+       		<script src="javascript/globs.js"></script>
 	</head>
 		
 	<body class="body">
@@ -45,11 +45,11 @@
         </li>
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
-          <!--ul class="dropdown-menu" role="menu">
+          <ul class="dropdown-menu" role="menu">
             <li><a href="cancel.html">Cancel Application</a></li>
             <li><a href="confirming.html">Confirm</a></li>
 			
-          </ul-->
+          </ul>
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
@@ -74,13 +74,13 @@
 			<div class="font">
 				<div class="form1">
 				<p>What would you like to do?</p>
-				<a href="confirming.html" class="choices" >
+				<a href="#" class="choices" data-toggle="modal" data-target="#myModal1">
 				<button class="btn btn-success btn-mini">
 					Confirm Application...
 				</button></a>
 
 				<p> OR </p>
-				<a href="cancel.html" class="choices" >
+				<a href="#" class="choices" data-toggle="modal" data-target="#myModal2">
 				<button class="btn btn-success btn-mini">
 					Cancel Application...
 				</button>
@@ -93,6 +93,60 @@
 			</div>
 
 
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
+      </div>
+      <div class="modal-body">
+	<form class="modal-form" id="confirmpasskey1" method="get">
+        <p class="modal-description">Please enter the authentication key provided to you.</p>
+	<p>
+	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
+	<input type="password" id="passkey" placeholder="Enter Key">
+	</p>
+	</form>
+	<!--script>
+		$("#confirmpasskey").validate();
+	</script-->
+	<div class="wrongkey"></div>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary" href="#" onclick="confirmKey1($('#passkey').val())">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
+      </div>
+      <div class="modal-body">
+	<form class="modal-form" id="confirmpasskey2" method="get">
+        <p class="modal-description">Please enter the authentication key provided to you.</p>
+	<p>
+	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
+	<input type="password" id="passkey" placeholder="Enter Key">
+	</p>
+	</form>
+	<!--script>
+		$("#confirmpasskey").validate();
+	</script-->
+	<div class="wrongkey"></div>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary" href="#" onclick="confirmKey2($('#passkey').val())">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="footer">
      		<div class="container">

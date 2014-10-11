@@ -124,3 +124,47 @@ function confirmKey(password)
 	});
 }
 
+function confirmKey1(password)
+{
+  $.ajax({
+	url: siteloc + scriptloc + "confirmKey.py",
+	data: {password: password},
+   	dataType: 'json',
+	success: function (res) {
+				if (res[0][0] == "None"){
+					$('#wrongkey1').empty();
+					var feedback = "Incorrect password";
+					$('#wrongkey1').append(feedback);
+					$('#wrongkey1').css('color','#003300');
+				}
+				else{
+					$('#wrongkey1').empty();
+					document.location.href = '/ATRrepo/confirming.html';
+				}
+	}
+	});
+}
+
+function confirmKey2(password)
+{
+  $.ajax({
+	url: siteloc + scriptloc + "confirmKey.py",
+	data: {password: password},
+   	dataType: 'json',
+	success: function (res) {
+				if (res[0][0] == "None"){
+					$('#wrongkey2').empty();
+					var feedback = "Incorrect password";
+					$('#wrongkey2').append(feedback);
+					$('#wrongkey2').css('color','#003300');
+				}
+				else{
+					$('#wrongkey2').empty();
+					document.location.href = '/ATRrepo/cancel.html';
+				}
+	}
+	});
+}
+
+
+
