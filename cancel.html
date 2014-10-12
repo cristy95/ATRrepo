@@ -10,10 +10,11 @@
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/globs.js"></script>
+		<script src="javascript/another.js"></script>
 	        <script src="javascript/jqinit.js"></script>
 	</head>
 		
-		<body class="body">
+		<body class="body" onload="fetchcollege();display_courses();">
 <!---navbar-->
 
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -72,13 +73,22 @@
 		<div class="form1">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
 				<input type="text" id="stud_id" class="delete" placeholder="ID No." required="">
-				&nbsp;<input type="int" id="college" class="delete" placeholder="College">
-				&nbsp;<input type="int" id="course" class="delete" placeholder="Course"></br></br>
+				<div id="getcoll"></div> 				
+&nbsp;<!--input type="int" id="college" class="delete" placeholder="College" required-->
+				&nbsp;<!--input type="int" id="course" class="delete" placeholder="Course" required></br></br-->
+				
 
-			<button
+				<div id="getcourses">
+				
+				<br>
+				
+				</div>
+				<br>
+				<button
 				class="btn btn-success btn-mini"
-				onclick="delperapp();"> Cancel Registration
-			</button>
+				onclick="delperapp();"> Cancel Application
+				</button>
+
 			<div id="target"></div>
 		</div>
 	

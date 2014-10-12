@@ -37,8 +37,8 @@ function delperapp()
   $.ajax({
       url: siteloc + scriptloc + "delperapp.py",
       data: {stud_id:$("#stud_id").val(),
-		college:$("#college").val(),
-		course:$("#course").val()},
+		college_fk:$("#college_fk").val(),
+		course_fk:$("#course_fk").val()},
       dataType: 'json',
       success: function (res) {
                 console.log(res);
