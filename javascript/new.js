@@ -135,8 +135,8 @@ function edit_allinfo()
 			'<fieldset class="sectionwrap">'+
 
 		'<input type="text" id="stud_id" class="fill" placeholder="ID No." value="' + res[0][0] + '" required="">'+
-		'<input type="text" id="course" class="fill" placeholder="Course" value="' + res[0][1] + '" required="">'+
-		'<input type="text" id="college" class="fill" placeholder="College" value ="' + res[0][2] + '" required=""></br></br>'+
+		'<input type="text" id="course_fk" class="fill" placeholder="Course" value="' + res[0][1] + '" required="">'+
+		'<input type="text" id="college_fk" class="fill" placeholder="College" value ="' + res[0][2] + '" required=""></br></br>'+
 
 			'<legend>Basic Information</legend>'+
 	'Name:<br /> <input id="nameLast" type="text" placeholder="Last Name" value="' + res[0][3] + '"/> <input id="nameFirst" type="text" placeholder="First Name" value="'+res[0][4]+'"/> <input id="nameMid" type="text" placeholder="Middle Name" value="'+res[0][5]+'"/><br />'+
@@ -234,8 +234,8 @@ function add_edition()
   $.ajax({
       url: siteloc + scriptloc + "edit_allinfo.py",
       data: {stud_id:$("#stud_id").val(),
-		college:$("#college").val(),
-  		course:$("#course").val(),
+		college_fk:$("#college_fk").val(),
+  		course_fk:$("#course_fk").val(),
 		nameFirst:$("#nameFirst").val(),
   		nameMid:$("#nameMid").val(),
   		nameLast:$("#nameLast").val(),
