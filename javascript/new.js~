@@ -85,8 +85,8 @@ function edit_allinfo()
   $.ajax({
 	url: siteloc + scriptloc + "get_allinfo.py",
 	data:{stud_id:$("#stud_id").val(),
-		college:$("#college").val(),
-		course:$("#course").val()},
+		college_fk:$("#college_fk").val(),
+		course_fk:$("#course_fk").val()},
 	dataType:'json',
 	success: function (res){
 			console.log(res);
@@ -279,22 +279,3 @@ function add_edition()
     });
 }
 
-function confirmKey(password)
-{
-  $.ajax({
-	url: siteloc + scriptloc + "confirmKey.py",
-	data: {password: password},
-   	dataType: 'json',
-	success: function (res) {
-				if (res[0][0] != "N"){
-					$('#incorrectGP').empty();
-					document.location.href = '/ATRrepo/admin.html';
-				}
-				else{
-					$('#incorrectGP').empty();
-					$('#incorrectGP').append("Incorrect password");
-					$('#incorrectGP').css('color','#FF0000');
-				}
-	}
-	});
-}

@@ -35,7 +35,7 @@ function fetchcollege()
 			colleges[i] = stud[i];
 			  }
   		}
-	ans = ' <select  "id="college_fk" >'+
+	ans = ' <select  id="college_fk" >'+
 		'<option>College</option>';
 	for(i=0; i<colleges.length; i++){
 	temp = [];
@@ -110,7 +110,7 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[1]){
 				if(st != 'undefined'){
-				str +='<option value='+courses[0][i][0]+'>'+ courses[0][i][1]+'</option>';
+				str +='<option value='+courses[1][i][0]+'>'+ courses[1][i][1]+'</option>';
 				i++;
 				}else{
 				continue;
@@ -145,8 +145,8 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[3]){
 				if(st != 'undefined'){
-				str +='<option value='+st[0]+'>'+ courses[3][i][1]+'</option>';
-				console.log(st[0]);
+				str +='<option value='+courses[3][i][0]+'>'+ courses[3][i][1]+'</option>';
+				console.log(courses[3][i][0]);
 				i++;
 				}else{
 				continue;
@@ -163,7 +163,7 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[4]){
 				if(st != 'undefined'){
-				str +='<option value='+st[0]+'>'+ courses[4][i][1]+'</option>';
+				str +='<option value='+courses[4][i][0]+'>'+ courses[4][i][1]+'</option>';
 				i++;
 				}else{
 				continue;
@@ -180,7 +180,7 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[5]){
 				if(st != 'undefined'){
-				str +='<option value='+st[0]+'>'+ courses[5][i][1]+'</option>';
+				str +='<option value='+courses[5][i][0]+'>'+ courses[5][i][1]+'</option>';
 				i++;
 				}else{
 				continue;
@@ -197,7 +197,7 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[6]){
 				if(st != 'undefined'){
-				str +='<option value='+st[0]+'>'+ courses[6][i][1]+'</option>';
+				str +='<option value='+courses[6][i][0]+'>'+ courses[6][i][1]+'</option>';
 				i++;
 				}else{
 				continue;
@@ -214,7 +214,7 @@ jQuery(document).ready(function($){
 			i = 0;
 			for(var st in courses[7]){
 				if(st != 'undefined'){
-				str +='<option value='+st[0]+'>'+ courses[7][i][1]+'</option>';
+				str +='<option value='+courses[7][i][0]+'>'+ courses[7][i][1]+'</option>';
 				i++;
 				}else{
 				continue;

@@ -35,7 +35,7 @@ function fetchcollege()
 			colleges[i] = stud[i];
 			  }
   		}
-	ans = ' <select  "id="college_fk" >'+
+	ans = ' <select  id="college_fk" >'+
 		'<option>College</option>';
 	for(i=0; i<colleges.length; i++){
 	temp = [];
@@ -86,7 +86,7 @@ jQuery(document).ready(function($){
 			console.log($this.val());
 		   if($this.val()==1 && $this.data('oldval')!=1){
 			console.log("heyou");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -104,7 +104,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		} else if($this.val()==11 && $this.data('oldval')!=11){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -121,7 +121,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==21 && $this.data('oldval')!=21){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -139,7 +139,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==31 && $this.data('oldval')!=31){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -157,7 +157,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==41 && $this.data('oldval')!=41){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -174,7 +174,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==51 && $this.data('oldval')!=51){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -191,7 +191,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==61 && $this.data('oldval')!=61){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;
@@ -208,7 +208,7 @@ jQuery(document).ready(function($){
 			$this.data('oldval', $this.val());
 		}else if($this.val()==71 && $this.data('oldval')!=71){
 			console.log("heyou2");
-			var str='<select id="course_id" type="int" name="course">';		
+			var str='<select id="course_fk" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
 			i = 0;

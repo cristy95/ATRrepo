@@ -10,6 +10,7 @@
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/new.js"></script>
+		<script src="javascript/another.js"></script>
 	        <script src="javascript/jqinit.js"></script>	
 	        	
 
@@ -17,7 +18,7 @@
 		
 	</head>
 		
-		<body class="body">
+		<body class="body" onload="fetchcollege();display_courses();">
 
 <!---navbar-->
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -46,13 +47,6 @@
 			
           </ul>
         </li>
-		<li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="cancel.html">Cancel Application</a></li>
-            <li><a href="confirming.html">Confirm</a></li>
-			
-          </ul>
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
@@ -79,14 +73,21 @@
 			<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
 				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
-				&nbsp;<input type="int" id="college" class="delete" placeholder="College" required>
-				&nbsp;<input type="int" id="course" class="delete" placeholder="Course" required></br></br>
-			
-			<button
+				<div id="getcoll"></div> 				
+&nbsp;<!--input type="int" id="college" class="delete" placeholder="College" required-->
+				&nbsp;<!--input type="int" id="course" class="delete" placeholder="Course" required></br></br-->
+				
+
+				<div id="getcourses">
+				
+				<br>
+				
+				</div>
+				<br>
+				<button
 				class="btn btn-success btn-mini"
 				onclick="edit_allinfo();"> Display Information
-			</button>
-			</div>
+				</button>
 
 			<div id="target"></div>
 			
