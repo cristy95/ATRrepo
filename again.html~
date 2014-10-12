@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="final.css"/>
        	<script src="javascript/bootstrap.min.js"></script>
-	<script src="javascript/fetchcoco.js"></script>
 	<script src="javascript/new.js"></script>
+	<script src="javascript/another.js"></script>
 	<script src="javascript/jqinit.js"></script>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -38,7 +38,7 @@
 
 	</script>
     </head>
-    <body class="body"><!--onload="fetchcollege();"-->
+    <body class="body" onload="fetchcollege();display_courses();">
         <script>
             $("#wizard").steps();
         </script>
@@ -100,21 +100,27 @@
 
 <h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>		
 
+
+		<!--input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
+		
+		<div id="getcoll"></div>
+
+		<div id="getcourses"></div-->
+
+		<div class="form1" id="eform">
+			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
+				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
+				<div id="getcoll"></div> 
+				<div id="getcourses">
+				
+				<br>
+				
+				</div>
+				<br></div>
 <form class="form" action="index.html" id="feedbackform">
 	<fieldset class="sectionwrap">
 
-		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
-
-	<div id="getcoll"></div>
-		
-<!--		<select id="college_fk">
-		<option>College</option>
-		<option type="int" value="1">School of Computer Studies</option><option type="int" value="2">School of Engineering Technology</option><option type="int" value="3">College of Science and Mathematics</option><option type="int" value="4">College of Education</option><option type="int" value="5">College of Engineering</option><option type="int" value="6">College of Nursing</option><option type="int" value="7">College of Business Administration and Accountancy</option><option type="int" value="8">College of Arts and Social Sciences</option></select>-->
-
 </br>
-		<select type="int" id="course_fk">
-		<option>Courses</option>
-		<option type="int" value="1">BS Computer Science</option><option type="int" value="2">BS Information Technology</option><option type="int" value="3">BS Information System</option><option type="int" value="4">BS Electronics and Computer Technology</option></select></br></br>
 
 <legend class="legend">Basic Information</legend>
 	Name:<br /> <input id="nameLast" type="text" placeholder="Last Name"/> <input id="nameFirst" type="text" placeholder="First Name"/> <input id="nameMid" type="text" placeholder="Middle Name"/><br><br>
