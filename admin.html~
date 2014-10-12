@@ -74,14 +74,14 @@
 			<div class="font">
 				<div class="form1">
 				<p>What would you like to do?</p>
-				<a href="#" class="choices" data-toggle="modal" data-target="#myModal1">
-				<button class="btn btn-success btn-mini">
+				<a href="#" class="choices">
+				<button class="btn btn-primary">
 					Confirm Application...
 				</button></a>
 
 				<p> OR </p>
-				<a href="#" class="choices" data-toggle="modal" data-target="#myModal2">
-				<button class="btn btn-success btn-mini">
+				<a href="#" class="choices">
+				<button class="btn btn-primary">
 					Cancel Application...
 				</button>
 				</a>
@@ -92,61 +92,6 @@
 				<div class="clear"></div>
 			</div>
 
-
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
-      </div>
-      <div class="modal-body">
-	<form class="modal-form" id="confirmpasskey1" method="get">
-        <p class="modal-description">Please enter the authentication key provided to you.</p>
-	<p>
-	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
-	<input type="password" id="passkey" placeholder="Enter Key">
-	</p>
-	</form>
-	<!--script>
-		$("#confirmpasskey").validate();
-	</script-->
-	<div class="wrongkey"></div>
-      </div>
-      <div class="modal-footer">
-        <a type="button" class="btn btn-primary" href="#" onclick="confirmKey1($('#passkey').val())">Confirm</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
-      </div>
-      <div class="modal-body">
-	<form class="modal-form" id="confirmpasskey2" method="get">
-        <p class="modal-description">Please enter the authentication key provided to you.</p>
-	<p>
-	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
-	<input type="password" id="passkey" placeholder="Enter Key">
-	</p>
-	</form>
-	<!--script>
-		$("#confirmpasskey").validate();
-	</script-->
-	<div class="wrongkey"></div>
-      </div>
-      <div class="modal-footer">
-        <a type="button" class="btn btn-primary" href="#" onclick="confirmKey2($('#passkey').val())">Confirm</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="footer">
      		<div class="container">
