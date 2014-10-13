@@ -2,13 +2,13 @@ from dosql import *
 import cgi
 import json
 
-def index(req, stud_id, college, course):
+def index(req, stud_id, college_fk, course_fk):
   stud_id = cgi.escape(stud_id)
-  college = cgi.escape(college)
-  course = cgi.escape(course)
+  college_fk = cgi.escape(college_fk)
+  course_fk = cgi.escape(course_fk)
 
   x = doSql()
-  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course + ", " + college + ");", True)
+  studs = x.execqry("select * from setcancelstatus('" + stud_id + "', " + course_fk + ", " + college_fk + ");", True)
   ##delete(stud_id)
   result = []
 

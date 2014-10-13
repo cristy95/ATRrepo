@@ -5,10 +5,10 @@ try:
 except ImportError:
     import simplejson as json
 
-def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle, father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, organization_name, position, academic_year, aa_ca, scholar_grant, dissertation, special_project, thesis_title):
+def index(req, stud_id, college_fk, course_fk, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle, father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, organization_name, position, academic_year, aa_ca, scholar_grant, dissertation, special_project, thesis_title):
   stud_id = cgi.escape(stud_id)
-  college = cgi.escape(college)
-  course = cgi.escape(course)
+  college_fk = cgi.escape(college_fk)
+  course_fk = cgi.escape(course_fk)
   nameFirst = cgi.escape(nameFirst)
   nameMid = cgi.escape(nameMid)
   nameLast = cgi.escape(nameLast)
@@ -47,7 +47,7 @@ def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname,
   student1 = y.execqry("select * from addpersonalinfo('" + stud_id +  "', '" + nameFirst + "', '" + nameMid + "', '" + nameLast + "', '" + nickname + "', '" + gender + "', " + birthdate + ", " + birthMonth + ", " + birthYear + ", " + age + ", '" + contactNum + "', '" + homeAddress + "', '" + father_nameFirst + "', '" + father_nameMiddle + "', '" + father_nameLast + "', '" + mother_nameFirst + "', '" + mother_nameMiddle + "', '" + mother_nameLast + "', '" + guardian_nameFirst + "', '" + guardian_nameMiddle + "', '" + guardian_nameLast + "', '" + spouse_nameFirst + "', '" + spouse_nameMiddle + "', '" + spouse_nameLast + "');", True)
 
 
-  student = x.execqry("select * from apply('" + stud_id + "', " + course + ", " + college + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "', 'Pending');", True)
+  student = x.execqry("select * from apply('" + stud_id + "', " + course_fk + ", " + college_fk + ", '" + organization_name + "', '" + position + "', '" + academic_year + "', '" + aa_ca + "', '" + scholar_grant + "', '" + dissertation + "', '" + special_project + "', '" + thesis_title + "', 'Pending');", True)
 
   result = []
   for stud in student:

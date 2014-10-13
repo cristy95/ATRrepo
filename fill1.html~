@@ -4,73 +4,26 @@
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		<link rel="stylesheet" type="text/css" href="fill1.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="final.css" type="text/css" />
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
-		<script src="javascript/globs.js"></script>
-	        <script src="javascript/jqinit.js"></script>		
-
-		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
+		<script src="javascript/fetchcoco.js"></script>
+	        <script src="javascript/jqinit.js"></script>
+		<script type="text/javascript" src="2.js"></script>
 		
 	</head>
 		
-		<body class="body">
+		<body class="body" onload="fetchcollege();">
 			<header class="mainHeader">
-				
-				<nav><ul>
-				
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="student.html">Student</a></li>
-					<li><a href="admin.html">Admin</a></li>
-					
-				</ul></nav>
 			
-			</header>
-			<div class="container">
-		<h1 class="fill_up_heading">Fill Up!</h1>
-		<p></p>
-		<p>INFORMATION SHEET FOR TADMAN REGISTRATION</p>
-		<input type="text" id="stud_id" class="fill" placeholder="ID No." required=""></br>
-		<input type="text" id="course" class="fill" placeholder="Course" required=""></br>
-		<input type="text" id="college" class="fill" placeholder="College" required=""></br></br></br>
-		Personal Information of Graduating Student</br></br>
-		<input type="text" id="nameLast" class="fill" placeholder="Last Name" required=""><br/>
-		<input type="text" id="nameFirst" class="fill" placeholder="First Name" required=""><br/>
-		<input type="text" id="nameMid" class="fill" placeholder="Middle Name" ><br/>
-		<input type="text" id="nickname" class="fill" placeholder="Nick Name"><br/>
-		Gender
-		<input type="radio" id="gender" class="fill" value="male">Male
-		<input type="radio" id="gender" class="fill" value="female">Female
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please CHECK appropriate box</br>
-
-		<input type="int" id="birthdate" class="fill1" placeholder="Day" required=""> 
-		<input type="int" id="birthMonth" class="fill1" placeholder="Month" required="">
-		<input type="int" id="birthYear" class="fill1" placeholder="Year" required=""></br>
-		<input type="text" id="age" class="fill" placeholder="Age" required=""></br>
-		<input type="text" id="contactNum" class="fill" placeholder="Contact Number"></br>
-		Address</br>
-		<input type="text" id="homeAddress" class="addbox" placeholder="Lot No.">
-		</div>	<p></p>
-		
-		<div id="target"></div>
-
-		<!a href="fill2.html"><button  
-					class="btn btn-lg btn-success"
-					onclick="addstudinfo();">
-					Next Page
-		</button><!/a>
-
-			
-			<footer class="mainFooter">
-				<p>Copyright &copy; 2014 <a  href="#" title="HandleMeWithCare">TeamBurlough.edu.com.gov.ph</a></p>
-			</footer>
-	
-	
-	</div>
+		<div id="getcoll"></div>
 		</body>
+		
+		<div id="getcourses">
+		<select id="course_id" type="int" name="college" />
+</div>
 		
 </html>
 

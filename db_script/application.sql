@@ -44,8 +44,7 @@ begin
 		set college_fk = p_college_fk, course_fk = p_course_fk, organization_name = p_organization_name,
 			position = p_position, academic_year = p_academic_year, aa_ca = p_aa_ca,
 			scholar_grant = p_scholar_grant, dissertation = p_dissertation,
-			special_project = p_special_project, thesis_title = p_thesis_title,
-			status = p_status
+			special_project = p_special_project, thesis_title = p_thesis_title
            	where stud_id = p_stud_id;
     	end if;
 

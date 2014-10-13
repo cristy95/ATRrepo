@@ -1,8 +1,11 @@
 from dosql import *
 import cgi
-import json
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
-def index(req, stud_id, college, course, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle, father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, organization_name, position, academic_year, aa_ca, scholar_grant, dissertation, special_project, thesis_title):
+def index(req, stud_id, college_fk, course_fk, nameFirst, nameMid, nameLast, nickname, gender, birthdate, birthMonth, birthYear, age, contactNum, homeAddress, father_nameFirst, father_nameMiddle, father_nameLast, mother_nameFirst, mother_nameMiddle, mother_nameLast, guardian_nameFirst, guardian_nameMiddle, guardian_nameLast, spouse_nameFirst, spouse_nameMiddle, spouse_nameLast, organization_name, position, academic_year, aa_ca, scholar_grant, dissertation, special_project, thesis_title):
   stud_id = cgi.escape(stud_id)
   college = cgi.escape(college)
   course = cgi.escape(course)

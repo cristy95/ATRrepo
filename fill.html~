@@ -21,7 +21,7 @@
 		
 	</head>
 		
-		<body class="body" onload="fetchcollege();">
+		<body class="body" onload="fetchcollege();display_courses();">
 
 <br><br>
 
@@ -31,6 +31,10 @@
 		<div id="getcourses">
 		<select id="course_fk" type="int" name="college" />
 		<option>Courses</option>
+		<button
+				class="btn btn-success btn-mini"
+				onclick="edit_allinfo();"> Display Information
+				</button>
 </div>
 		
 </html>

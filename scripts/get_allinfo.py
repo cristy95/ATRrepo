@@ -6,8 +6,10 @@ except ImportError:
     import simplejson as json
 	
 	
-def index(req, stud_id, college, course):
+def index(req, stud_id, college_fk, course_fk):
     stud_id = cgi.escape(stud_id)
+    college_fk = cgi.escape(college_fk)
+    course_fk = cgi.escape(course_fk)
     x = doSql()
     rets = x.execqry("select personal_info.stud_id, courses.course_name,\
 			colleges.college_name, personal_info.nameLast, \
@@ -29,8 +31,8 @@ def index(req, stud_id, college, course):
 INNEr join applications on applications.stud_id = personal_info.stud_id \
 Inner join colleges on colleges.college_id = applications.college_fk \
 inner join courses on courses.course_id = applications.course_fk \
-where personal_info.stud_id ='" + stud_id + "' and colleges.college_id =" + college + \
-			" and courses.course_id =" + course + ";", False)
+where personal_info.stud_id ='" + stud_id + "' and colleges.college_id =" + college_fk + \
+			" and courses.course_id =" + course_fk + ";", False)
     result = []
     for ret in rets:
         stringed = map(str, ret)
