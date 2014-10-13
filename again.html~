@@ -3,9 +3,9 @@
     <head>
         <title>AUTOMATED TADMAN REGISTRATION</title>
         <meta charset="utf-8">
-
-	<script src="javascript/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script src="javascript/jquery.steps.js"></script>
+	<script src="javascript/jquery.js"></script>
         <link href="jquery.steps.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -15,7 +15,7 @@
 	<script src="javascript/another.js"></script>
 	<script src="javascript/jqinit.js"></script>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="formwizard.css" />
 	<script src="javascript/formwizard.js" type="text/javascript">
 
@@ -110,7 +110,7 @@
 		<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
 				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
-				<div id="getcoll"></div> 
+				<div id="getcoll"></div> <br>
 				<div id="getcourses">
 				
 				<br>
