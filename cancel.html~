@@ -86,7 +86,7 @@
 				<br>
 				<button
 				class="btn btn-success btn-mini"
-				onclick="edit_allinfo();"> Display Information
+				onclick="delperapp();"> Cancel Application
 				</button>
 
 			<div id="target"></div>
