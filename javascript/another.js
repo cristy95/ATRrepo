@@ -48,7 +48,7 @@ function fetchcollege()
 }
 	
 	ans += ' </select>';
-	//display_courses();
+	display_courses();
 	$("#getcoll").html(ans);
 }
 });
@@ -82,19 +82,21 @@ jQuery(document).ready(function($){
 	$('select').on('change', function(){
 	console.log("heyooou")
 		var $this = $(this);
-	
-		    if($this.value==colleges[1] && $this.data('oldval')!=colleges[1]){
+	a=0;
+		    if($this.value==colleges[a] && $this.data('oldval')!=colleges[a]){
+			a=a+1;
 			var str='<select id="course_id" type="int" name="course">';		
 			orig_html = $("#getcourses").html();
 			orig_value = $("#course_fk").val();
-			for(var st in courses[1]){
-				str +='<option value='+st[0][0]+'>'+courses1[0][1]+'</option>';
+			for(var st in fetchcourses(1)){
+				str +='<option value='+st[0][0]+'>'+fetchcourses(a)[0][1]+'</option>';
 			}
 			str +="</select>";
 			$("#getcourses").html(str);
 			$this.data('oldval', $this.val());
+	
 		}
-		else if($this.data('oldval')==colleges[1]&& $this.val()!=colleges[1]){
+		else if($this.data('oldval')==colleges[a]&& $this.val()!=colleges[a]){
 		course_value = $("#course_fk").val();
 		$("#getcourses").html(orig_html);
 		$("#course_fk").val(orig_value);
