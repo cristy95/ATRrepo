@@ -81,18 +81,7 @@ jQuery(document).ready(function($){
 	var $el = $("#college_fk");
 	$el.data('oldval', $el.val());
 	$('select').on('change', function(){
-<<<<<<< HEAD
-	console.log("heyooou")
-		var $this = $(this);
-	a=0;
-		    if($this.value==colleges[a] && $this.data('oldval')!=colleges[a]){
-			a=a+1;
-			var str='<select id="course_id" type="int" name="course">';		
-			orig_html = $("#getcourses").html();
-			orig_value = $("#course_fk").val();
-			for(var st in fetchcourses(1)){
-				str +='<option value='+st[0][0]+'>'+fetchcourses(a)[0][1]+'</option>';
-=======
+
 	console.log("heyooou");
 		var $this = $(this);		
 			console.log($this.val());
@@ -231,19 +220,15 @@ jQuery(document).ready(function($){
 				}else{
 				continue;
 				}
->>>>>>> 7930efeded6cccdabe7eec28f1338c2cb8855bd8
 			}
 			str +="</select>";
 			$("#getcourses").html(str);
 			$this.data('oldval', $this.val());
 	
 		}
-<<<<<<< HEAD
-		else if($this.data('oldval')==colleges[a]&& $this.val()!=colleges[a]){
-=======
+
 		else {//if($this.data('oldval')==colleges[1]&& $this.val()!=colleges[1]){
 		console.log("haiya");
->>>>>>> 7930efeded6cccdabe7eec28f1338c2cb8855bd8
 		course_value = $("#course_fk").val();
 		$("#getcourses").html(orig_html);
 		$("#course_fk").val(orig_value);
