@@ -6,17 +6,12 @@
 		<meta charset="utf-8"/>
 		
 		<script src="javascript/jquery.js"></script>
-		<script src="javascript/jquery.steps.js"></script>
-        <link href="jquery.steps.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="final.css"/>
+	<link rel="stylesheet" type="text/css" href="css/final.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
        	<script src="javascript/bootstrap.min.js"></script>
 	<script src="javascript/jqinit.js"></script>
 	<script src="javascript/globs.js"></script>
-		
-		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
-		
 	</head>
 
 
@@ -103,10 +98,13 @@
 </nav>
 <!--navbar end-->
 
-<header>
-<h2  class="header"><a href="#" title="">Welcome to the Automated Tadman Registration</a></h2></header>
 
-<div class="font"><img src="j.jpg"><br><br><br><br><br><br><p>If you are a graduating student, you are required to fill-up and provide us with relevant information that will be used for the Tadman, your MSU-IIT Yearbook.</p><div>
+
+<div class="font"><img src="pictures/j.jpg"><header>
+<div>
+<h2 class="header">Welcome to the Automated Tadman Registration</h2>
+</div>
+</header><p>If you are a graduating student, you are required to fill-up and provide us with relevant information that will be used for the Tadman, your MSU-IIT Yearbook.</p><div>
 
 
 	<div class="footer">
