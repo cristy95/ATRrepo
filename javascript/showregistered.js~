@@ -1,0 +1,103 @@
+var siteloc = "http://localhost/ATRrepo"
+var scriptloc = "/scripts/"
+
+function showcolleges()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "getcollege.py",
+      data: {},
+      dataType: 'json',
+      async:false, 
+      success: function (stud) {
+                  if(stud[0][0] != "None")
+                  {
+			str = '<div class="form1" >'+
+				'<a href="1.html">' + stud[0] +
+				'<br><a href="2.html">' + stud[1] + '</a>' + 
+				'<br><a href="3.html">' + stud[2] + '</a>' +
+				'<br><a href="4.html">' + stud[3] + '</a>' +
+				'<br><a href="5.html">' + stud[4] + '</a>' +
+				'<br><a href="6.html">' + stud[5] + '</a>' +
+				'<br><a href="7.html">' + stud[6] + '</a>' +
+				'<br><a href="8.html">' + stud[7] + '</a>' +
+				'</div>';
+
+			$("#showreg").html(str);
+		  }
+}
+});
+}
+
+function showcourses(college_id_fk)
+{
+  $.ajax({
+      url: siteloc + scriptloc + "getcourses.py",
+      data: {college_id_fk:college_id_fk},
+      dataType: 'json',
+      async:false,
+      success: function (stud) {
+                  console.log(stud);
+                  if(stud[0][0] != "None")
+                  {
+			str = '<div class=form1>'
+			for(i = 0; i < stud.length; i++){
+				str += '<a href="reg' + stud[i][0] + '.html">' + stud[i][1] + '</a><br>'
+			}
+			str += '</div>'
+                    $("#showreg").html(str);
+		}
+  		}
+	});
+}
+
+function showreg(college, course){
+  $.ajax({
+      url: siteloc + scriptloc + "getreg.py",
+      data: {college:college,
+		course:course},
+      dataType: 'json',
+      async:false,
+      success: function (stud) {
+                  console.log(stud);
+                  if(stud[0][0] != "None")
+                  {
+              table = '<div class="table-responsive">';
+            table += '<table class="table table-condensed">';
+            table += '<thead>' +
+                    '<tr>' +
+                    '<th>ID No.</th>' +
+                    '<th>First Name</th>' +
+                    '<th>Middle Name</th>'+
+                    '<th>Last Name</th>' +
+		    '<th>Status</th>' +
+                    '</tr>' +
+                     '</thead>';
+            table += "<tbody>";      
+            for (i = 0; i < stud.length; i++)
+            {
+              row = stud[i];
+              table += "<tr>";
+              for (j = 0; j < row.length; j++)
+              {
+
+                if (j <= 3){
+                  table += '<td>' + row[j] + '</td>';
+                }
+                else if (j == 4){
+                  table += '<td><button class="buttonlink" onclick="displayform(' + "'" + row[0] + "'" +','+ college +','+ course + ');">[more..]</button></td>'
+                };
+              }
+              table += "</tr>";
+            }
+            table += "</tbody>";
+            table += "</table>";
+            table += "<br></div>";
+            $("#showreg").html(table); 
+          } 
+          else{
+            display = '<div class="table-responsive"><br><br><br>No Results Found.<br><br></div>'
+            $("#showreg").html(display);
+          }
+	}
+    });
+}

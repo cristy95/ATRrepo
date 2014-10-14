@@ -171,7 +171,7 @@ language 'sql';
 -------------------------------------------------------------------
 ----this is for the show students per course
 create or replace function
-	searchstatus(in int, in int, out char(9), out text, out text, out text, out text)
+	getreg(in int, in int, out char(9), out text, out text, out text, out text)
 returns setof record as
 
 $$
