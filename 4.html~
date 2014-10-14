@@ -7,8 +7,8 @@
 		
 		<script src="javascript/jquery.js"></script>
 		<script src="javascript/jquery.steps.js"></script>
-        <link href="jquery.steps.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="final.css"/>
+        <link href="css/jquery.steps.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/final.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
        	<script src="javascript/bootstrap.min.js"></script>
