@@ -1,25 +1,32 @@
-<!DOCTYPE html> <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 		
 	<head>
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
 		
-		
-                <link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="css/final.css"/>
 		<script src="javascript/jquery.js"></script>
-       		<script src="javascript/bootstrap.min.js"></script>
-		<script src="javascript/globs.js"></script>
-	        <script src="javascript/jqinit.js"></script>	
-
-<!--		<meta name="viewport" content="width-device-width, initial-scale-1.0"> -->
+		<script src="javascript/jquery.steps.js"></script>
+        <link href="css/jquery.steps.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/final.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
+       	<script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/jqinit.js"></script>
+	<script src="javascript/globs.js"></script>
+	<script src="javascript/confirm.js"></script>
+	<script src="javascript/showregistered.js"></script>
+		
+		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
 		
 	</head>
+
+
 		
-		<body class="body">
+<body class="body" onload="showreg(1,1);">
 
-
+<!--navbar here-->
 	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,15 +64,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title" id="myModalLabel">Admin Authentication</h3>
+        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
       </div>
       <div class="modal-body">
 	<form class="modal-form" id="confirmpasskey" method="get">
         <p class="modal-description">Please enter the authentication key provided to you.</p>
-	</br>
-	</br>
 	<p>
-	&nbsp;&nbsp;<input type="password" id="passkey" placeholder="Enter Key">
+	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
+	<input type="password" id="passkey" placeholder="Enter Key">
 	</p>
 	</form>
 	<!--script>
@@ -84,9 +90,9 @@
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm"/>
+			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
 			<div class="input-group-btn">
-				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm)"><i class="glyphicon glyphicon-search"></i></button>
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
 		</form>
@@ -96,67 +102,27 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="pictures/b.jpg">
+<img src="pictures/h.jpg">
 </nav>
+<!--navbar end-->
 
-
-<!--end navbar-->
-			<div class="container">
-				<h2> About the Authors</h2>
-				<p> We are Team Burlough, we are who we are, we fight 'til the end of time. </p>
-				<p> Death is inevitable but memories will remain forever in time.</p>
+	<div class="form1">
+<header>
+<h2  class="banner">School of Computer Studies</h2>
+<h3 class="banner">Department of Computer Science</h3></header>
 <br>
-<br><br><br>
-	<div class="col-md-12">
-	<img src="pictures/c.jpg"><br> <p> Raphael Jose Balonga </p>
-	<a href="https://www.facebook.com/raphaeljose.balonga">Facebook</a>
-	</div>
-	<div class="col-md-12">
-	<img src="pictures/d.jpg"><br><p> Cristy Loraine Fuerzas</p>
-	<a href="https://www.facebook.com/cristyloraine.fuerzas">Facebook</a>
-	</div>
-	<div class="col-md-12">
-	<img src="pictures/k.jpg"><br><p>Dareen Mae Bandola</p>
-	<a href="https://www.facebook.com/darsquared06">Facebook</a>
-	</div>
-	<div class="col-md-12">
-	<img src="pictures/e.jpg"><br><p> Lorie Anne Castillano</p>
-	<a href="https://www.facebook.com/clorieanne">Facebook</a>
-	</div>
-	<div class="col-md-12">
-	<img src="pictures/f.jpg"><br><p> Pio Pentin</p>
-	<a href="https://www.facebook.com/JunPi0">Facebook</a>
-	</div>
-	
+<div class="font">
+	<div id="showreg"></div>
+	<div id="clear"></div>
 </div>
-<!--modal -->
-
-<div id="myModal2" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Search Results</h4>
-            </div>
-            <div class="modal-body">
-                <p>
+<div>
 
 
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-	
 	<div class="footer">
-      <div class="container">
-        <p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
-      </div>
-    </div>
-		</body>
-		
+        	<div class="container">
+        		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph
+			</p>
+		</div>
+    	</div>
+</body>	
 </html>
