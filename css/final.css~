@@ -32,8 +32,8 @@ font-size: 20px;
 	outline-width: thin;
 	background: white;
 	font-size: 13px;
-
 	margin:  1% 10% 5% 10%;
+	padding: 2% 2% 2% 2%;
 }
 
 .banner{
