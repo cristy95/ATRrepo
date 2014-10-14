@@ -57,7 +57,7 @@ function delperapp()
 }
 
 //lorie
-function searchstatus()
+function searchstatus(srchterm)
 {
 
   $.ajax({
@@ -92,11 +92,11 @@ function searchstatus()
             table += "</tbody>";
             table += "</table>";
             table += "<br></div>";
-            $("#target").html(table); 
+            $("p").append(table); 
           } 
           else{
             display = '<div class="table-responsive">No Results Found<br><br></div>'
-            $("#target").html(display);
+            $("p").append(display);
           }
 		 }
 	});
@@ -166,5 +166,11 @@ function confirmKey2(password)
 	});
 }
 
+//lorie
+function loadsearch(srchterm)
+{
+	$('#myModal').modal('show');
+  searchstatus(srchterm);
 
+}
 
