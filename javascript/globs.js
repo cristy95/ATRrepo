@@ -169,7 +169,7 @@ function confirmKey2(password)
 //lorie
 function loadsearch(srchterm)
 {
-	$('#myModal').modal('show');
+	$('#myModal2').modal('show');
   searchstatus(srchterm);
 
 }
