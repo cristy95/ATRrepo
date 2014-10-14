@@ -19,6 +19,7 @@
 		
 		<body class="body">
 
+
 	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -83,9 +84,9 @@
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm"/>
 			<div class="input-group-btn">
-				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm)"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
 		</form>
@@ -100,10 +101,6 @@
 
 
 <!--end navbar-->
-
-	
-
-			
 			<div class="container">
 				<h2> About the Authors</h2>
 				<p> We are Team Burlough, we are who we are, we fight 'til the end of time. </p>
@@ -131,6 +128,27 @@
 	<a href="https://www.facebook.com/JunPi0">Facebook</a>
 	</div>
 	
+</div>
+<!--modal -->
+
+<div id="myModal2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Search Results</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 	

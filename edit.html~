@@ -12,15 +12,9 @@
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/new.js"></script>
 		<script src="javascript/another.js"></script>
-	        <script src="javascript/jqinit.js"></script>
-<<<<<<< HEAD
-=======
+	        <script src="javascript/jqinit.js"></script
 	        <script src="javascript/globs.js"></script>	
 	        	
-
-		<meta name="viewport" content="width-device-width, initial-scale-1.0"> 
->>>>>>> 4464ee8850493541b34f3b4ae5e8c347ea1fe9c9
-		
 	</head>
 		
 		<body class="body" onload="fetchcollege();display_courses();">
