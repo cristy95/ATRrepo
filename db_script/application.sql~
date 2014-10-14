@@ -169,4 +169,17 @@ $$
 
 language 'sql';
 -------------------------------------------------------------------
+----this is for the show students per course
+create or replace function
+	searchstatus(in int, in int, out char(9), out text, out text, out text, out text)
+returns setof record as
 
+$$
+
+select stud_id, nameFirst, nameMid, nameLast, status from applications
+INNEr join applications on applications.stud_id = personal_info.stud_id
+where college_id_fk = $1 and course_id_fk = $1;
+
+$$
+
+language 'sql';
