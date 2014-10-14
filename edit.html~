@@ -63,7 +63,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 <!--end navbar-->
 
@@ -85,7 +85,7 @@
 				</div>
 				<br>
 				<button
-				class="btn btn-success btn-mini"
+				class="btn btn-primary"
 				onclick="edit_allinfo();"> Display Information
 				</button>
 

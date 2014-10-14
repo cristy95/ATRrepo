@@ -92,20 +92,13 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 
 <!--end navbar-->
 
 
 <h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>		
-
-
-		<!--input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
-		
-		<div id="getcoll"></div>
-
-		<div id="getcourses"></div-->
 
 		<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>

@@ -61,7 +61,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 
 
@@ -85,7 +85,7 @@
 				</div>
 				<br>
 				<button
-				class="btn btn-success btn-mini"
+				class="btn btn-primary"
 				onclick="delperapp();"> Cancel Application
 				</button>
 

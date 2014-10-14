@@ -44,7 +44,7 @@
           </ul>
         </li>
 		<li class="dropdown">
-		<a href="admin.html">Admin</a>
+		<a href="admin.html">Back to Admin Page</a>
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
@@ -61,7 +61,7 @@
 	</ul>
        </div><!-- /.navbar-collapse -->	
 	</div>
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 
 <!--end navbar-->

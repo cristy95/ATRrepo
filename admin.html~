@@ -66,7 +66,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 
 <h1 class="banner">Administration</h1>
@@ -74,13 +74,13 @@
 			<div class="font">
 				<div class="form1">
 				<p>What would you like to do?</p>
-				<a href="#" class="choices">
+				<a href="confirming.html" class="choices">
 				<button class="btn btn-primary">
 					Confirm Application...
 				</button></a>
 
 				<p> OR </p>
-				<a href="#" class="choices">
+				<a href="cancel.html" class="choices">
 				<button class="btn btn-primary">
 					Cancel Application...
 				</button>

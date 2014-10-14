@@ -76,7 +76,7 @@
       			
 
 			<button
-				class="btn btn-success btn-mini"
+				class="btn btn-primary"
 				onclick="getheader();"> Show Template
 			</button> </div>
 			<div id="target"></div>
