@@ -102,12 +102,16 @@
 </nav>
 <!--navbar end-->
 
-<header>
-<h2  class="header"></h2></header>
 
+<header>
+<h2  class="banner">Show Registered</h2>
+<h2  class="banner">Choose College</h2></header>
+<br>
 <div class="font">
 	<div id="showreg"></div>
-<div>
+	<div id="clear"></div>
+</div>
+
 
 
 	<div class="footer">
