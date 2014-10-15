@@ -5,16 +5,20 @@
         <meta charset="utf-8">
 	<script type="text/javascript" src="javascript/jquery.min.js"></script>
         <script src="javascript/jquery.steps.js"></script>
-        <script src="javascript/globs.js"></script>
 	<script src="javascript/jquery.js"></script>
         <link href="css/jquery.steps.css" rel="stylesheet">
+        <script src="javascript/jqinit.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/final.css"/>
        	<script src="javascript/bootstrap.min.js"></script>
 	<script src="javascript/new.js"></script>
 	<script src="javascript/another.js"></script>
-	<script src="javascript/jqinit.js"></script>
+	<script src="javascript/globs.js"></script>
+	<script>
+
+	</script>
+	
 
 	
 	<link rel="stylesheet" type="text/css" href="css/formwizard.css" />
@@ -44,28 +48,6 @@
             $("#wizard").steps();
         </script>
         <div id="wizard"></div>
-<!--modal -->
-
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Search Results</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-
-
-                </p>
-                <p class="text-warning"><small></small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!---navbar-->
@@ -95,18 +77,16 @@
 			
           </ul>
         </li>
-	<a href="show_registered.html">Registered</a>
+	<li><a href="show_registered.html">Registered</a></li>
 	
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<input type="text" class="form-control" placeholder="Search" name="srchterm" id="srchterm"/>
 			<div class="input-group-btn">
-				<button class="btn btn-default" type="submit"
-				onclick = "searchstatus();">
-				<i class="glyphicon glyphicon-search"></i>
-					
+				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm);">
+				<i class="glyphicon glyphicon-search"></i>	
 				</button>
 			</div>
 		</div>
@@ -223,6 +203,27 @@ Specify Dissertations (Input 'NONE' if not available)</br>
 </fieldset>
 </form>
 
+<!--modal -->
+
+<div id="myModal2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Search Results</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="footer">
       <div class="container">
