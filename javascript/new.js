@@ -108,9 +108,8 @@ function edit_allinfo()
        	'<script src="javascript/bootstrap.min.js"></script>'+
 	'<script src="javascript/new.js"></script>'+
 	'<script src="javascript/globs.js"></script>'+
-	'<script src="javascript/another.js"></script>'+		
+	'<script src="javascript/another.js"></script>'+
 
-	'<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>'+
 	'<link rel="stylesheet" type="text/css" href="css/formwizard.css" />'+
 	'<script src="javascript/formwizard.js" type="text/javascript">'
 		rets += '</script>'+
@@ -126,7 +125,7 @@ function edit_allinfo()
 
 	'</script>'+
     '</head>'+
-   ' <body class="body" onload="fetchcollege();">'+
+   ' <body class="body">'+
        ' <script>'+
            ' $("#wizard").steps();'+
        ' </script>'+
