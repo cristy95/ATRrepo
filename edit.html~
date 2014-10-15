@@ -12,9 +12,9 @@
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/new.js"></script>
 		<script src="javascript/another.js"></script>
-	        <script src="javascript/jqinit.js"></script>
-	        <script src="javascript/globs.js"></script>
-		
+	        <script src="javascript/jqinit.js"></script
+	        <script src="javascript/globs.js"></script>	
+	        	
 	</head>
 		
 		<body class="body" onload="fetchcollege();display_courses();">
