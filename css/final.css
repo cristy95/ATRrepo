@@ -32,6 +32,19 @@ font-size: 20px;
 	border-radius: 5px;
 }
 
+.success{
+	padding: 5% 5% 5% 5%;
+	margin:  1% 10% 5% 10%;
+	outline-style: solid;
+	outline-color: black;
+	outline-width: thin;
+	background: white;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+
+
 .form1{
 	outline-style: solid;
 	outline-color: black;
