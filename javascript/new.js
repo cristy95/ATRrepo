@@ -66,7 +66,6 @@ function add_application()
 			v_appli_id=res[0][0];
          		rets = 'SET'
            		 $("#target").html(rets); 
-			//add_pending_status(v_appli_id);
         	  }
               }
     });
@@ -107,8 +106,6 @@ function edit_allinfo()
 	'<link rel="stylesheet" type="text/css" href="css/final.css"/>'+
        	'<script src="javascript/bootstrap.min.js"></script>'+
 	'<script src="javascript/new.js"></script>'+
-	'<script src="javascript/globs.js"></script>'+
-	'<script src="javascript/another.js"></script>'+
 
 	'<link rel="stylesheet" type="text/css" href="css/formwizard.css" />'+
 	'<script src="javascript/formwizard.js" type="text/javascript">'
@@ -129,9 +126,8 @@ function edit_allinfo()
        ' <script>'+
            ' $("#wizard").steps();'+
        ' </script>'+
-      '  <div id="wizard"></div>'
+      '  <div id="wizard"></div>';
 				rets += '<h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
-
 			'<form class="form" id="feedbackform">'+
 
 			'<fieldset class="sectionwrap">'+
@@ -219,13 +215,13 @@ function edit_allinfo()
 '<div id="target"></div>'+
 	
 '</fieldset>'+
-'</form>'
-					  $( "#target").html(rets); 
+'</form>' + '</body>';
+					  $( "#editresult").html(rets); 
 			}
 			else{
 			rets = '<div class="form1"><h3>No Result Found</h3>'+
 				'<p>Please check your input values. Make sure that you have registered first. Maybe you can search first. :)</div>';
-			$("#target").html(rets);
+			$("#editresult").html(rets);
 		}
 	}
   });
@@ -275,7 +271,7 @@ function add_edition()
                   if(res[0][0] != "None")
                   {
          		rets = '&nbsp;&nbsp;<br><h4>Done Editing!<br><br>'
-           		 $("#target").html(rets); 
+           		 $("#editresult").html(rets); 
         	  } 
               }
     });
