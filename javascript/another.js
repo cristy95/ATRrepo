@@ -37,13 +37,16 @@ function fetchcollege()
   		}
 	ans = ' <select  id="college_fk" >'+
 		'<option>College</option>';
+	val = 1;
 	for(i=0; i<colleges.length; i++){
+
 	temp = [];
 		if(i in colleges){
 
 	var c = colleges[i][0];
-	ans +=	'<option type="text" value=' + i+1 + ' onselect="display_courses();">' + c +'</option>';
-	fetchcourses(i+1);
+	ans +=	'<option type="text" value=' + val + ' onselect="display_courses();">' + c +'</option>';
+	fetchcourses(val);
+	val += 10;
 	courses[i] = temp;
 		}
 }
