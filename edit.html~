@@ -12,9 +12,9 @@
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/new.js"></script>
 		<script src="javascript/another.js"></script>
-	        <script src="javascript/jqinit.js"></script
-	        <script src="javascript/globs.js"></script>	
-	        	
+	        <script src="javascript/jqinit.js"></script>
+	        <script src="javascript/globs.js"></script>
+		
 	</head>
 		
 		<body class="body" onload="fetchcollege();display_courses();">
@@ -46,6 +46,7 @@
 			
           </ul>
         </li>
+	<li><a href="show_registered.html">Registered</a></li>
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
@@ -72,7 +73,7 @@
 			<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
 				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
-			<div id="getcoll"></div>
+			<div id="getcoll"></div><br>
 			<div id="getcourses"><br></div>
 		<br><button
 			class="btn btn-primary"
