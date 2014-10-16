@@ -26,7 +26,11 @@ function getheader()
 				+ 'Mothers Name: ' + res[0][11] + '&nbsp;' + res[0][12] + '&nbsp;' + res[0][13] + '<br>' + '<br>'
 				+ 'AD/Thesis: ' + res[0][14] + '&nbsp;' + res[0][15] + '&nbsp;' + res[0][16] + '<br>' + '<br>' + '</div>' + '</div>';
 			$("#target").html(ans);
-		} //end if
+		} else{
+			ans = '<h1 class="banner">No Results Found</h1>' 
+			$("#target").html(ans);
+		}
+
 	}
 	});
 }
