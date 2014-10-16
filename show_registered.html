@@ -4,20 +4,25 @@
 	<head>
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
-		<link rel="stylesheet" type="text/css" href="css/final.css" type="text/css" />
-		<script src="javascript/jquery.js"></script>
-       	<script src="javascript/bootstrap.min.js"></script>
-       	<script src="javascript/confirm.js"></script>
-       	<script src="javascript/globs.js"></script>
-	</head>
 		
-	<body class="body" onload="fetchperstatus();">
+		<script src="javascript/jquery.js"></script>
+		<script src="javascript/jquery.steps.js"></script>
+        <link href="css/jquery.steps.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/final.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+       	<script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/jqinit.js"></script>
+	<script src="javascript/globs.js"></script>
+	<script src="javascript/showregistered.js"></script>
+		
+	</head>
 
-<!---navbar-->
 
+		
+<body class="body" onload="showcolleges();">
+
+<!--navbar here-->
 	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,44 +50,70 @@
           </ul>
         </li>
 		<li class="dropdown">
-		<a href="admin.html">Back to Admin Page</a>
-		<li><a href="show_registered.html">Registered</a></li>
+		<a href="#" id="password" data-toggle="modal" data-target="#myModal">
+  Admin
+</a>   <li><a href="show_registered.html">Registered</a></li>
       </ul>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Admin Authentication</h4>
+      </div>
+      <div class="modal-body">
+	<form class="modal-form" id="confirmpasskey" method="get">
+        <p class="modal-description">Please enter the authentication key provided to you.</p>
+	<p>
+	<!--label for="passkey">Pass Key (should be character of length 6)</label-->
+	<input type="password" id="passkey" placeholder="Enter Key">
+	</p>
+	</form>
+	<!--script>
+		$("#confirmpasskey").validate();
+	</script-->
+	<div class="wrongkey"></div>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary" href="#" onclick="confirmKey($('#passkey').val())">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 	<div class="col-sm-3 col-md-3 pull-right">
 		<div class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm"/>
+			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm">
 			<div class="input-group-btn">
 				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm);"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
 		</div>
 		</div>
-	<ul class="nav navbar-nav navbar-right">
-	<li><a href="about.html">About the Developers</a></li>
-	</ul>
-       </div><!-- /.navbar-collapse -->	
-	</div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html">About the Developers</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 <img src="pictures/h.jpg">
 </nav>
+<!--navbar end-->
 
-<!--end navbar-->
- <h1 class="banner">CONFIRMATION PAGE FOR PENDING APPLICATIONS</h1>
 
-			<div class="form">
-				<div id = "search">
-					<p>Please input a valid student's ID No. (ex: 2012-1212)</p>
-		    	    <input type="text" class="textinput" id = "searchvalue" size="15" maxlength="9">
-		    	    <button class="button" onclick="fetchstudstatus();">search</button>
-				</div>
-				<div id="sideoption">
-				<br><br>
-					<button class="buttonlink" onclick="fetchperstatus();">back to pending list..</button>
-				</div>
-				<br>
-				<div id="target"></div>
-				<div class="clear"></div>
-			</div>
+<header>
+<h2  class="banner">Show Registered</h2>
+<h2  class="banner">Choose College</h2></header>
+<br>
+<div class="font">
+	<div id="showreg"></div>
+	<div id="clear"></div>
+</div>
+
 <!--modal -->
 
 <div id="myModal2" class="modal fade">
@@ -93,7 +124,7 @@
                 <h4 class="modal-title">Search Results</h4>
             </div>
             <div id="v"class="modal-body">
-               
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
@@ -102,12 +133,13 @@
     </div>
 </div>
 
+
+
 	<div class="footer">
-     		<div class="container">
-        		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
-    		</div>
-   	 </div>
-	
-	</body>
-		
-</html>  </div><!-- /.container-fluid -->
+        	<div class="container">
+        		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph
+			</p>
+		</div>
+    	</div>
+</body>	
+</html>

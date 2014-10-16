@@ -16,7 +16,7 @@ function getheader()
                    {
 			ans = '<h1 class="banner">TEMPLATE</h1>' 
 
-				+ '<div class="form">' + '<div class="form">' + '&nbsp;'+'&nbsp;'+'&nbsp;'+'&nbsp;'+ '<img src="pictures/yots.jpg"/>' + '<br>' + '<br>' + '</div>'
+				+ '<div class="form">'
 			    + '<div class="form">' + 'Name: ' + res[0][1] + '&nbsp;' + res[0][2] + '&nbsp;' + res[0][3] + '<br>' + '<br>'
 				+ 'Course: ' + res[0][18] + '<br>' + '<br>'
 				+ 'College: ' + res[0][17] + '<br>' + '<br>'
@@ -62,7 +62,7 @@ function delperapp()
 }
 
 //lorie
-function searchstatus()
+function searchstatus(srchterm)
 {
 
   $.ajax({
@@ -97,11 +97,11 @@ function searchstatus()
             table += "</tbody>";
             table += "</table>";
             table += "<br></div>";
-            $("#target").html(table); 
+            $('#v').append(table); 
           } 
           else{
             display = '<div class="table-responsive">No Results Found<br><br></div>'
-            $("#target").html(display);
+            $('#v').append(display);
           }
 		 }
 	});
@@ -171,5 +171,11 @@ function confirmKey2(password)
 	});
 }
 
+//lorie
+function loadsearch(srchterm)
+{
+	$('#myModal2').modal('show');
+  searchstatus(srchterm);
 
+}
 

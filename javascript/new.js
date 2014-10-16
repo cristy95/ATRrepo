@@ -97,18 +97,20 @@ function edit_allinfo()
        ' <title>AUTOMATED TADMAN REGISTRATION</title>'+
         '<meta charset="utf-8">'+
 
+	'<script type="text/javascript" src="javascript/jquery.min.js"></script>'+
+        '<script src="javascript/jquery.steps.js"></script>'+
 	'<script src="javascript/jquery.js"></script>'+
-       ' <script src="javascript/jquery.steps.js"></script>'+
-        '<link href="jquery.steps.css" rel="stylesheet">'+
+        '<link href="css/jquery.steps.css" rel="stylesheet">'+
+        '<script src="javascript/jqinit.js"></script>'+
 	'<link rel="stylesheet" href="css/bootstrap.min.css">'+
 	'<link rel="stylesheet" href="css/bootstrap-theme.min.css">'+
-	'<link rel="stylesheet" type="text/css" href="final.css"/>'+
+	'<link rel="stylesheet" type="text/css" href="css/final.css"/>'+
        	'<script src="javascript/bootstrap.min.js"></script>'+
 	'<script src="javascript/new.js"></script>'+
-	'<script src="javascript/jqinit.js"></script>'+		
+	'<script src="javascript/globs.js"></script>'+
+	'<script src="javascript/another.js"></script>'+
 
-	'<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>'+
-	'<link rel="stylesheet" type="text/css" href="formwizard.css" />'+
+	'<link rel="stylesheet" type="text/css" href="css/formwizard.css" />'+
 	'<script src="javascript/formwizard.js" type="text/javascript">'
 		rets += '</script>'+
 
@@ -123,7 +125,7 @@ function edit_allinfo()
 
 	'</script>'+
     '</head>'+
-   ' <body class="body" onload="fetchcollege();">'+
+   ' <body class="body">'+
        ' <script>'+
            ' $("#wizard").steps();'+
        ' </script>'+

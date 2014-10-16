@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <html lang="en">
 		
 	<head>
 		<title>AUTOMATED TADMAN REGISTRATION</title>
 		<meta charset="utf-8"/>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+		
+                <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
 		<link rel="stylesheet" type="text/css" href="css/final.css" type="text/css" />
 		<script src="javascript/jquery.js"></script>
-       	<script src="javascript/bootstrap.min.js"></script>
-       	<script src="javascript/confirm.js"></script>
-       	<script src="javascript/globs.js"></script>
+       		<script src="javascript/bootstrap.min.js"></script>
+		<script src="javascript/globs.js"></script>
+	        <script src="javascript/jqinit.js"></script>
 	</head>
 		
-	<body class="body" onload="fetchperstatus();">
+		<body class="body">
 
 <!---navbar-->
 
@@ -44,45 +43,28 @@
 			
           </ul>
         </li>
-		<li class="dropdown">
-		<a href="admin.html">Back to Admin Page</a>
-		<li><a href="show_registered.html">Registered</a></li>
+	<li><a href="show_registered.html">Registered</a></li>
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
-		<div class="navbar-form" role="search">
+		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm"/>
+			<input type="text" class="form-control" placeholder="Search" name="srchterm" id="srchterm">
 			<div class="input-group-btn">
 				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm);"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
+		</form>
 		</div>
-		</div>
-	<ul class="nav navbar-nav navbar-right">
-	<li><a href="about.html">About the Developers</a></li>
-	</ul>
-       </div><!-- /.navbar-collapse -->	
-	</div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html">About the Developers</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 <img src="pictures/h.jpg">
 </nav>
 
 <!--end navbar-->
- <h1 class="banner">CONFIRMATION PAGE FOR PENDING APPLICATIONS</h1>
 
-			<div class="form">
-				<div id = "search">
-					<p>Please input a valid student's ID No. (ex: 2012-1212)</p>
-		    	    <input type="text" class="textinput" id = "searchvalue" size="15" maxlength="9">
-		    	    <button class="button" onclick="fetchstudstatus();">search</button>
-				</div>
-				<div id="sideoption">
-				<br><br>
-					<button class="buttonlink" onclick="fetchperstatus();">back to pending list..</button>
-				</div>
-				<br>
-				<div id="target"></div>
-				<div class="clear"></div>
-			</div>
 <!--modal -->
 
 <div id="myModal2" class="modal fade">
@@ -92,8 +74,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Search Results</h4>
             </div>
-            <div id="v"class="modal-body">
-               
+            <div class="modal-body">
+                <p>
+
+
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
@@ -102,12 +87,23 @@
     </div>
 </div>
 
+
+
+				
+			<div class="form">
+			<p> ✔ Successfully Registered<p>		</div>	<button  class="btn btn-lg btn-success"
+		 onclick="success.html">
+			Submit Form
+	</button>
+			
 	<div class="footer">
-     		<div class="container">
-        		<p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
-    		</div>
-   	 </div>
+      <div class="container">
+        <p class="text-muted">Copyright&copy;2014 TeamBurlough.edu.com.gov.ph</p>
+      </div>
+    </div>
 	
-	</body>
+	
+	
+		</body>
 		
-</html>  </div><!-- /.container-fluid -->
+</html>

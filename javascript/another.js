@@ -49,7 +49,7 @@ function fetchcollege()
 }
 	
 	ans += ' </select>';
-	//display_courses();
+	display_courses();
 	$("#getcoll").html(ans);
 }
 });
@@ -81,6 +81,7 @@ jQuery(document).ready(function($){
 	var $el = $("#college_fk");
 	$el.data('oldval', $el.val());
 	$('select').on('change', function(){
+
 	console.log("heyooou");
 		var $this = $(this);		
 			console.log($this.val());
@@ -223,7 +224,9 @@ jQuery(document).ready(function($){
 			str +="</select>";
 			$("#getcourses").html(str);
 			$this.data('oldval', $this.val());
+	
 		}
+
 		else {//if($this.data('oldval')==colleges[1]&& $this.val()!=colleges[1]){
 		console.log("haiya");
 		course_value = $("#course_fk").val();

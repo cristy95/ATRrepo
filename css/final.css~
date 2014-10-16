@@ -15,6 +15,12 @@ body {
 font-size: 20px;
 }
 
+.header {
+	float: center;
+	margin-left: 25%;
+	margin-top: 5%;
+}
+
 .form{
 	padding: 5% 5% 5% 5%;
 	margin:  1% 10% 5% 10%;
@@ -26,14 +32,27 @@ font-size: 20px;
 	border-radius: 5px;
 }
 
+.success{
+	padding: 5% 5% 5% 5%;
+	margin:  1% 10% 5% 10%;
+	outline-style: solid;
+	outline-color: black;
+	outline-width: thin;
+	background: white;
+	font-size: 13px;
+	border-radius: 5px;
+}
+
+
+
 .form1{
 	outline-style: solid;
 	outline-color: black;
 	outline-width: thin;
 	background: white;
 	font-size: 13px;
-
 	margin:  1% 10% 5% 10%;
+	padding: 2% 2% 2% 2%;
 }
 
 .banner{

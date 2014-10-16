@@ -7,18 +7,18 @@
 		
                 <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="final.css"/>
+		<link rel="stylesheet" type="text/css" href="css/final.css"/>
 		<script src="javascript/jquery.js"></script>
        		<script src="javascript/bootstrap.min.js"></script>
 		<script src="javascript/globs.js"></script>
 	        <script src="javascript/jqinit.js"></script>	
-		<script src="javascript/student_info.js"></script>	
 
 <!--		<meta name="viewport" content="width-device-width, initial-scale-1.0"> -->
 		
 	</head>
 		
 		<body class="body">
+
 
 	<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
@@ -84,9 +84,9 @@
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<input type="text" class="form-control" placeholder="Enter ID No." name="srchterm" id="srchterm"/>
 			<div class="input-group-btn">
-				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm)"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
 		</form>
@@ -96,15 +96,11 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="b.jpg">
+<img src="pictures/b.jpg">
 </nav>
 
 
 <!--end navbar-->
-
-	
-
-			
 			<div class="container">
 				<h2> About the Authors</h2>
 				<p> We are Team Burlough, we are who we are, we fight 'til the end of time. </p>
@@ -112,26 +108,47 @@
 <br>
 <br><br><br>
 	<div class="col-md-12">
-	<img src="c.jpg"><br> <p> Raphael Jose Balonga </p>
+	<img src="pictures/c.jpg"><br> <p> Raphael Jose Balonga </p>
 	<a href="https://www.facebook.com/raphaeljose.balonga">Facebook</a>
 	</div>
 	<div class="col-md-12">
-	<img src="d.jpg"><br><p> Cristy Loraine Fuerzas</p>
+	<img src="pictures/d.jpg"><br><p> Cristy Loraine Fuerzas</p>
 	<a href="https://www.facebook.com/cristyloraine.fuerzas">Facebook</a>
 	</div>
 	<div class="col-md-12">
-	<img src="k.jpg"><br><p>Dareen Mae Bandola</p>
+	<img src="pictures/k.jpg"><br><p>Dareen Mae Bandola</p>
 	<a href="https://www.facebook.com/darsquared06">Facebook</a>
 	</div>
 	<div class="col-md-12">
-	<img src="e.jpg"><br><p> Lorie Anne Castillano</p>
+	<img src="pictures/e.jpg"><br><p> Lorie Anne Castillano</p>
 	<a href="https://www.facebook.com/clorieanne">Facebook</a>
 	</div>
 	<div class="col-md-12">
-	<img src="f.jpg"><br><p> Pio Pentin</p>
+	<img src="pictures/f.jpg"><br><p> Pio Pentin</p>
 	<a href="https://www.facebook.com/JunPi0">Facebook</a>
 	</div>
 	
+</div>
+<!--modal -->
+
+<div id="myModal2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Search Results</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 	

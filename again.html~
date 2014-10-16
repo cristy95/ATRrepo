@@ -3,20 +3,25 @@
     <head>
         <title>AUTOMATED TADMAN REGISTRATION</title>
         <meta charset="utf-8">
-
-	<script src="javascript/jquery.js"></script>
+	<script type="text/javascript" src="javascript/jquery.min.js"></script>
         <script src="javascript/jquery.steps.js"></script>
-        <link href="jquery.steps.css" rel="stylesheet">
+	<script src="javascript/jquery.js"></script>
+        <link href="css/jquery.steps.css" rel="stylesheet">
+        <script src="javascript/jqinit.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="final.css"/>
+	<link rel="stylesheet" type="text/css" href="css/final.css"/>
        	<script src="javascript/bootstrap.min.js"></script>
 	<script src="javascript/new.js"></script>
+	<script src="javascript/globs.js"></script>
 	<script src="javascript/another.js"></script>
-	<script src="javascript/jqinit.js"></script>
+	<script>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="formwizard.css" />
+	</script>
+	
+
+	
+	<link rel="stylesheet" type="text/css" href="css/formwizard.css" />
 	<script src="javascript/formwizard.js" type="text/javascript">
 
 /***********************************************
@@ -72,17 +77,15 @@
 			
           </ul>
         </li>
+	<li><a href="show_registered.html">Registered</a></li>
+	
       </ul>
 	<div class="col-sm-3 col-md-3 pull-right">
 		<form class="navbar-form" role="search">
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<input type="text" class="form-control" placeholder="Search" name="srchterm" id="srchterm"/>
 			<div class="input-group-btn">
-				<button class="btn btn-default" type="submit"
-				onclick = "searchstatus();">
-				<i class="glyphicon glyphicon-search"></i>
-					
-				</button>
+				<button class="btn btn-default" type="button" onclick="loadsearch(srchterm);"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		</div>
 		</form>
@@ -92,7 +95,7 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<img src="h.jpg">
+<img src="pictures/h.jpg">
 </nav>
 
 <!--end navbar-->
@@ -100,24 +103,17 @@
 
 <h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>		
 
-
-		<!--input type="text" id="stud_id" class="fill" placeholder="ID No." required=""><br><br>
-		
-		<div id="getcoll"></div>
-
-		<div id="getcourses"></div-->
-
 		<div class="form1" id="eform">
 			<p>Please input a valid student's ID No. (ex: 2012-1212)<p>
 				<input type="text" id="stud_id" class="delete" placeholder="ID No.">
-				<div id="getcoll"></div> 
+				<div id="getcoll"></div> <br>
 				<div id="getcourses">
 				
 				<br>
 				
 				</div>
 				<br></div>
-<form class="form" action="index.html" id="feedbackform">
+<form class="form" action="success.html" id="feedbackform">
 	<fieldset class="sectionwrap">
 
 </br>
@@ -205,6 +201,27 @@ Specify Dissertations (Input 'NONE' if not available)</br>
 </fieldset>
 </form>
 
+<!--modal -->
+
+<div id="myModal2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Search Results</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="location.reload();">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="footer">
       <div class="container">
