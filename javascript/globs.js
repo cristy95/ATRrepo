@@ -30,6 +30,7 @@ function getheader()
 			ans = '<h1 class="banner">No Results Found</h1>' 
 			$("#target").html(ans);
 		}
+
 	}
 	});
 }

@@ -14,7 +14,6 @@ class doSql(object):
 
 
         self._cxn = psycopg2.connect("dbname='atrdatabase' user='postgres' password='yourpasswordhere' host='127.0.0.1' port='5432'")
-
         self._cur = self._cxn.cursor()
         
     def __del__(self): #destructor
