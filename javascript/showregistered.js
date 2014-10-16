@@ -84,7 +84,7 @@ function showreg(college, course){
                   table += '<td>' + row[j] + '</td>';
                 }
                 else if (j == 4){
-                  table += '<td><button class="buttonlink" onclick="displayform(' + "'" + row[0] + "'" +','+ college +','+ course + ');">[more..]</button></td>'
+                  table += '<td>' + row[j] + '</td><td><button class="buttonlink" onclick="displayform(' + "'" + row[0] + "'" +','+ college +','+ course + ');">[more..]</button></td>'
                 };
               }
               table += "</tr>";
