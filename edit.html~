@@ -13,7 +13,6 @@
 		<script src="javascript/new.js"></script>
 		<script src="javascript/another.js"></script>
 	        <script src="javascript/jqinit.js"></script>
-	        <script src="javascript/globs.js"></script>
 		
 	</head>
 		
@@ -81,7 +80,7 @@
 		
 </button></div>
 
-			<div id="target"></div>
+			<div id="editresult"></div>
 
 <!--modal -->
 
