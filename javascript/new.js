@@ -128,8 +128,7 @@ function edit_allinfo()
    ' <body class="body">'+
        ' <script>'+
            ' $("#wizard").steps();'+
-       ' </script>'+
-      '  <div id="wizard"></div>'
+       ' </script>';
 				rets += '<h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
 
 			'<form class="form" id="feedbackform">'+
