@@ -176,9 +176,9 @@ returns setof record as
 
 $$
 
-select stud_id, nameFirst, nameMid, nameLast, status from applications
+select personal_info.stud_id, personal_info.nameFirst, personal_info.nameMid, personal_info.nameLast, applications.status from personal_info
 INNEr join applications on applications.stud_id = personal_info.stud_id
-where college_fk = $1 and course_fk = $1;
+where college_fk = $1 and course_fk = $2;
 
 $$
 
