@@ -92,10 +92,12 @@ function searchstatus(srchterm)
             table += "</tbody>";
             table += "</table>";
             table += "<br></div>";
+            $('#v').empty(); 
             $('#v').append(table); 
           } 
           else{
             display = '<div class="table-responsive">No Results Found<br><br></div>'
+            $('#v').empty();
             $('#v').append(display);
           }
 		 }
