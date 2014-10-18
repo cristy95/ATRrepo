@@ -37,16 +37,19 @@ function showcourses(college_id_fk)
       async:false,
       success: function (stud) {
                   console.log(stud);
-                  if(stud[0][0] != "None")
-                  {
+                  if(stud[0][0] == "None")
+                  {	str = "something happened";
+                    $("#showreg").html(str);
+		}else{
+			console.log('hey');
 			str = '<div class=form1>'
 			for(i = 0; i < stud.length; i++){
 				str += '<a href="reg' + stud[i][0] + '.html">' + stud[i][1] + '</a><br>'
 			}
 			str += '</div>'
-                    $("#showreg").html(str);
-		}
+			$("#showreg").html(str);
   		}
+}
 	});
 }
 
