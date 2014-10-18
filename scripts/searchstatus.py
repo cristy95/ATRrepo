@@ -9,7 +9,7 @@ def index(req, stud_id):
   stud_id = cgi.escape(stud_id)
 
   x = doSql()
-  studs = x.execqry("select * from searchstatus('" + stud_id + "');", True)
+  studs = x.execqry("select * from searchstatus('" + stud_id + "');", False)
   result = []
 
   for stud in studs:

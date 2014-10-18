@@ -7,7 +7,7 @@ except ImportError:
 
 def index(req, password):
   x = doSql()
-  rets = x.execqry("select * from confirmKey('" +  password + "');", 'False')
+  rets = x.execqry("select * from confirmKey('" +  password + "');", False)
   result = []
   for ret in rets:
     stringed = map(str, ret)

@@ -7,7 +7,7 @@ except ImportError:
 
 def index(req, college, course):
   x = doSql()
-  rets = x.execqry("select * from getreg(" + college + ", " + course + ");", 'False')
+  rets = x.execqry("select * from getreg(" + college + ", " + course + ");", False)
   result = []
   for ret in rets:
     stringed = map(str, ret)

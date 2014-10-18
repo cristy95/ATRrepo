@@ -5,9 +5,9 @@ try:
 except ImportError:
     import simplejson as json
 
-def index(req):
+def index(req, password):
   x = doSql()
-  rets = x.execqry("select college_name from colleges", 'False')
+  rets = x.execqry("select * from confirmKey('" +  password + "');", 'False')
   result = []
   for ret in rets:
     stringed = map(str, ret)
