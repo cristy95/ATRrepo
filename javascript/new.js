@@ -125,11 +125,12 @@ function edit_allinfo()
 
 	'</script>'+
     '</head>'+
-   ' <body class="body">'+
+   ' <body class="body" onload="fetchcollege();display_courses();>'+
        ' <script>'+
            ' $("#wizard").steps();'+
        ' </script>';
-				rets += '<h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
+
+				rets += '<div><h1 class="banner">INFORMATION SHEET FOR TADMAN REGISTRATION</h1>'+
 
 			'<form class="form" id="feedbackform">'+
 
@@ -218,7 +219,7 @@ function edit_allinfo()
 '<div id="target"></div>'+
 	
 '</fieldset>'+
-'</form>'
+'</form></div>'
 					  $( "#target").html(rets); 
 			}
 			else{

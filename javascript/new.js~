@@ -125,7 +125,7 @@ function edit_allinfo()
 
 	'</script>'+
     '</head>'+
-   ' <body class="body">'+
+   ' <body class="body" onload="fetchcollege();display_courses();>'+
        ' <script>'+
            ' $("#wizard").steps();'+
        ' </script>';
