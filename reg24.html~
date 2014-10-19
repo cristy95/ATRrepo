@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/final.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/confirmsearch.css">
        	<script src="javascript/bootstrap.min.js"></script>
 	<script src="javascript/jqinit.js"></script>
 	<script src="javascript/globs.js"></script>
@@ -22,7 +23,7 @@
 
 
 		
-<body class="body" onload="showcourses(41);">
+<body class="body" onload="showreg(41,24);">
 
 <!--navbar here-->
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -104,11 +105,15 @@
 </nav>
 <!--navbar end-->
 
+	<div class="form1">
 <header>
-<h2  class="header"></h2></header>
-
+<h2  class="banner">College of Arts and Social Sciences</h2>
+<h3 class="banner">AB English</h3></header>
+<br>
 <div class="font">
 	<div id="showreg"></div>
+	<div id="clear"></div>
+</div>
 <div>
 
 
