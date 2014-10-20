@@ -14,8 +14,8 @@ insert into courses(course_id,course_name,college_id_fk) values (6,'BS Mathemati
 insert into courses(course_id,course_name,college_id_fk) values (7,'BS Physics',21);
 insert into courses(course_id,course_name,college_id_fk) values (8,'BSE Mathematics',31);
 insert into courses(course_id,course_name,college_id_fk) values (9,'BSE Physics',31);
-insert into courses(course_id,course_name,college_id_fk) values (10,'BS EE',41);
-insert into courses(course_id,course_name,college_id_fk) values (11,'BS ECE',41);
+insert into courses(course_id,course_name,college_id_fk) values (10,'BS Electrical Engineering',41);
+insert into courses(course_id,course_name,college_id_fk) values (11,'BS Electronics and Communication Engineering',41);
 insert into courses(course_id,course_name,college_id_fk) values (12,'BS Nursing',51);
 insert into courses(course_id,course_name,college_id_fk) values (13,'BS Accountancy',61);
 insert into courses(course_id,course_name,college_id_fk) values (14,'BSBA Business Economics',61);
@@ -29,7 +29,7 @@ insert into courses(course_id,course_name,college_id_fk) values (21,'BS Ceramics
 insert into courses(course_id,course_name,college_id_fk) values (22,'BS Chemical Engineering',41);
 insert into courses(course_id,course_name,college_id_fk) values (23,'BS Computer Engineering',41);
 insert into courses(course_id,course_name,college_id_fk) values (24,'BS Mining Engineering',41);
-insert into courses(course_id,course_name,college_id_fk) values (25,'BS EET',41);
+insert into courses(course_id,course_name,college_id_fk) values (25,'BS Environmental Engineering Technology',41);
 insert into courses(course_id,course_name,college_id_fk) values (26,'BS Mechanical Engineering',41);
 insert into courses(course_id,course_name,college_id_fk) values (27,'BS Metallurgical Engineering',41);
 insert into courses(course_id,course_name,college_id_fk) values (28,'BS Biology(Botany)',21);
