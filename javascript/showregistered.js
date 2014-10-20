@@ -87,7 +87,7 @@ function showreg(college, course){
                   table += '<td>' + row[j] + '</td>';
                 }
                 else if (j == 4){
-                  table += '<td><button class="buttonlink" onclick="displayform(' + "'" + row[0] + "'" +','+ college +','+ course + ');">[more..]</button></td>'
+                  table += '<td>' + row[j] + '</td><td><button class="buttonlink" onclick="displayform(' + "'" + row[0] + "'" +','+ course +','+ college + ');">[more..]</button></td>'
                 };
               }
               table += "</tr>";
@@ -117,12 +117,12 @@ function displayform(stud_id,course,college)
     console.log(res);
     if(res[0][0] != "None")
                     {
-      display = '<div class="content"><br><br>';
+      display = '<div class="content"><button class="buttonlink" onclick="showreg('+ college +','+ course + ');">back to registered list..</button><br><br>';
       display += '<p>&nbsp;ID No.:&nbsp;<u>' + res[0][0] + '</u></p>'
         + '<p>&nbsp;Course:&nbsp;<u>'+ res[0][1] + '</u></p>'
         + '<p>&nbsp;College:&nbsp;<u>'+res[0][2] + '</u></p>'
         + '<p><h3>Personal Information of Graduating Student</h3></p><br>'
-        + '<div class = "column">'
+        + '<div class = "columnar">'
         + '<p>&nbsp;Last Name:&nbsp;<u>'+res[0][3] + '</u></p>'
         + '<p>&nbsp;Middle Name:&nbsp;<u>'+res[0][4] + '</u></p>'
         + '<p>&nbsp;First Name:&nbsp;<u>'+res[0][5] + '</u></p>'
@@ -134,7 +134,7 @@ function displayform(stud_id,course,college)
         + '<p>&nbsp;Home Address:&nbsp;<u>'+res[0][12] + '</u></p>'
         + '</div>'
         + '<p><h3>Family Background</h3></p>'
-        + '<div class = "column">'
+        + '<div class = "columnar">'
         + '<p><h4>Father</h4></p>'
         + '<p>&nbsp;Last Name:&nbsp;<u>'+res[0][13] + '</u></p>'
         + '<p>&nbsp;First Name:&nbsp;<u>'+res[0][14] + '</u></p>'
@@ -153,7 +153,7 @@ function displayform(stud_id,course,college)
         + '<p>&nbsp;Middle Name:&nbsp;<u>'+res[0][24] + '</u></p>'
         + '</div>'
         + '<p><h3>Position held in official recognized Student Organization</h3></p><br><br>'
-        + '<div class="column">'
+        + '<div class="columnar">'
         + '<p>&nbsp;Position:&nbsp;<u>'+res[0][25] + '</u></p>'
         + '<p>&nbsp;Name of Organization:&nbsp;<u>'+res[0][26] + '</u></p>'
         + '<p>&nbsp;Academic Year:&nbsp;<u>'+res[0][27] + '</u></p>'
@@ -167,8 +167,54 @@ function displayform(stud_id,course,college)
         + '<p>&nbsp;Thesis:&nbsp;<u>'+res[0][32] + '</u></p>'
         + '<input type="hidden" id="stud_id" value="' + res[0][0] + '"><input type="hidden" id="course" value="' + res[0][33] + '">'
         + '<input type="hidden" id="college" value="' + res[0][34] + '">'
+        + '<p><button class="buttonlink" onclick="showreg('+ college +','+ course + ');">back to registered list..</button></p>'
             $("#showreg").html(display); 
           }
     }
   });
+}
+
+function fetchperstatus()
+{
+  $.ajax({
+      url: siteloc + scriptloc + "getconfirm_perconfirm.py",
+      dataType: 'json',
+      success: function (res) {
+                  console.log(res);
+                  if(res[0][0] != "None")
+                  {
+              table = '<div class="table-responsive">';
+            table += '<table class="table table-condensed">';
+            table += '<thead>' +
+                    '<tr>' +
+                    '<th>ID No.</th>' +
+                    '<th>Course</th>' +
+                    '<th>College</th>'+
+                    '</tr>' +
+                     '</thead>';
+            table += "<tbody>";
+            for (i = 0; i < res.length; i++)
+            {
+              row = res[i];
+              table += "<tr>";
+              for (j = 0; j < row.length; j++)
+              {
+
+                if (j <= 2){
+                  table += '<td>' + row[j] + '</td>';
+                };
+              }
+              table += "</tr>";
+            }
+            table += "</tbody>";
+            table += "</table>";
+            table += "<br></div>";
+            $("#target").html(table); 
+          } 
+          else{
+            display = '<div class="table-responsive"><br><br><br>No Results Found.<br><br></div>'
+            $("#target").html(display);
+          }
+              }
+    });
 }
