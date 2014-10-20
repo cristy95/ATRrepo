@@ -4,6 +4,15 @@ create table colleges
 	college_name text
 );
 
+INSERT INTO colleges(college_id,college_name) values (1,'School of Computer Studies');
+INSERT INTO colleges(college_id,college_name) values (11,'School of Engineering Technology');
+INSERT INTO colleges(college_id,college_name) values (21,'College of Science and Mathematics');
+INSERT INTO colleges(college_id,college_name) values (31,'College of Education');
+INSERT INTO colleges(college_id,college_name) values (41,'College of Engineering');
+INSERT INTO colleges(college_id,college_name) values (51,'College of Nursing');
+INSERT INTO colleges(college_id,college_name) values (61,'College of Business Administration and Accountancy');
+INSERT INTO colleges(college_id,college_name) values (71,'College of Arts and Social Sciences');
+
 create or replace
     function setcollege (p_college_name text)
     returns text as
